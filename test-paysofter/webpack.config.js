@@ -1,10 +1,11 @@
 const path = require('path');
 
 module.exports = {
+  mode: 'development', // or 'production'
   entry: './script.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist')
   },
   module: {
     rules: [
@@ -12,9 +13,15 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-        },
-      },
-    ],
+          loader: 'babel-loader'
+        }
+      }
+    ]
   },
+  resolve: {
+    alias: {
+      'react-paysofter': path.resolve(__dirname, '../react-paysofter/src')
+    },
+    extensions: ['.js', '.jsx']
+  }
 };

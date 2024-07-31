@@ -8,6 +8,8 @@
 # testing  
 /coverage
 
+/test-paysofter
+
 # production
 /build
 

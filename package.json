@@ -1,6 +1,6 @@
 {
   "name": "react-paysofter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "react-paysofter is a React component for integrating Paysofter payment functionalities into your React application. It supports multiple payment options like card payments, fund transfers, and promise payments.",
   "main": "Paysofter.js",
   "scripts": {
