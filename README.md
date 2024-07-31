@@ -1,9 +1,16 @@
 # React Paysofter
 
-## Installtion
+React Paysofter is a React component for integrating Paysofter payment functionalities into your React application.
+
+## Installation
+
+To install the package, run:
+
+```bash
 npm install react-paysofter
 
-## Usage
+
+## Usage 
 
 Here is a basic example of how to use the `Paysofter` component in your React project.
 
@@ -56,3 +63,10 @@ export default App;
 | `showFundOption`    | Boolean  | Whether to show the Fund Account payment option (default: false).         |
 | `showCardOption`    | Boolean  | Whether to show the Card payment option (default: false).                 |
 
+
+## Repository
+
+You can find the source code and more details about this project on its [GitHub repository](https://github.com/paysofter/react-paysofter.git).
+
+### License
+This project is licensed under the Apache-2.0 License.
