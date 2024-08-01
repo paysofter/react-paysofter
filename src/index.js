@@ -78,6 +78,8 @@ export function Paysofter({
     setError(null);
     setLoading(false);
   };
+  
+  console.log('Paysofter:', Paysofter);
 
   return (
     <>
