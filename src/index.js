@@ -2,20 +2,20 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col, Modal } from "react-bootstrap";
 import axios from "axios";
-import PaysofterButton from "./PaysofterButton"; 
+import PaysofterButton from "./PaysofterButton";
 import PaysofterButtonTest from "./PaysofterButtonTest";
 import Loader from "./Loader";
 import MessageFixed from "./MessageFixed";
-import { PAYSOFTER_API_URL } from "./config/apiConfig";
-
-export function Paysofter({
+import { PAYSOFTER_API_URL } from "./config/apiConfig";  
+ 
+export function Paysofter({ 
   amount,
   currency,
-  email, 
+  email,
   paysofterPublicKey,
   onSuccess,
   onClose,
-  payment_id,
+  paymentRef,
   showFundOption,
   showCardOption,
   showPromiseOption,
@@ -107,7 +107,7 @@ export function Paysofter({
                     paysofterPublicKey={paysofterPublicKey}
                     onSuccess={onSuccess}
                     onClose={onClose}
-                    payment_id={payment_id}
+                    payment_id={paymentRef}
                     showPaymentModal={showPaymentModal}
                     setShowPaymentModal={setShowPaymentModal}
                     showPromiseOption={showPromiseOption}
@@ -139,4 +139,4 @@ export function Paysofter({
       )}
     </>
   );
-}  
+}
