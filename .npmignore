@@ -1,7 +1,7 @@
 node_modules
 public
-webpack.config.js
-babel.config.js
+# webpack.config.js
+# babel.config.js
 *.test.js
 *.spec.js
 __tests__

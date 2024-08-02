@@ -1,15 +1,10 @@
 // ConfirmPaysofterPromise.js
-import React, { useEffect } from "react";
+import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-// import { clearCart } from "../../actions/cartActions";
 
 const ConfirmPaysofterPromise = () => {
-  // const dispatch = useDispatch();
-
-
 
   const handleConfirmPromise = () => {
-    // dispatch(clearCart());
     window.location.reload();
     window.location.href = "https://paysofter.com/promise/buyer";
   };
