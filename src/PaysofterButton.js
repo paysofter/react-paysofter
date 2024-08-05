@@ -22,7 +22,7 @@ function PaysofterButton({
   onClose,
   onError,
   payment_id,
-  showPaymentModal,
+  showPaymentModal, 
   setShowPaymentModal,
   showFundOption,
   showCardOption,

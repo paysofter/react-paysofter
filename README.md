@@ -106,7 +106,7 @@ export default App;
 ```jsx
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import 'bootstrap/dist/css/bootstrap.min.css'; // Add bootstrap.min.css to the entry point of your app "index.js" to be available globally
+import 'bootstrap/dist/css/bootstrap.min.css'; // Add bootstrap.min.css to the entry point of your app e.g. "index.js" to be available globally
 import { Paysofter } from "react-paysofter";
 
 const App = () => {

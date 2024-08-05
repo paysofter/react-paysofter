@@ -20,6 +20,7 @@ function PaysofterButtonTest({
   paysofterPublicKey,
   onSuccess,
   onClose,
+  onError,
   showPaymentModal,
   setShowPaymentModal,
   payment_id,
@@ -221,6 +222,7 @@ function PaysofterButtonTest({
                   email={email}
                   paysofterPublicKey={paysofterPublicKey}
                   onSuccess={onSuccess}
+                  onClose={handleOnClosePayment}
                   payment_id={payment_id}
                 />
               )}
@@ -232,6 +234,7 @@ function PaysofterButtonTest({
                   email={email}
                   paysofterPublicKey={paysofterPublicKey}
                   onSuccess={onSuccess}
+                  onClose={handleOnClosePayment}
                 />
               )}
 

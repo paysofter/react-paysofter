@@ -1,7 +1,7 @@
 // CardPaymentTest.js
 import React, { useState, useEffect, useCallback } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'; 
 import Select from "react-select";
 import { MONTH_CHOICES, YEAR_CHOICES } from "./payment-constants";
 import Message from "./Message";
