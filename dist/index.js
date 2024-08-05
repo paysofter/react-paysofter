@@ -34063,6 +34063,7 @@ function PaysofterButtonTest(_ref) {
     paysofterPublicKey = _ref.paysofterPublicKey,
     onSuccess = _ref.onSuccess,
     onClose = _ref.onClose,
+    onError = _ref.onError,
     showPaymentModal = _ref.showPaymentModal,
     setShowPaymentModal = _ref.setShowPaymentModal,
     payment_id = _ref.payment_id,
@@ -34165,13 +34166,15 @@ function PaysofterButtonTest(_ref) {
     email: email,
     paysofterPublicKey: paysofterPublicKey,
     onSuccess: onSuccess,
+    onClose: handleOnClosePayment,
     payment_id: payment_id
   }), selectedPaymentOption === "fund" && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_PaysofterAccountFundTest, {
     amount: amount,
     currency: currency,
     email: email,
     paysofterPublicKey: paysofterPublicKey,
-    onSuccess: onSuccess
+    onSuccess: onSuccess,
+    onClose: handleOnClosePayment
   }), selectedPaymentOption === "bank" && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_BankPayment, null), selectedPaymentOption === "transfer" && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_TransferPayment, null), selectedPaymentOption === "ussd" && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_UssdPayment, null), selectedPaymentOption === "qr" && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_QrPayment, null))))));
 }
 /* harmony default export */ const src_PaysofterButtonTest = (PaysofterButtonTest);

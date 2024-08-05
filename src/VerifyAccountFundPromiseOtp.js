@@ -8,6 +8,7 @@ import MessageFixed from "./MessageFixed";
 import ConfirmPaysofterPromise from "./ConfirmPaysofterPromise";
 import { PAYSOFTER_API_URL } from "./config/apiConfig";
 import axios from "axios";
+import SuccessScreen from "./SuccessScreen";
 
 const VerifyAccountFundPromiseOtp = ({
   email,
@@ -182,7 +183,7 @@ const VerifyAccountFundPromiseOtp = ({
       setShowSuccessMessage(true);
       handleOnSuccess();
       setTimeout(() => {
-        setShowConfirmPaysofterPromise(true);
+        setShowConfirmPaysofterPromise(true); 
         setShowSuccessMessage(false);
         localStorage.removeItem("debitAccountData");
       }, 3000);

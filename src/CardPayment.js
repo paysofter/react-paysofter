@@ -1,7 +1,7 @@
 // CardPayment.js
 import React, { useState, useEffect, useCallback } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import Select from "react-select";
 import { MONTH_CHOICES, YEAR_CHOICES } from "./payment-constants";
 import Message from "./Message";
@@ -10,6 +10,7 @@ import Loader from "./Loader";
 import { formatAmount } from "./FormatAmount";
 import { PAYSOFTER_API_URL } from "./config/apiConfig";
 import axios from "axios";
+import SuccessScreen from "./SuccessScreen";
 
 function CardPayment({
   amount,
@@ -26,6 +27,8 @@ function CardPayment({
   const [monthChoices, setMonthChoices] = useState([]);
   const [yearChoices, setYearChoices] = useState([]);
 
+  const [showSuccessScreen, setShowSuccessScreen] = useState(false);
+  const [paymentSuccess, setPaymentSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -115,12 +118,14 @@ function CardPayment({
         paysofterPaymentData
       );
       console.log(data);
+      setPaymentSuccess(true);
+      handleOnSuccess();
       setShowSuccessMessage(true);
       setTimeout(() => {
-        handleOnClose();
+        // handleOnClose();
         setShowSuccessMessage(false);
+        setShowSuccessScreen(true);
       }, 3000);
-      handleOnSuccess();
     } catch (error) {
       setError(
         error.response && error.response.data.detail
@@ -136,146 +141,160 @@ function CardPayment({
     onSuccess();
   }, [onSuccess]);
 
-  const handleOnClose = useCallback(() => {
-    onClose();
-  }, [onClose]);
+  // const handleOnClose = useCallback(() => {
+  //   onClose();
+  // }, [onClose]);
 
   useEffect(() => {
-    if (showSuccessMessage && !hasHandledSuccess) {
+    if (paymentSuccess && !hasHandledSuccess) {
       setHasHandledSuccess(true);
+      setShowSuccessMessage(true);
+      handleOnSuccess();
+      setTimeout(() => {
+        setShowSuccessMessage(false);
+        setShowSuccessScreen(true);
+      }, 3000);
     }
-  }, [showSuccessMessage, hasHandledSuccess]);
+  }, [paymentSuccess, handleOnSuccess, hasHandledSuccess]);
 
   return (
     <div>
-      <h2 className="py-2 text-center">Debit Card</h2>
+      {showSuccessScreen ? (
+        <SuccessScreen />
+      ) : (
+        <div>
+          <h2 className="py-2 text-center">Debit Card</h2>
 
-      {showSuccessMessage && (
-        <Message variant="success">Payment made successfully.</Message>
-      )}
+          {showSuccessMessage && (
+            <Message variant="success">Payment made successfully.</Message>
+          )}
 
-      {error && <Message variant="danger">{error}</Message>}
-      {loading && <Loader />}
+          {error && <Message variant="danger">{error}</Message>}
+          {loading && <Loader />}
 
-      <Form onSubmit={submitHandler}>
-        <Form.Group>
-          <Form.Label>Card Number</Form.Label>
-          <Form.Control
-            type="text"
-            name="cardNumber"
-            value={paymentDetails.cardNumber}
-            onChange={(e) =>
-              handlePaymentDetailsChange("cardNumber", e.target.value)
-            }
-            required
-            placeholder="1234 5678 9012 3456"
-            maxLength="19"
-          />
-        </Form.Group>
-        {cardType && (
-          <p>
-            Detected Card Type: {cardType}
-            {cardType === "Visa " && <i className="fab fa-cc-visa"></i>}
-            {cardType === "Mastercard " && (
-              <i className="fab fa-cc-mastercard"></i>
-            )}
-          </p>
-        )}
-        <i className="fab fa-cc-mastercard"></i>{" "}
-        <i className="fab fa-cc-visa"></i>
-        <Row>
-          <Col>
+          <Form onSubmit={submitHandler}>
             <Form.Group>
-              <Form.Label>Expiration Month</Form.Label>
-              <Select
-                options={monthChoices?.map(([value, label]) => ({
-                  value,
-                  label,
-                }))}
-                onChange={(selectedOption) =>
-                  handlePaymentDetailsChange(
-                    "expirationMonth",
-                    selectedOption.value
-                  )
+              <Form.Label>Card Number</Form.Label>
+              <Form.Control
+                type="text"
+                name="cardNumber"
+                value={paymentDetails.cardNumber}
+                onChange={(e) =>
+                  handlePaymentDetailsChange("cardNumber", e.target.value)
                 }
-                value={{
-                  value: paymentDetails.expirationMonth,
-                  label: paymentDetails.expirationMonth,
-                }}
-                placeholder="Select Month"
+                required
+                placeholder="1234 5678 9012 3456"
+                maxLength="19"
               />
             </Form.Group>
-          </Col>
-          <Col>
+            {cardType && (
+              <p>
+                Detected Card Type: {cardType}
+                {cardType === "Visa " && <i className="fab fa-cc-visa"></i>}
+                {cardType === "Mastercard " && (
+                  <i className="fab fa-cc-mastercard"></i>
+                )}
+              </p>
+            )}
+            <i className="fab fa-cc-mastercard"></i>{" "}
+            <i className="fab fa-cc-visa"></i>
+            <Row>
+              <Col>
+                <Form.Group>
+                  <Form.Label>Expiration Month</Form.Label>
+                  <Select
+                    options={monthChoices?.map(([value, label]) => ({
+                      value,
+                      label,
+                    }))}
+                    onChange={(selectedOption) =>
+                      handlePaymentDetailsChange(
+                        "expirationMonth",
+                        selectedOption.value
+                      )
+                    }
+                    value={{
+                      value: paymentDetails.expirationMonth,
+                      label: paymentDetails.expirationMonth,
+                    }}
+                    placeholder="Select Month"
+                  />
+                </Form.Group>
+              </Col>
+              <Col>
+                <Form.Group>
+                  <Form.Label>Expiration Year</Form.Label>
+                  <Select
+                    options={yearChoices?.map(([value, label]) => ({
+                      value,
+                      label,
+                    }))}
+                    value={{
+                      value: paymentDetails.expirationYear,
+                      label: paymentDetails.expirationYear,
+                    }}
+                    onChange={(selectedOption) =>
+                      handlePaymentDetailsChange(
+                        "expirationYear",
+                        selectedOption.value
+                      )
+                    }
+                    placeholder="Select Year"
+                  />
+                </Form.Group>
+              </Col>
+            </Row>
             <Form.Group>
-              <Form.Label>Expiration Year</Form.Label>
-              <Select
-                options={yearChoices?.map(([value, label]) => ({
-                  value,
-                  label,
-                }))}
-                value={{
-                  value: paymentDetails.expirationYear,
-                  label: paymentDetails.expirationYear,
-                }}
-                onChange={(selectedOption) =>
-                  handlePaymentDetailsChange(
-                    "expirationYear",
-                    selectedOption.value
-                  )
+              <Form.Label>CVV</Form.Label>
+              <Form.Control
+                type={cvvVisible ? "text" : "password"}
+                name="cvv"
+                value={paymentDetails.cvv}
+                onChange={(e) =>
+                  handlePaymentDetailsChange("cvv", e.target.value)
                 }
-                placeholder="Select Year"
+                required
+                maxLength="3"
+                placeholder="123"
               />
             </Form.Group>
-          </Col>
-        </Row>
-        <Form.Group>
-          <Form.Label>CVV</Form.Label>
-          <Form.Control
-            type={cvvVisible ? "text" : "password"}
-            name="cvv"
-            value={paymentDetails.cvv}
-            onChange={(e) => handlePaymentDetailsChange("cvv", e.target.value)}
-            required
-            maxLength="3"
-            placeholder="123"
-          />
-        </Form.Group>
-        <span className="d-flex justify-content-end">
-          <Button
-            variant="outline"
-            className="rounded"
-            size="sm"
-            onClick={toggleCvvVisibility}
-          >
-            {cvvVisible ? (
-              <span>
-                <i className="fa fa-eye-slash"></i> Hide
-              </span>
-            ) : (
-              <span>
-                <i className="fa fa-eye"></i> Show
-              </span>
-            )}
-          </Button>
-        </span>
-        <div className="text-center w-100 mt-3 py-2">
-          <Button
-            className="w-100 rounded"
-            variant="primary"
-            type="submit"
-            disabled={!isFormValid() || loading}
-          >
-            Pay{" "}
-            <span>
-              ({formatAmount(amount)} {currency})
+            <span className="d-flex justify-content-end">
+              <Button
+                variant="outline"
+                className="rounded"
+                size="sm"
+                onClick={toggleCvvVisibility}
+              >
+                {cvvVisible ? (
+                  <span>
+                    <i className="fa fa-eye-slash"></i> Hide
+                  </span>
+                ) : (
+                  <span>
+                    <i className="fa fa-eye"></i> Show
+                  </span>
+                )}
+              </Button>
             </span>
-          </Button>
+            <div className="text-center w-100 mt-3 py-2">
+              <Button
+                className="w-100 rounded"
+                variant="primary"
+                type="submit"
+                disabled={!isFormValid() || loading}
+              >
+                Pay{" "}
+                <span>
+                  ({formatAmount(amount)} {currency})
+                </span>
+              </Button>
+            </div>
+            <div className="py-2 d-flex justify-content-center">
+              {error && <MessageFixed variant="danger">{error}</MessageFixed>}
+            </div>
+          </Form>
         </div>
-        <div className="py-2 d-flex justify-content-center">
-          {error && <MessageFixed variant="danger">{error}</MessageFixed>}
-        </div>
-      </Form>
+      )}
     </div>
   );
 }

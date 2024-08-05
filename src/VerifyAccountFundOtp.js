@@ -1,12 +1,13 @@
 // VerifyAccountFundOtp.js
 import React, { useState, useEffect, useCallback } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import Message from "./Message";
 import MessageFixed from "./MessageFixed";
 import Loader from "./Loader";
 import { PAYSOFTER_API_URL } from "./config/apiConfig";
 import axios from "axios";
+import SuccessScreen from "./SuccessScreen";
 
 const VerifyAccountFundOtp = ({
   amount,
@@ -24,6 +25,7 @@ const VerifyAccountFundOtp = ({
   const [countdown, setCountdown] = useState(60);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [hasHandledSuccess, setHasHandledSuccess] = useState(false);
+  const [showSuccessScreen, setShowSuccessScreen] = useState(false);
   const [paymentSuccess, setPaymentSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -99,8 +101,9 @@ const VerifyAccountFundOtp = ({
       setHasHandledSuccess(true);
       handleOnSuccess();
       setTimeout(() => {
-        handleOnClose();
+        // handleOnClose();
         setShowSuccessMessage(false);
+        setShowSuccessScreen(true);
       }, 3000);
     } catch (error) {
       setError(
@@ -146,9 +149,9 @@ const VerifyAccountFundOtp = ({
     onSuccess();
   }, [onSuccess]);
 
-  const handleOnClose = useCallback(() => {
-    onClose();
-  }, [onClose]);
+  // const handleOnClose = useCallback(() => {
+  //   onClose();
+  // }, [onClose]);
 
   useEffect(() => {
     if (paymentSuccess && !hasHandledSuccess) {
@@ -158,73 +161,78 @@ const VerifyAccountFundOtp = ({
       setTimeout(() => {
         setShowSuccessMessage(false);
         localStorage.removeItem("debitAccountData");
+        setShowSuccessScreen(true);
       }, 3000);
     }
   }, [paymentSuccess, handleOnSuccess, hasHandledSuccess]);
 
   return (
     <Container>
-      <Row className="justify-content-center text-center mt-5">
-        <Col>
-          <div className="border rounded p-4 py-2">
-            <h1 className="py-2">Verify OTP ({currency})</h1>
-            {showSuccessMessage && (
-              <Message variant="success">Payment made successfully!</Message>
-            )}
-            {loading && <Loader />}
-            {error && <Message variant="danger">{error}</Message>}
-            {resendMessage && (
-              <Message variant={resendLoading ? "info" : "success"}>
-                {resendMessage}
-              </Message>
-            )}
+      {showSuccessScreen ? (
+        <SuccessScreen />
+      ) : (
+        <Row className="justify-content-center text-center mt-5">
+          <Col>
+            <div className="border rounded p-4 py-2">
+              <h1 className="py-2">Verify OTP ({currency})</h1>
+              {showSuccessMessage && (
+                <Message variant="success">Payment made successfully!</Message>
+              )}
+              {loading && <Loader />}
+              {error && <Message variant="danger">{error}</Message>}
+              {resendMessage && (
+                <Message variant={resendLoading ? "info" : "success"}>
+                  {resendMessage}
+                </Message>
+              )}
 
-            <Form className="py-2">
-              <Form.Group controlId="otp">
-                <Form.Control
-                  type="text"
-                  value={otp}
-                  onChange={(e) => setOtp(e.target.value)}
-                  placeholder="Enter OTP"
-                  required
-                />
-              </Form.Group>
-              <div className="py-3">
-                <Button
-                  onClick={handleVerifyEmailOtp}
-                  disabled={otp === "" || loading || showSuccessMessage}
-                  variant="success"
-                  type="submit"
-                  className="rounded"
-                >
-                  Verify OTP
-                </Button>
-              </div>
-            </Form>
-            <p>
-              OTP has been sent to email: {formattedPayerEmail} for Paysofter
-              Account ID: {sendOtpData.account_id} and expires in 10 minutes. It
-              might take a few seconds to deliver.
-            </p>
-            <Button
-              variant="link"
-              type="submit"
-              disabled={resendDisabled || resendLoading}
-              onClick={handleResendEmailOtp}
-            >
-              {resendLoading
-                ? "Resending OTP..."
-                : resendDisabled
-                ? `Resend OTP (${countdown}sec)`
-                : "Resend OTP"}
-            </Button>
-          </div>
+              <Form className="py-2">
+                <Form.Group controlId="otp">
+                  <Form.Control
+                    type="text"
+                    value={otp}
+                    onChange={(e) => setOtp(e.target.value)}
+                    placeholder="Enter OTP"
+                    required
+                  />
+                </Form.Group>
+                <div className="py-3">
+                  <Button
+                    onClick={handleVerifyEmailOtp}
+                    disabled={otp === "" || loading || showSuccessMessage}
+                    variant="success"
+                    type="submit"
+                    className="rounded"
+                  >
+                    Verify OTP
+                  </Button>
+                </div>
+              </Form>
+              <p>
+                OTP has been sent to email: {formattedPayerEmail} for Paysofter
+                Account ID: {sendOtpData.account_id} and expires in 10 minutes.
+                It might take a few seconds to deliver.
+              </p>
+              <Button
+                variant="link"
+                type="submit"
+                disabled={resendDisabled || resendLoading}
+                onClick={handleResendEmailOtp}
+              >
+                {resendLoading
+                  ? "Resending OTP..."
+                  : resendDisabled
+                  ? `Resend OTP (${countdown}sec)`
+                  : "Resend OTP"}
+              </Button>
+            </div>
 
-          <div className="py-2 d-flex justify-content-center">
-            {error && <MessageFixed variant="danger">{error}</MessageFixed>}
-          </div>
-        </Col>
-      </Row>
+            <div className="py-2 d-flex justify-content-center">
+              {error && <MessageFixed variant="danger">{error}</MessageFixed>}
+            </div>
+          </Col>
+        </Row>
+      )}
     </Container>
   );
 };
