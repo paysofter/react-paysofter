@@ -1,6 +1,7 @@
 // PaysofterPromiseTest.js
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Form, Button, Modal } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import PaysofterPromiseFundTest from "./PaysofterPromiseFundTest";
 import Select from "react-select";
 import { PAYMENT_DURATION_CHOICES } from "./payment-constants";

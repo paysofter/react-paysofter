@@ -24,7 +24,7 @@ import { Paysofter } from "react-paysofter";
 
 const App = () => {
   const amount = 10; // Amount in dollars, e.g., 10.00 USD
-  const paysofterPublicKey = "test_api_key_abc123"; // Replace with your actual public key
+  const [paysofterPublicKey] = useState("test_api_key_abc123"); // Replace with your actual Paysofter public key
 
   const handleSuccess = () => {
     console.log("Payment successful!");
@@ -62,9 +62,9 @@ import { Paysofter } from "react-paysofter";
 const App = () => {
   const [showPayment, setShowPayment] = useState(false);
   const amount = 5000; // Amount in Nigerian Naira, e.g., NGN 5,000
-  const paysofterPublicKey = "test_api_key_abc123"; // Replace with your actual public key
   const currency = "NGN"; // Nigerian Naira
   const email = "buyer@example.com"; // Buyer's email
+  const [paysofterPublicKey] = useState("test_api_key_abc123"); // Replace with your actual Paysofter public key
 
   const handleSuccess = () => {
     console.log("Payment successful!");
@@ -105,15 +105,22 @@ export default App;
 
 ```jsx
 import React, { useState } from "react";
-import { Paysofter } from "react-paysofter";
 import { Form, Button } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css'; // Add bootstrap.min.css to the entry point of your app "index.js" to be available globally
+import { Paysofter } from "react-paysofter";
 
 const App = () => {
   const [showPayment, setShowPayment] = useState(false);
   const [amount, setAmount] = useState(5000); // Default amount in NGN, e.g., NGN 5,000
-  const [paysofterPublicKey] = useState("test_api_key_abc123"); // Replace with your actual public key
   const [currency, setCurrency] = useState("NGN"); // Default currency
   const [email, setEmail] = useState("buyer@example.com"); // Default email
+  const [paysofterPublicKey] = useState("test_api_key_abc123"); // Replace with your actual Paysofter public key
+  // const paymentRef = `PID${Math.floor(Math.random() * 10000000000000000)}`; // Generate a 17-digit random payment reference with PID prefix
+  const paymentRef = `PID${new Date()
+    .toISOString()
+    .slice(2, 19)
+    .replace(/[-T:]/g, "")}${Math.floor(Math.random() * 100000)}`; // Or generate a 17-digit payment reference with PID prefix starting with the timestamp and random numbers appended at the end as in 'PIDYYMMDDHHMMSSxxxxx'.
+  console.log("paymentRef:", paymentRef);
 
   const handleSuccess = () => {
     console.log("Payment successful!");
@@ -126,11 +133,21 @@ const App = () => {
   };
 
   return (
-    <div style={{ maxWidth: "400px", margin: "0 auto", padding: "20px" }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "20px",
+        minHeight: "100vh",
+      }}
+    >
+      <h2 style={{ textAlign: "center", padding: "10px" }}>Checkout</h2>
       {!showPayment ? (
         <Form>
           <Form.Group controlId="formAmount">
-            <Form.Label>Amount</Form.Label>
+            <Form.Label>Amount: </Form.Label>
             <Form.Control
               type="number"
               placeholder="Enter Amount"
@@ -140,7 +157,7 @@ const App = () => {
           </Form.Group>
 
           <Form.Group controlId="formCurrency" style={{ marginTop: "10px" }}>
-            <Form.Label>Currency</Form.Label>
+            <Form.Label>Currency: </Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter Currency"
@@ -150,7 +167,7 @@ const App = () => {
           </Form.Group>
 
           <Form.Group controlId="formEmail" style={{ marginTop: "10px" }}>
-            <Form.Label>Email</Form.Label>
+            <Form.Label>Email: </Form.Label>
             <Form.Control
               type="email"
               placeholder="Enter Email"
@@ -159,27 +176,37 @@ const App = () => {
             />
           </Form.Group>
 
-          <Button
-            variant="primary"
-            onClick={() => setShowPayment(true)}
-            style={{ marginTop: "20px" }}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              padding: "10px",
+            }}
           >
-            Pay Now
-          </Button>
+            <Button
+              variant="primary"
+              onClick={() => setShowPayment(true)}
+              style={{ marginTop: "20px" }}
+            >
+              Pay Now
+            </Button>
+          </div>
         </Form>
       ) : (
-        <Paysofter
-          amount={amount}
-          currency={currency}
-          email={email}
-          paysofterPublicKey={paysofterPublicKey}
-          onSuccess={handleSuccess}
-          onClose={handleClose}
-          paymentRef={PID${Math.floor(Math.random() * 100000000000000)}}
-          showPromiseOption={false}
-          showFundOption={true}
-          showCardOption={true}
-        />
+        <>
+           <Paysofter
+            amount={amount}
+            currency={currency}
+            email={email}
+            paysofterPublicKey={paysofterPublicKey}
+            onSuccess={handleSuccess}
+            onClose={handleClose}
+            paymentRef={paymentRef}
+            showPromiseOption={false}
+            showFundOption={true}
+            showCardOption={true}
+          /> 
+        </>
       )}
     </div>
   );
@@ -190,18 +217,18 @@ export default App;
 
 ## Props
 
-| Prop Name            | Type     | Description                                                       |
-| :------------------- | :------- | :---------------------------------------------------------------- |
-| `amount`             | Number   | The amount to be paid.                                            |
-| `currency`           | String   | The currency in which the payment is to be made (e.g., USD, NGN). |
-| `email`              | String   | The email address of the user making the payment.                 |
-| `paysofterPublicKey` | String   | Your Paysofter public key for processing the payment.             |
-| `onSuccess`          | Function | Callback function to handle the success of the payment.           |
-| `onClose`            | Function | Callback function to handle the closing of the payment window.    |
-| `paymentRef`         | String   | A unique identifier for the payment serving as a refrence.        |
-| `showPromiseOption`  | Boolean  | Whether to show the Promise payment option (default: true). If all options are delcared false then Promise payment option defaults to true.     |
-| `showFundOption`     | Boolean  | Whether to show the Fund Account payment option.                  |
-| `showCardOption`     | Boolean  | Whether to show the Card payment option.                          |
+| Prop Name            | Type     | Description                                                                                                                                                                                                                                                                                                                                              |
+| :------------------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `amount`             | Number   | The amount to be paid.                                                                                                                                                                                                                                                                                                                                   |
+| `currency`           | String   | The currency in which the payment is to be made (e.g., USD, NGN).                                                                                                                                                                                                                                                                                        |
+| `email`              | String   | The email address of the user making the payment.                                                                                                                                                                                                                                                                                                        |
+| `paysofterPublicKey` | String   | Your Paysofter public key for processing the payment.                                                                                                                                                                                                                                                                                                    |
+| `onSuccess`          | Function | Callback function to handle the success of the payment.                                                                                                                                                                                                                                                                                                  |
+| `onClose`            | Function | Callback function to handle the closing of the payment window.                                                                                                                                                                                                                                                                                           |
+| `paymentRef`         | String   | A unique identifier for the payment serving as a refrence. Either generate a 17-digit random payment reference with PID prefix, or generate a 17-digit payment reference with PID prefix starting with a timestamp and a small random number appended at the end. Paysofter also generates a tarnsaction ID(TID) to reference every payment tarnsaction. |
+| `showPromiseOption`  | Boolean  | Whether to show the Promise payment option (default: true). If all options are delcared false then Promise payment option defaults to true.                                                                                                                                                                                                              |
+| `showFundOption`     | Boolean  | Whether to show the Fund Account payment option.                                                                                                                                                                                                                                                                                                         |
+| `showCardOption`     | Boolean  | Whether to show the Card payment option.                                                                                                                                                                                                                                                                                                                 |
 
 ## Contributing to the Project
 
@@ -222,4 +249,4 @@ export default App;
 
 ## Additional Configuration Options
 
-For further configuration options, please refer to the [Paysofter Documentation](https://paysofter.com/docs).
+For further configuration options, please refer to the [Paysofter Documentation](https://paysofter.com/docs/).

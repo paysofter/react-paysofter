@@ -1,6 +1,7 @@
 // VerifyAccountFundPromiseOtp.js
 import React, { useState, useEffect, useCallback } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Loader from "./Loader";
 import Message from "./Message";
 import MessageFixed from "./MessageFixed";

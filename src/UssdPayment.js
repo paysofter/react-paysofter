@@ -1,5 +1,6 @@
 // UssdPayment.js
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function UssdPayment() {
   // USSD payment UI elements and logic

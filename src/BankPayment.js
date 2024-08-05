@@ -1,5 +1,6 @@
 // BankPayment.js
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function BankPayment() {
   // Bank transfer payment UI elements and logic 

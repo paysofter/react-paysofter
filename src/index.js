@@ -1,6 +1,7 @@
-// Paysofter.js
+// index.js
 import React, { useEffect, useState } from "react";
 import { Row, Col, Modal } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import PaysofterButton from "./PaysofterButton";
 import PaysofterButtonTest from "./PaysofterButtonTest";
@@ -15,6 +16,7 @@ export function Paysofter({
   paysofterPublicKey,
   onSuccess,
   onClose,
+  onError,
   paymentRef,
   showFundOption,
   showCardOption,
@@ -31,7 +33,7 @@ export function Paysofter({
       setLoading(true);
       try {
         const response = await axios.post(
-          `${PAYSOFTER_API_URL}/api/get-api-key-status/`,
+          `${PAYSOFTER_API_URL}/api/get-api-key-status/`, 
           {
             public_api_key: paysofterPublicKey,
           }

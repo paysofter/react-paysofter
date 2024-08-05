@@ -1,6 +1,7 @@
 // PaysofterButtonTest.js
 import React, { useState } from "react";
 import { Button, Modal, Row, Col } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import CardPaymentTest from "./CardPaymentTest";
 import PaysofterAccountFundTest from "./PaysofterAccountFundTest";
 import PaysofterPromiseTest from "./PaysofterPromiseTest";

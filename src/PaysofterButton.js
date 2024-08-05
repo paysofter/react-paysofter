@@ -1,6 +1,7 @@
 // PaysofterButton.js
 import React, { useState } from "react";
 import { Button, Modal, Row, Col } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import CardPayment from "./CardPayment";
 import PaysofterAccountFund from "./PaysofterAccountFund";
 import PaysofterPromise from "./PaysofterPromise";
@@ -19,6 +20,7 @@ function PaysofterButton({
   paysofterPublicKey,
   onSuccess,
   onClose,
+  onError,
   payment_id,
   showPaymentModal,
   setShowPaymentModal,
@@ -52,6 +54,10 @@ function PaysofterButton({
     setShowPaymentModal(false);
     onClose();
   };
+
+  // const handleOnError = () => {
+  //   onError();
+  // };
 
   return (
     <div>
@@ -262,6 +268,7 @@ function PaysofterButton({
                   paysofterPublicKey={paysofterPublicKey}
                   onSuccess={onSuccess}
                   onClose={handleOnClosePayment}
+                  onError={onError}
                   payment_id={payment_id}
                 />
               )}
@@ -274,6 +281,7 @@ function PaysofterButton({
                   paysofterPublicKey={paysofterPublicKey}
                   onSuccess={onSuccess}
                   onClose={handleOnClosePayment}
+                  onError={onError}
                   payment_id={payment_id}
                 />
               )}
@@ -286,6 +294,7 @@ function PaysofterButton({
                   paysofterPublicKey={paysofterPublicKey}
                   onSuccess={onSuccess}
                   onClose={handleOnClosePayment}
+                  onError={onError}
                   payment_id={payment_id}
                 />
               )}

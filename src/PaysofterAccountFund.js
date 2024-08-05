@@ -1,6 +1,7 @@
 // PaysofterAccountFund.js
 import React, { useState, useEffect } from "react";
 import { Row, Col, Form, Button, Modal } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import VerifyAccountFundOtp from "./VerifyAccountFundOtp";
 import Message from "./Message";
 import MessageFixed from "./MessageFixed";

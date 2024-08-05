@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 // import { useSelector } from "react-redux";
 import { Row, Col, Form, Button, Modal } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Message from "./Message";
 // import Loader from "./Loader";
 import VerifyPromiseFundOtpTest from "./VerifyPromiseFundOtpTest";
