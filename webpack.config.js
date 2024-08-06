@@ -5,7 +5,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"), // Output directory
     filename: "index.js", // Output filename
-    publicPath: "/dist/", // Public path 
+    publicPath: "./dist/", // Public path
     libraryTarget: "umd", // Output module type for broad compatibility
     globalObject: "this", // Necessary for UMD builds to work in Node.js environments
   },
@@ -32,13 +32,26 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i, // Handle image imports
+
+        // use: [
+        //   {
+        //     loader: "file-loader",
+        //     options: {
+        //       name: "[name].[hash:8].[ext]",
+        //       outputPath: "images/", // Output directory for images
+        //       publicPath: "/dist/images", // Public path for images
+        //     },
+        //   },
+        // ],
+
         use: [
           {
-            loader: "file-loader",
+            loader: "url-loader",
             options: {
+              limit: 8192,
               name: "[name].[hash:8].[ext]",
-              outputPath: "images/", // Output directory for images
-              // publicPath: "/dist/", // Public path for images
+              outputPath: "images/",
+              publicPath: "/images/",
             },
           },
         ],
@@ -50,6 +63,7 @@ module.exports = {
     alias: {
       react: path.resolve(__dirname, "./node_modules/react"),
       "react-dom": path.resolve(__dirname, "./node_modules/react-dom"),
+      images: path.resolve(__dirname, "dist/images/"),
     },
   },
   externals: {

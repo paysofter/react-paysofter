@@ -30511,6 +30511,49 @@ function formatAmount(amount) {
 // apiConfig.js
 
 var PAYSOFTER_API_URL = "https://api.paysofter.com";
+;// CONCATENATED MODULE: ./node_modules/react-bootstrap/esm/Container.js
+"use client";
+
+
+
+
+
+const Container = /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_.forwardRef(({
+  bsPrefix,
+  fluid = false,
+  // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+  as: Component = 'div',
+  className,
+  ...props
+}, ref) => {
+  const prefix = useBootstrapPrefix(bsPrefix, 'container');
+  const suffix = typeof fluid === 'string' ? `-${fluid}` : '-fluid';
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(Component, {
+    ref: ref,
+    ...props,
+    className: classnames_default()(className, fluid ? `${prefix}${suffix}` : prefix)
+  });
+});
+Container.displayName = 'Container';
+/* harmony default export */ const esm_Container = (Container);
+;// CONCATENATED MODULE: ./src/SuccessScreen.js
+// SuccessScreen.js
+
+
+
+
+var SuccessScreen = function SuccessScreen() {
+  return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Container, null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Row, {
+    className: "justify-content-center"
+  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Col, null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", {
+    className: "py-2 text-center"
+  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_MessageFixed, {
+    variant: "success"
+  }, "Transaction successful!"), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("h2", {
+    className: "py-2 mb-2"
+  }, "Successful! "), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("p", null, "Payment created successfully!")))));
+};
+/* harmony default export */ const src_SuccessScreen = (SuccessScreen);
 ;// CONCATENATED MODULE: ./src/CardPayment.js
 function CardPayment_typeof(o) { "@babel/helpers - typeof"; return CardPayment_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, CardPayment_typeof(o); }
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == CardPayment_typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(CardPayment_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
@@ -30528,6 +30571,7 @@ function CardPayment_arrayLikeToArray(r, a) { (null == a || a > r.length) && (a 
 function CardPayment_iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function CardPayment_arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 // CardPayment.js
+
 
 
 
@@ -30565,33 +30609,41 @@ function CardPayment(_ref) {
     setYearChoices = _useState8[1];
   var _useState9 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
     _useState10 = CardPayment_slicedToArray(_useState9, 2),
-    loading = _useState10[0],
-    setLoading = _useState10[1];
-  var _useState11 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(""),
+    showSuccessScreen = _useState10[0],
+    setShowSuccessScreen = _useState10[1];
+  var _useState11 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
     _useState12 = CardPayment_slicedToArray(_useState11, 2),
-    error = _useState12[0],
-    setError = _useState12[1];
+    paymentSuccess = _useState12[0],
+    setPaymentSuccess = _useState12[1];
+  var _useState13 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
+    _useState14 = CardPayment_slicedToArray(_useState13, 2),
+    loading = _useState14[0],
+    setLoading = _useState14[1];
+  var _useState15 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(""),
+    _useState16 = CardPayment_slicedToArray(_useState15, 2),
+    error = _useState16[0],
+    setError = _useState16[1];
   (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useEffect)(function () {
     setMonthChoices(MONTH_CHOICES);
     setYearChoices(YEAR_CHOICES);
   }, []);
-  var _useState13 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(""),
-    _useState14 = CardPayment_slicedToArray(_useState13, 2),
-    cardType = _useState14[0],
-    setCardType = _useState14[1];
-  var _useState15 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)({
+  var _useState17 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(""),
+    _useState18 = CardPayment_slicedToArray(_useState17, 2),
+    cardType = _useState18[0],
+    setCardType = _useState18[1];
+  var _useState19 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)({
       cardNumber: "",
       expirationMonth: null,
       expirationYear: null,
       cvv: ""
     }),
-    _useState16 = CardPayment_slicedToArray(_useState15, 2),
-    paymentDetails = _useState16[0],
-    setPaymentDetails = _useState16[1];
-  var _useState17 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
-    _useState18 = CardPayment_slicedToArray(_useState17, 2),
-    cvvVisible = _useState18[0],
-    setCvvVisible = _useState18[1];
+    _useState20 = CardPayment_slicedToArray(_useState19, 2),
+    paymentDetails = _useState20[0],
+    setPaymentDetails = _useState20[1];
+  var _useState21 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
+    _useState22 = CardPayment_slicedToArray(_useState21, 2),
+    cvvVisible = _useState22[0],
+    setCvvVisible = _useState22[1];
   var toggleCvvVisibility = function toggleCvvVisibility() {
     return setCvvVisible(!cvvVisible);
   };
@@ -30655,27 +30707,29 @@ function CardPayment(_ref) {
             _yield$axios$post = _context.sent;
             data = _yield$axios$post.data;
             console.log(data);
+            setPaymentSuccess(true);
+            handleOnSuccess();
             setShowSuccessMessage(true);
             setTimeout(function () {
-              handleOnClose();
+              // handleOnClose();
               setShowSuccessMessage(false);
+              setShowSuccessScreen(true);
             }, 3000);
-            handleOnSuccess();
-            _context.next = 18;
+            _context.next = 19;
             break;
-          case 15:
-            _context.prev = 15;
+          case 16:
+            _context.prev = 16;
             _context.t0 = _context["catch"](4);
             setError(_context.t0.response && _context.t0.response.data.detail ? _context.t0.response.data.detail : _context.t0.message);
-          case 18:
-            _context.prev = 18;
+          case 19:
+            _context.prev = 19;
             setLoading(false);
-            return _context.finish(18);
-          case 21:
+            return _context.finish(19);
+          case 22:
           case "end":
             return _context.stop();
         }
-      }, _callee, null, [[4, 15, 18, 21]]);
+      }, _callee, null, [[4, 16, 19, 22]]);
     }));
     return function submitHandler(_x) {
       return _ref2.apply(this, arguments);
@@ -30684,15 +30738,23 @@ function CardPayment(_ref) {
   var handleOnSuccess = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useCallback)(function () {
     onSuccess();
   }, [onSuccess]);
-  var handleOnClose = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useCallback)(function () {
-    onClose();
-  }, [onClose]);
+
+  // const handleOnClose = useCallback(() => {
+  //   onClose();
+  // }, [onClose]);
+
   (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useEffect)(function () {
-    if (showSuccessMessage && !hasHandledSuccess) {
+    if (paymentSuccess && !hasHandledSuccess) {
       setHasHandledSuccess(true);
+      setShowSuccessMessage(true);
+      handleOnSuccess();
+      setTimeout(function () {
+        setShowSuccessMessage(false);
+        setShowSuccessScreen(true);
+      }, 3000);
     }
-  }, [showSuccessMessage, hasHandledSuccess]);
-  return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("h2", {
+  }, [paymentSuccess, handleOnSuccess, hasHandledSuccess]);
+  return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", null, showSuccessScreen ? /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_SuccessScreen, null) : /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("h2", {
     className: "py-2 text-center"
   }, "Debit Card"), showSuccessMessage && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_Message, {
     variant: "success"
@@ -30786,34 +30848,9 @@ function CardPayment(_ref) {
     className: "py-2 d-flex justify-content-center"
   }, error && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_MessageFixed, {
     variant: "danger"
-  }, error))));
+  }, error)))));
 }
 /* harmony default export */ const src_CardPayment = (CardPayment);
-;// CONCATENATED MODULE: ./node_modules/react-bootstrap/esm/Container.js
-"use client";
-
-
-
-
-
-const Container = /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_.forwardRef(({
-  bsPrefix,
-  fluid = false,
-  // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
-  as: Component = 'div',
-  className,
-  ...props
-}, ref) => {
-  const prefix = useBootstrapPrefix(bsPrefix, 'container');
-  const suffix = typeof fluid === 'string' ? `-${fluid}` : '-fluid';
-  return /*#__PURE__*/(0,jsx_runtime.jsx)(Component, {
-    ref: ref,
-    ...props,
-    className: classnames_default()(className, fluid ? `${prefix}${suffix}` : prefix)
-  });
-});
-Container.displayName = 'Container';
-/* harmony default export */ const esm_Container = (Container);
 ;// CONCATENATED MODULE: ./src/VerifyAccountFundOtp.js
 function VerifyAccountFundOtp_typeof(o) { "@babel/helpers - typeof"; return VerifyAccountFundOtp_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, VerifyAccountFundOtp_typeof(o); }
 function VerifyAccountFundOtp_regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ VerifyAccountFundOtp_regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == VerifyAccountFundOtp_typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(VerifyAccountFundOtp_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
@@ -30826,6 +30863,7 @@ function VerifyAccountFundOtp_arrayLikeToArray(r, a) { (null == a || a > r.lengt
 function VerifyAccountFundOtp_iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function VerifyAccountFundOtp_arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 // VerifyAccountFundOtp.js
+
 
 
 
@@ -30872,16 +30910,20 @@ var VerifyAccountFundOtp = function VerifyAccountFundOtp(_ref) {
     setHasHandledSuccess = _useState14[1];
   var _useState15 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
     _useState16 = VerifyAccountFundOtp_slicedToArray(_useState15, 2),
-    paymentSuccess = _useState16[0],
-    setPaymentSuccess = _useState16[1];
+    showSuccessScreen = _useState16[0],
+    setShowSuccessScreen = _useState16[1];
   var _useState17 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
     _useState18 = VerifyAccountFundOtp_slicedToArray(_useState17, 2),
-    loading = _useState18[0],
-    setLoading = _useState18[1];
-  var _useState19 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(null),
+    paymentSuccess = _useState18[0],
+    setPaymentSuccess = _useState18[1];
+  var _useState19 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
     _useState20 = VerifyAccountFundOtp_slicedToArray(_useState19, 2),
-    error = _useState20[0],
-    setError = _useState20[1];
+    loading = _useState20[0],
+    setLoading = _useState20[1];
+  var _useState21 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(null),
+    _useState22 = VerifyAccountFundOtp_slicedToArray(_useState21, 2),
+    error = _useState22[0],
+    setError = _useState22[1];
   var createdAt = new Date().toLocaleString("en-US", {
     weekday: "long",
     year: "numeric",
@@ -30964,8 +31006,9 @@ var VerifyAccountFundOtp = function VerifyAccountFundOtp(_ref) {
             setHasHandledSuccess(true);
             handleOnSuccess();
             setTimeout(function () {
-              handleOnClose();
+              // handleOnClose();
               setShowSuccessMessage(false);
+              setShowSuccessScreen(true);
             }, 3000);
             _context2.next = 15;
             break;
@@ -31034,9 +31077,11 @@ var VerifyAccountFundOtp = function VerifyAccountFundOtp(_ref) {
   var handleOnSuccess = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useCallback)(function () {
     onSuccess();
   }, [onSuccess]);
-  var handleOnClose = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useCallback)(function () {
-    onClose();
-  }, [onClose]);
+
+  // const handleOnClose = useCallback(() => {
+  //   onClose();
+  // }, [onClose]);
+
   (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useEffect)(function () {
     if (paymentSuccess && !hasHandledSuccess) {
       setHasHandledSuccess(true);
@@ -31045,10 +31090,11 @@ var VerifyAccountFundOtp = function VerifyAccountFundOtp(_ref) {
       setTimeout(function () {
         setShowSuccessMessage(false);
         localStorage.removeItem("debitAccountData");
+        setShowSuccessScreen(true);
       }, 3000);
     }
   }, [paymentSuccess, handleOnSuccess, hasHandledSuccess]);
-  return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Container, null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Row, {
+  return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Container, null, showSuccessScreen ? /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_SuccessScreen, null) : /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Row, {
     className: "justify-content-center text-center mt-5"
   }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Col, null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", {
     className: "border rounded p-4 py-2"
@@ -31441,6 +31487,7 @@ function VerifyAccountFundPromiseOtp_arrayLikeToArray(r, a) { (null == a || a > 
 function VerifyAccountFundPromiseOtp_iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function VerifyAccountFundPromiseOtp_arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 // VerifyAccountFundPromiseOtp.js
+
 
 
 
@@ -32278,7 +32325,7 @@ function QrPayment() {
 }
 /* harmony default export */ const src_QrPayment = (QrPayment);
 ;// CONCATENATED MODULE: ./src/images/logo.png
-/* harmony default export */ const logo = ("images/logo.50438c64c37d0acf587b559e3e7d22e9.png");
+/* harmony default export */ const logo = ("data:image/png;base64,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");
 // EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js!./src/Paysofter.css
 var Paysofter = __webpack_require__(360);
 ;// CONCATENATED MODULE: ./src/Paysofter.css
@@ -32472,6 +32519,24 @@ var generateRandomNum = function generateRandomNum(digits) {
   }
   return num;
 };
+;// CONCATENATED MODULE: ./src/SuccessScreenTest.js
+// SuccessScreenTest.js
+
+
+
+
+var SuccessScreenTest = function SuccessScreenTest() {
+  return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Container, null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Row, {
+    className: "justify-content-center"
+  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Col, null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", {
+    className: "py-2 text-center"
+  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_MessageFixed, {
+    variant: "success"
+  }, "Transaction successful!"), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("h2", {
+    className: "py-2 mb-2"
+  }, "Successful! "), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("p", null, "A test payment has been created successfully!")))));
+};
+/* harmony default export */ const src_SuccessScreenTest = (SuccessScreenTest);
 ;// CONCATENATED MODULE: ./src/CardPaymentTest.js
 function CardPaymentTest_typeof(o) { "@babel/helpers - typeof"; return CardPaymentTest_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, CardPaymentTest_typeof(o); }
 function CardPaymentTest_regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ CardPaymentTest_regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == CardPaymentTest_typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(CardPaymentTest_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
@@ -32489,6 +32554,7 @@ function CardPaymentTest_arrayLikeToArray(r, a) { (null == a || a > r.length) &&
 function CardPaymentTest_iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function CardPaymentTest_arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 // CardPaymentTest.js
+
 
 
 
@@ -32527,33 +32593,41 @@ function CardPaymentTest(_ref) {
     setYearChoices = _useState8[1];
   var _useState9 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
     _useState10 = CardPaymentTest_slicedToArray(_useState9, 2),
-    loading = _useState10[0],
-    setLoading = _useState10[1];
-  var _useState11 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(""),
+    showSuccessScreen = _useState10[0],
+    setShowSuccessScreen = _useState10[1];
+  var _useState11 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
     _useState12 = CardPaymentTest_slicedToArray(_useState11, 2),
-    error = _useState12[0],
-    setError = _useState12[1];
+    paymentSuccess = _useState12[0],
+    setPaymentSuccess = _useState12[1];
+  var _useState13 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
+    _useState14 = CardPaymentTest_slicedToArray(_useState13, 2),
+    loading = _useState14[0],
+    setLoading = _useState14[1];
+  var _useState15 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(""),
+    _useState16 = CardPaymentTest_slicedToArray(_useState15, 2),
+    error = _useState16[0],
+    setError = _useState16[1];
   (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useEffect)(function () {
     setMonthChoices(MONTH_CHOICES);
     setYearChoices(YEAR_CHOICES);
   }, []);
-  var _useState13 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(""),
-    _useState14 = CardPaymentTest_slicedToArray(_useState13, 2),
-    cardType = _useState14[0],
-    setCardType = _useState14[1];
-  var _useState15 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)({
+  var _useState17 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(""),
+    _useState18 = CardPaymentTest_slicedToArray(_useState17, 2),
+    cardType = _useState18[0],
+    setCardType = _useState18[1];
+  var _useState19 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)({
       cardNumber: generateRandomNum(16),
       expirationMonth: "12",
       expirationYear: "2026",
       cvv: generateRandomNum(3)
     }),
-    _useState16 = CardPaymentTest_slicedToArray(_useState15, 2),
-    paymentDetails = _useState16[0],
-    setPaymentDetails = _useState16[1];
-  var _useState17 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
-    _useState18 = CardPaymentTest_slicedToArray(_useState17, 2),
-    cvvVisible = _useState18[0],
-    setCvvVisible = _useState18[1];
+    _useState20 = CardPaymentTest_slicedToArray(_useState19, 2),
+    paymentDetails = _useState20[0],
+    setPaymentDetails = _useState20[1];
+  var _useState21 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
+    _useState22 = CardPaymentTest_slicedToArray(_useState21, 2),
+    cvvVisible = _useState22[0],
+    setCvvVisible = _useState22[1];
   var toggleCvvVisibility = function toggleCvvVisibility() {
     return setCvvVisible(!cvvVisible);
   };
@@ -32617,27 +32691,29 @@ function CardPaymentTest(_ref) {
             _yield$axios$post = _context.sent;
             data = _yield$axios$post.data;
             console.log(data);
+            setPaymentSuccess(true);
+            handleOnSuccess();
             setShowSuccessMessage(true);
             setTimeout(function () {
-              handleOnClose();
+              // handleOnClose();
               setShowSuccessMessage(false);
+              setShowSuccessScreen(true);
             }, 3000);
-            handleOnSuccess();
-            _context.next = 18;
+            _context.next = 19;
             break;
-          case 15:
-            _context.prev = 15;
+          case 16:
+            _context.prev = 16;
             _context.t0 = _context["catch"](4);
             setError(_context.t0.response && _context.t0.response.data.detail ? _context.t0.response.data.detail : _context.t0.message);
-          case 18:
-            _context.prev = 18;
+          case 19:
+            _context.prev = 19;
             setLoading(false);
-            return _context.finish(18);
-          case 21:
+            return _context.finish(19);
+          case 22:
           case "end":
             return _context.stop();
         }
-      }, _callee, null, [[4, 15, 18, 21]]);
+      }, _callee, null, [[4, 16, 19, 22]]);
     }));
     return function submitHandler(_x) {
       return _ref2.apply(this, arguments);
@@ -32646,15 +32722,23 @@ function CardPaymentTest(_ref) {
   var handleOnSuccess = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useCallback)(function () {
     onSuccess();
   }, [onSuccess]);
-  var handleOnClose = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useCallback)(function () {
-    onClose();
-  }, [onClose]);
+
+  // const handleOnClose = useCallback(() => {
+  //   onClose();
+  // }, [onClose]);
+
   (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useEffect)(function () {
-    if (showSuccessMessage && !hasHandledSuccess) {
+    if (paymentSuccess && !hasHandledSuccess) {
       setHasHandledSuccess(true);
+      setShowSuccessMessage(true);
+      handleOnSuccess();
+      setTimeout(function () {
+        setShowSuccessMessage(false);
+        setShowSuccessScreen(true);
+      }, 3000);
     }
-  }, [showSuccessMessage, hasHandledSuccess]);
-  return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("h2", {
+  }, [paymentSuccess, handleOnSuccess, hasHandledSuccess]);
+  return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", null, showSuccessScreen ? /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_SuccessScreenTest, null) : /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("h2", {
     className: "py-2 text-center"
   }, "Debit Card"), showSuccessMessage && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_Message, {
     variant: "success"
@@ -32750,7 +32834,7 @@ function CardPaymentTest(_ref) {
     className: "py-2 d-flex justify-content-center"
   }, error && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_MessageFixed, {
     variant: "danger"
-  }, error))));
+  }, error)))));
 }
 /* harmony default export */ const src_CardPaymentTest = (CardPaymentTest);
 ;// CONCATENATED MODULE: ./src/VerifyAccountFundOtpTest.js
@@ -32765,6 +32849,7 @@ function VerifyAccountFundOtpTest_arrayLikeToArray(r, a) { (null == a || a > r.l
 function VerifyAccountFundOtpTest_iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function VerifyAccountFundOtpTest_arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 // VerifyAccountFundOtpTest.js
+
 
 
 
@@ -32812,16 +32897,20 @@ var VerifyAccountFundOtpTest = function VerifyAccountFundOtpTest(_ref) {
     setHasHandledSuccess = _useState14[1];
   var _useState15 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
     _useState16 = VerifyAccountFundOtpTest_slicedToArray(_useState15, 2),
-    paymentSuccess = _useState16[0],
-    setPaymentSuccess = _useState16[1];
+    showSuccessScreen = _useState16[0],
+    setShowSuccessScreen = _useState16[1];
   var _useState17 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
     _useState18 = VerifyAccountFundOtpTest_slicedToArray(_useState17, 2),
-    loading = _useState18[0],
-    setLoading = _useState18[1];
-  var _useState19 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(null),
+    paymentSuccess = _useState18[0],
+    setPaymentSuccess = _useState18[1];
+  var _useState19 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
     _useState20 = VerifyAccountFundOtpTest_slicedToArray(_useState19, 2),
-    error = _useState20[0],
-    setError = _useState20[1];
+    loading = _useState20[0],
+    setLoading = _useState20[1];
+  var _useState21 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(null),
+    _useState22 = VerifyAccountFundOtpTest_slicedToArray(_useState21, 2),
+    error = _useState22[0],
+    setError = _useState22[1];
   var createdAt = new Date().toLocaleString("en-US", {
     weekday: "long",
     year: "numeric",
@@ -32908,8 +32997,9 @@ var VerifyAccountFundOtpTest = function VerifyAccountFundOtpTest(_ref) {
             setHasHandledSuccess(true);
             handleOnSuccess();
             setTimeout(function () {
-              handleOnClose();
+              // handleOnClose();
               setShowSuccessMessage(false);
+              setShowSuccessScreen(true);
             }, 3000);
             _context2.next = 15;
             break;
@@ -32975,9 +33065,11 @@ var VerifyAccountFundOtpTest = function VerifyAccountFundOtpTest(_ref) {
   var handleOnSuccess = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useCallback)(function () {
     onSuccess();
   }, [onSuccess]);
-  var handleOnClose = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useCallback)(function () {
-    onClose();
-  }, [onClose]);
+
+  // const handleOnClose = useCallback(() => {
+  //   onClose();
+  // }, [onClose]);
+
   (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useEffect)(function () {
     if (paymentSuccess && !hasHandledSuccess) {
       setHasHandledSuccess(true);
@@ -32986,10 +33078,11 @@ var VerifyAccountFundOtpTest = function VerifyAccountFundOtpTest(_ref) {
       setTimeout(function () {
         setShowSuccessMessage(false);
         localStorage.removeItem("debitAccountData");
+        setShowSuccessScreen(true);
       }, 3000);
     }
   }, [paymentSuccess, handleOnSuccess, hasHandledSuccess]);
-  return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Container, null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Row, {
+  return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Container, null, showSuccessScreen ? /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_SuccessScreenTest, null) : /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Row, {
     className: "justify-content-center text-center mt-5"
   }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Col, null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", {
     className: "border rounded p-4 py-2"
@@ -33379,6 +33472,7 @@ function VerifyPromiseFundOtpTest_arrayLikeToArray(r, a) { (null == a || a > r.l
 function VerifyPromiseFundOtpTest_iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function VerifyPromiseFundOtpTest_arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 // VerifyPromiseFundOtpTest.js
+
 
 
 
