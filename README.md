@@ -4,6 +4,10 @@
 
 This is a ReactJS package for integrating Paysofter payment gateway into your ReactJS application.
 
+
+![Project Logo](./images/promise-live.jpg)
+
+
 ## Installation
 
 To install the package, run:
@@ -15,6 +19,13 @@ npm install react-paysofter
 ## Usage
 
 Here are basic examples of how to use the `react-paysofter` library in your ReactJS project.
+
+
+![Project Logo](./images/promise-test.jpg)
+
+
+<!-- ![Project Logo](./images/card.jpg) -->
+<!-- ![Project Logo](./images/fund.jpg) -->
 
 ### Example 1: Basic Payment Setup
 
