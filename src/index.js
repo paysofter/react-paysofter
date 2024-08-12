@@ -56,7 +56,7 @@ export function Paysofter({
         setError(
           error.response?.data?.detail ||
             error.MessageFixed ||
-            "Error fetching API key status"
+            "Error fetching API key status. Check your network connectivity and try again."
         );
       } finally {
         setLoading(false);

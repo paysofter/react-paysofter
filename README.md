@@ -37,11 +37,11 @@ const App = () => {
   const amount = 10; // Amount in dollars, e.g., 10.00 USD
   const [paysofterPublicKey] = useState("test_api_key_abc123"); // Replace with your actual Paysofter public key
 
-  const handleSuccess = () => {
+  const handleOnSuccess = () => {
     console.log("Payment successful!");
   };
 
-  const handleClose = () => {
+  const handleOnClose = () => {
     console.log("Payment window closed.");
   };
 
@@ -51,8 +51,8 @@ const App = () => {
       currency="USD"
       email="user@example.com"
       paysofterPublicKey={paysofterPublicKey}
-      onSuccess={handleSuccess}
-      onClose={handleClose}
+      onSuccess={handleOnSuccess}
+      onClose={handleOnClose}
       paymentRef={`PID${Math.floor(Math.random() * 100000000000000)}`}
       showPromiseOption={true}
       showFundOption={false}
@@ -77,12 +77,12 @@ const App = () => {
   const email = "buyer@example.com"; // Buyer's email
   const [paysofterPublicKey] = useState("test_api_key_abc123"); // Replace with your actual Paysofter public key
 
-  const handleSuccess = () => {
+  const handleOnSuccess = () => {
     console.log("Payment successful!");
     setShowPayment(false); // Hide payment component after success
   };
 
-  const handleClose = () => {
+  const handleOnClose = () => {
     console.log("Payment window closed.");
     setShowPayment(false); // Hide payment component when closed
   };
@@ -97,8 +97,8 @@ const App = () => {
           currency={currency}
           email={email}
           paysofterPublicKey={paysofterPublicKey}
-          onSuccess={handleSuccess}
-          onClose={handleClose}
+          onSuccess={handleOnSuccess}
+          onClose={handleOnClose}
           paymentRef={`PID${Math.floor(Math.random() * 100000000000000)}`}
           showPromiseOption={truefalse}
           showFundOption={false}
@@ -133,12 +133,12 @@ const App = () => {
     .replace(/[-T:]/g, "")}${Math.floor(Math.random() * 100000)}`; // Or generate a 17-digit payment reference with PID prefix starting with the timestamp and random numbers appended at the end as in 'PIDYYMMDDHHMMSSxxxxx'.
   console.log("paymentRef:", paymentRef);
 
-  const handleSuccess = () => {
+  const handleOnSuccess = () => {
     console.log("Payment successful!");
     setShowPayment(false); // Hide payment component after success
   };
 
-  const handleClose = () => {
+  const handleOnClose = () => {
     console.log("Payment window closed.");
     setShowPayment(false); // Hide payment component when closed
   };
@@ -210,8 +210,8 @@ const App = () => {
             currency={currency}
             email={email}
             paysofterPublicKey={paysofterPublicKey}
-            onSuccess={handleSuccess}
-            onClose={handleClose}
+            onSuccess={handleOnSuccess}
+            onClose={handleOnClose}
             paymentRef={paymentRef}
             showPromiseOption={false}
             showFundOption={true}

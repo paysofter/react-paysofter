@@ -34356,7 +34356,7 @@ function src_Paysofter_0(_ref) {
             case 11:
               _context.prev = 11;
               _context.t0 = _context["catch"](1);
-              setError(((_error$response = _context.t0.response) === null || _error$response === void 0 || (_error$response = _error$response.data) === null || _error$response === void 0 ? void 0 : _error$response.detail) || _context.t0.MessageFixed || "Error fetching API key status");
+              setError(((_error$response = _context.t0.response) === null || _error$response === void 0 || (_error$response = _error$response.data) === null || _error$response === void 0 ? void 0 : _error$response.detail) || _context.t0.MessageFixed || "Error fetching API key status. Check your network connectivity and try again.");
             case 14:
               _context.prev = 14;
               setLoading(false);
