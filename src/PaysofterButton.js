@@ -1,18 +1,18 @@
 // PaysofterButton.js
 import React, { useState } from "react";
 import { Button, Modal, Row, Col } from "react-bootstrap";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import CardPayment from "./CardPayment";
 import PaysofterAccountFund from "./PaysofterAccountFund";
 import PaysofterPromise from "./PaysofterPromise";
 import UssdPayment from "./UssdPayment";
-import BankPayment from "./BankPayment"; 
+import BankPayment from "./BankPayment";
 import TransferPayment from "./TransferPayment";
 import QrPayment from "./QrPayment";
 import { formatAmount } from "./FormatAmount";
-import logoImage from "./images/logo.png"; 
+import logoImage from "./images/logo.png";
 import "./Paysofter.css";
- 
+
 function PaysofterButton({
   amount,
   currency,
@@ -21,8 +21,10 @@ function PaysofterButton({
   onSuccess,
   onClose,
   onError,
-  payment_id,
-  showPaymentModal, 
+  referenceId,
+  buyerName,
+  buyerPhoneNumber,
+  showPaymentModal,
   setShowPaymentModal,
   showFundOption,
   showCardOption,
@@ -269,7 +271,6 @@ function PaysofterButton({
                   onSuccess={onSuccess}
                   onClose={handleOnClosePayment}
                   onError={onError}
-                  payment_id={payment_id}
                 />
               )}
 
@@ -282,7 +283,9 @@ function PaysofterButton({
                   onSuccess={onSuccess}
                   onClose={handleOnClosePayment}
                   onError={onError}
-                  payment_id={payment_id}
+                  referenceId={referenceId}
+                  buyerName={buyerName}
+                  buyerPhoneNumber={buyerPhoneNumber}
                 />
               )}
 
@@ -295,7 +298,6 @@ function PaysofterButton({
                   onSuccess={onSuccess}
                   onClose={handleOnClosePayment}
                   onError={onError}
-                  payment_id={payment_id}
                 />
               )}
 

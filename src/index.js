@@ -1,15 +1,15 @@
 // index.js
 import React, { useEffect, useState } from "react";
 import { Row, Col, Modal } from "react-bootstrap";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import PaysofterButton from "./PaysofterButton";
 import PaysofterButtonTest from "./PaysofterButtonTest";
 import Loader from "./Loader";
 import MessageFixed from "./MessageFixed";
-import { PAYSOFTER_API_URL } from "./config/apiConfig";  
- 
-export function Paysofter({ 
+import { PAYSOFTER_API_URL } from "./config/apiConfig";
+
+export function Paysofter({
   amount,
   currency,
   email,
@@ -17,7 +17,9 @@ export function Paysofter({
   onSuccess,
   onClose,
   onError,
-  paymentRef,
+  referenceId,
+  buyerName,
+  buyerPhoneNumber,
   showFundOption,
   showCardOption,
   showPromiseOption,
@@ -33,7 +35,7 @@ export function Paysofter({
       setLoading(true);
       try {
         const response = await axios.post(
-          `${PAYSOFTER_API_URL}/api/get-api-key-status/`, 
+          `${PAYSOFTER_API_URL}/api/get-api-key-status/`,
           {
             public_api_key: paysofterPublicKey,
           }
@@ -80,8 +82,8 @@ export function Paysofter({
     setError(null);
     setLoading(false);
   };
-  
-  console.log('Paysofter:', Paysofter);
+
+  console.log("Paysofter:", Paysofter);
 
   return (
     <>
@@ -111,7 +113,9 @@ export function Paysofter({
                     paysofterPublicKey={paysofterPublicKey}
                     onSuccess={onSuccess}
                     onClose={onClose}
-                    payment_id={paymentRef}
+                    referenceId={referenceId}
+                    buyerName={buyerName}
+                    buyerPhoneNumber={buyerPhoneNumber}
                     showPaymentModal={showPaymentModal}
                     setShowPaymentModal={setShowPaymentModal}
                     showPromiseOption={showPromiseOption}

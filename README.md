@@ -4,9 +4,7 @@
 
 This is a ReactJS package for integrating Paysofter payment gateway into your ReactJS application.
 
-
 ![Paysofter Payment (Live)](./src/images/promise-live.jpg)
-
 
 ## Installation
 
@@ -20,9 +18,7 @@ npm install react-paysofter
 
 Here are basic examples of how to use the `react-paysofter` library in your ReactJS project.
 
-
 ![Paysofter Payment (Test)](./src/images/promise-test.jpg)
-
 
 <!-- ![Project Logo](./images/card.jpg) -->
 <!-- ![Project Logo](./images/fund.jpg) -->
@@ -53,7 +49,7 @@ const App = () => {
       paysofterPublicKey={paysofterPublicKey}
       onSuccess={handleOnSuccess}
       onClose={handleOnClose}
-      paymentRef={`PID${Math.floor(Math.random() * 100000000000000)}`}
+      referenceId={`RID${Math.floor(Math.random() * 100000000000000)}`}
       showPromiseOption={true}
       showFundOption={false}
       showCardOption={true}
@@ -99,7 +95,7 @@ const App = () => {
           paysofterPublicKey={paysofterPublicKey}
           onSuccess={handleOnSuccess}
           onClose={handleOnClose}
-          paymentRef={`PID${Math.floor(Math.random() * 100000000000000)}`}
+          referenceId={`RID${Math.floor(Math.random() * 100000000000000)}`}
           showPromiseOption={truefalse}
           showFundOption={false}
           showCardOption={false}
@@ -117,7 +113,7 @@ export default App;
 ```jsx
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import 'bootstrap/dist/css/bootstrap.min.css'; // Add bootstrap.min.css to the entry point of your app e.g. "index.js" to be available globally
+import "bootstrap/dist/css/bootstrap.min.css"; // Add bootstrap.min.css to the entry point of your app e.g. "index.js" to be available globally
 import { Paysofter } from "react-paysofter";
 
 const App = () => {
@@ -126,12 +122,12 @@ const App = () => {
   const [currency, setCurrency] = useState("NGN"); // Default currency
   const [email, setEmail] = useState("buyer@example.com"); // Default email
   const [paysofterPublicKey] = useState("test_api_key_abc123"); // Replace with your actual Paysofter public key
-  // const paymentRef = `PID${Math.floor(Math.random() * 10000000000000000)}`; // Generate a 17-digit random payment reference with PID prefix
-  const paymentRef = `PID${new Date()
+  // const referenceId = `RID${Math.floor(Math.random() * 10000000000000000)}`; // Generate a 17-digit random payment reference with RID prefix
+  const referenceId = `RID${new Date()
     .toISOString()
     .slice(2, 19)
-    .replace(/[-T:]/g, "")}${Math.floor(Math.random() * 100000)}`; // Or generate a 17-digit payment reference with PID prefix starting with the timestamp and random numbers appended at the end as in 'PIDYYMMDDHHMMSSxxxxx'.
-  console.log("paymentRef:", paymentRef);
+    .replace(/[-T:]/g, "")}${Math.floor(Math.random() * 100000)}`; // Or generate a 17-digit payment reference with RID prefix starting with the timestamp and random numbers appended at the end as in 'RIDYYMMDDHHMMSSxxxxx'.
+  console.log("referenceId:", referenceId);
 
   const handleOnSuccess = () => {
     console.log("Payment successful!");
@@ -205,18 +201,18 @@ const App = () => {
         </Form>
       ) : (
         <>
-           <Paysofter
+          <Paysofter
             amount={amount}
             currency={currency}
             email={email}
             paysofterPublicKey={paysofterPublicKey}
             onSuccess={handleOnSuccess}
             onClose={handleOnClose}
-            paymentRef={paymentRef}
+            referenceId={referenceId}
             showPromiseOption={false}
             showFundOption={true}
             showCardOption={true}
-          /> 
+          />
         </>
       )}
     </div>
@@ -228,18 +224,22 @@ export default App;
 
 ## Props
 
-| Prop Name            | Type     | Description                                                                                                                                                                                                                                                                                                                                              |
-| :------------------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `amount`             | Number   | The amount to be paid.                                                                                                                                                                                                                                                                                                                                   |
-| `currency`           | String   | The currency in which the payment is to be made (e.g., USD, NGN).                                                                                                                                                                                                                                                                                        |
-| `email`              | String   | The email address of the user making the payment.                                                                                                                                                                                                                                                                                                        |
-| `paysofterPublicKey` | String   | Your Paysofter public key for processing the payment.                                                                                                                                                                                                                                                                                                    |
-| `onSuccess`          | Function | Callback function to handle the success of the payment.                                                                                                                                                                                                                                                                                                  |
-| `onClose`            | Function | Callback function to handle the closing of the payment window.                                                                                                                                                                                                                                                                                           |
-| `paymentRef`         | String   | A unique identifier for the payment serving as a refrence. Either generate a 17-digit random payment reference with PID prefix, or generate a 17-digit payment reference with PID prefix starting with a timestamp and a small random number appended at the end. Paysofter also generates a tarnsaction ID(TID) to reference every payment tarnsaction. |
-| `showPromiseOption`  | Boolean  | Whether to show the Promise payment option (default: true). If all options are delcared false then Promise payment option defaults to true.                                                                                                                                                                                                              |
-| `showFundOption`     | Boolean  | Whether to show the Fund Account payment option.                                                                                                                                                                                                                                                                                                         |
-| `showCardOption`     | Boolean  | Whether to show the Card payment option.                                                                                                                                                                                                                                                                                                                 |
+| Prop Name            | Type     | Description                                                                                                                                                                                                                                                                                                      |
+| :------------------- | :------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `amount`             | Number   | The amount to be paid.                                                                                                                                                                                                                                                                                           |
+| `currency`           | String   | The currency in which the payment is to be made (e.g., USD, NGN).                                                                                                                                                                                                                                                |
+| `email`              | String   | The email address of the user making the payment.                                                                                                                                                                                                                                                                 |
+| `paysofterPublicKey` | String   | Your Paysofter public key for processing the payment.                                                                                                                                                                                                                                                            |
+| `onSuccess`          | Function | Callback function to handle the success of the payment.                                                                                                                                                                                                                                                          |
+| `onClose`            | Function | Callback function to handle the closing of the payment window.                                                                                                                                                                                                                                                   |
+| `showPromiseOption`  | Boolean  | Whether to show the Promise payment option (default: true). If all options are declared false, then Promise payment option defaults to true.                                                                                                                                                                      |
+| `showFundOption`     | Boolean  | Whether to show the Fund Account payment option.                                                                                                                                                                                                                                                                 |
+| `showCardOption`     | Boolean  | Whether to show the Card payment option.                                                                                                                                                                                                                                                                         |
+| `buyerName`          | String   | The buyer's name for the Card payment option. This information is optional, and the buyer may choose not to provide it.                                                                                                                                                                                           |
+| `buyerPhoneNumber`   | String   | The buyer's phone number for the Card payment option. This information is optional, and the buyer may choose not to provide it.                                                                                                                                                                                    |
+| `referenceId`        | String   | A unique identifier for the payment serving as a reference for the Card payment option. Either generate a 17-digit random payment reference with RID prefix, or generate a 17-digit payment reference with RID prefix starting with a timestamp and a small random number appended at the end. Paysofter also generates a transaction ID (TID) to reference every payment transaction. |
+
+
 
 ## Contributing to the Project
 

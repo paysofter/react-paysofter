@@ -30590,7 +30590,9 @@ function CardPayment(_ref) {
     paysofterPublicKey = _ref.paysofterPublicKey,
     onSuccess = _ref.onSuccess,
     onClose = _ref.onClose,
-    payment_id = _ref.payment_id;
+    referenceId = _ref.referenceId,
+    buyerName = _ref.buyerName,
+    buyerPhoneNumber = _ref.buyerPhoneNumber;
   var _useState = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
     _useState2 = CardPayment_slicedToArray(_useState, 2),
     showSuccessMessage = _useState2[0],
@@ -30688,8 +30690,10 @@ function CardPayment(_ref) {
             setLoading(true);
             setError("");
             paysofterPaymentData = {
-              payment_id: payment_id,
               buyer_email: email,
+              buyer_name: buyerName,
+              buyer_phone: buyerPhoneNumber,
+              payment_id: referenceId,
               currency: currency,
               amount: amount,
               public_api_key: paysofterPublicKey,
@@ -32386,7 +32390,9 @@ function PaysofterButton(_ref) {
     onSuccess = _ref.onSuccess,
     onClose = _ref.onClose,
     onError = _ref.onError,
-    payment_id = _ref.payment_id,
+    referenceId = _ref.referenceId,
+    buyerName = _ref.buyerName,
+    buyerPhoneNumber = _ref.buyerPhoneNumber,
     showPaymentModal = _ref.showPaymentModal,
     setShowPaymentModal = _ref.setShowPaymentModal,
     showFundOption = _ref.showFundOption,
@@ -32487,8 +32493,7 @@ function PaysofterButton(_ref) {
     paysofterPublicKey: paysofterPublicKey,
     onSuccess: onSuccess,
     onClose: handleOnClosePayment,
-    onError: onError,
-    payment_id: payment_id
+    onError: onError
   }), selectedPaymentOption === "card" && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_CardPayment, {
     amount: amount,
     currency: currency,
@@ -32497,7 +32502,9 @@ function PaysofterButton(_ref) {
     onSuccess: onSuccess,
     onClose: handleOnClosePayment,
     onError: onError,
-    payment_id: payment_id
+    referenceId: referenceId,
+    buyerName: buyerName,
+    buyerPhoneNumber: buyerPhoneNumber
   }), selectedPaymentOption === "fund" && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_PaysofterAccountFund, {
     amount: amount,
     currency: currency,
@@ -32505,8 +32512,7 @@ function PaysofterButton(_ref) {
     paysofterPublicKey: paysofterPublicKey,
     onSuccess: onSuccess,
     onClose: handleOnClosePayment,
-    onError: onError,
-    payment_id: payment_id
+    onError: onError
   }), selectedPaymentOption === "bank" && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_BankPayment, null), selectedPaymentOption === "transfer" && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_TransferPayment, null), selectedPaymentOption === "ussd" && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_UssdPayment, null), selectedPaymentOption === "qr" && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_QrPayment, null))))));
 }
 /* harmony default export */ const src_PaysofterButton = (PaysofterButton);
@@ -32574,7 +32580,9 @@ function CardPaymentTest(_ref) {
     paysofterPublicKey = _ref.paysofterPublicKey,
     onSuccess = _ref.onSuccess,
     onClose = _ref.onClose,
-    payment_id = _ref.payment_id;
+    referenceId = _ref.referenceId,
+    buyerName = _ref.buyerName,
+    buyerPhoneNumber = _ref.buyerPhoneNumber;
   var _useState = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
     _useState2 = CardPaymentTest_slicedToArray(_useState, 2),
     showSuccessMessage = _useState2[0],
@@ -32672,7 +32680,9 @@ function CardPaymentTest(_ref) {
             setLoading(true);
             setError("");
             paysofterPaymentData = {
-              payment_id: payment_id,
+              buyer_name: buyerName,
+              buyer_phone: buyerPhoneNumber,
+              payment_id: referenceId,
               buyer_email: email,
               currency: currency,
               amount: amount,
@@ -34160,7 +34170,9 @@ function PaysofterButtonTest(_ref) {
     onError = _ref.onError,
     showPaymentModal = _ref.showPaymentModal,
     setShowPaymentModal = _ref.setShowPaymentModal,
-    payment_id = _ref.payment_id,
+    referenceId = _ref.referenceId,
+    buyerName = _ref.buyerName,
+    buyerPhoneNumber = _ref.buyerPhoneNumber,
     showFundOption = _ref.showFundOption,
     showCardOption = _ref.showCardOption,
     showPromiseOption = _ref.showPromiseOption;
@@ -34261,7 +34273,9 @@ function PaysofterButtonTest(_ref) {
     paysofterPublicKey: paysofterPublicKey,
     onSuccess: onSuccess,
     onClose: handleOnClosePayment,
-    payment_id: payment_id
+    referenceId: referenceId,
+    buyerName: buyerName,
+    buyerPhoneNumber: buyerPhoneNumber
   }), selectedPaymentOption === "fund" && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_PaysofterAccountFundTest, {
     amount: amount,
     currency: currency,
@@ -34301,7 +34315,9 @@ function src_Paysofter_0(_ref) {
     onSuccess = _ref.onSuccess,
     onClose = _ref.onClose,
     onError = _ref.onError,
-    paymentRef = _ref.paymentRef,
+    referenceId = _ref.referenceId,
+    buyerName = _ref.buyerName,
+    buyerPhoneNumber = _ref.buyerPhoneNumber,
     showFundOption = _ref.showFundOption,
     showCardOption = _ref.showCardOption,
     showPromiseOption = _ref.showPromiseOption;
@@ -34388,7 +34404,7 @@ function src_Paysofter_0(_ref) {
     setError(null);
     setLoading(false);
   };
-  console.log('Paysofter:', src_Paysofter_0);
+  console.log("Paysofter:", src_Paysofter_0);
   return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement((external_commonjs_react_commonjs2_react_amd_React_root_React_default()).Fragment, null, (loading || error) && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Modal, {
     show: loading || error,
     onHide: handleClose,
@@ -34412,7 +34428,9 @@ function src_Paysofter_0(_ref) {
     paysofterPublicKey: paysofterPublicKey,
     onSuccess: onSuccess,
     onClose: onClose,
-    payment_id: paymentRef,
+    referenceId: referenceId,
+    buyerName: buyerName,
+    buyerPhoneNumber: buyerPhoneNumber,
     showPaymentModal: showPaymentModal,
     setShowPaymentModal: setShowPaymentModal,
     showPromiseOption: showPromiseOption,

@@ -1,7 +1,7 @@
 // PaysofterButtonTest.js
 import React, { useState } from "react";
 import { Button, Modal, Row, Col } from "react-bootstrap";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import CardPaymentTest from "./CardPaymentTest";
 import PaysofterAccountFundTest from "./PaysofterAccountFundTest";
 import PaysofterPromiseTest from "./PaysofterPromiseTest";
@@ -23,7 +23,9 @@ function PaysofterButtonTest({
   onError,
   showPaymentModal,
   setShowPaymentModal,
-  payment_id,
+  referenceId,
+  buyerName,
+  buyerPhoneNumber,
   showFundOption,
   showCardOption,
   showPromiseOption,
@@ -223,7 +225,9 @@ function PaysofterButtonTest({
                   paysofterPublicKey={paysofterPublicKey}
                   onSuccess={onSuccess}
                   onClose={handleOnClosePayment}
-                  payment_id={payment_id}
+                  referenceId={referenceId}
+                  buyerName={buyerName}
+                  buyerPhoneNumber={buyerPhoneNumber}
                 />
               )}
 

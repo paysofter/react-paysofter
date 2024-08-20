@@ -19,7 +19,9 @@ function CardPayment({
   paysofterPublicKey,
   onSuccess,
   onClose,
-  payment_id,
+  referenceId,
+  buyerName,
+  buyerPhoneNumber,
 }) {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [hasHandledSuccess, setHasHandledSuccess] = useState(false);
@@ -98,8 +100,10 @@ function CardPayment({
     setError("");
 
     const paysofterPaymentData = {
-      payment_id: payment_id,
       buyer_email: email,
+      buyer_name: buyerName,
+      buyer_phone: buyerPhoneNumber,
+      payment_id: referenceId,
       currency: currency,
       amount: amount,
       public_api_key: paysofterPublicKey,
