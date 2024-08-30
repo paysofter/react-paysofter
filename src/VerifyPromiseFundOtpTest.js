@@ -1,7 +1,7 @@
 // VerifyPromiseFundOtpTest.js
 import React, { useState, useEffect, useCallback } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import Loader from "./Loader";
 import Message from "./Message";
 import MessageFixed from "./MessageFixed";
@@ -15,6 +15,9 @@ const VerifyPromiseFundOtpTest = ({
   email,
   amount,
   paysofterPublicKey,
+  qty,
+  productName,
+  referenceId,
   formattedPayerEmail,
   currency,
   duration,
@@ -26,10 +29,8 @@ const VerifyPromiseFundOtpTest = ({
   const [resendMessage, setResendMessage] = useState("");
   const [countdown, setCountdown] = useState(60);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [
-    showConfirmPaysofterPromiseTest,
-    setShowConfirmPaysofterPromiseTest,
-  ] = useState(false);
+  const [showConfirmPaysofterPromiseTest, setShowConfirmPaysofterPromiseTest] =
+    useState(false);
   const [hasHandledSuccess, setHasHandledSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -54,6 +55,9 @@ const VerifyPromiseFundOtpTest = ({
     email: email,
     amount: amount,
     public_api_key: paysofterPublicKey,
+    qty: qty,
+    product_name: productName,
+    reference_id: referenceId,
     account_id: sendOtpData.account_id,
     buyer_email: email,
     currency: currency,

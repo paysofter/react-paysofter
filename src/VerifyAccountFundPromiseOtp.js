@@ -1,7 +1,7 @@
 // VerifyAccountFundPromiseOtp.js
 import React, { useState, useEffect, useCallback } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import Loader from "./Loader";
 import Message from "./Message";
 import MessageFixed from "./MessageFixed";
@@ -14,6 +14,9 @@ const VerifyAccountFundPromiseOtp = ({
   email,
   amount,
   paysofterPublicKey,
+  qty,
+  productName,
+  referenceId,
   formattedPayerEmail,
   currency,
   duration,
@@ -37,10 +40,8 @@ const VerifyAccountFundPromiseOtp = ({
     timeZoneName: "short",
   });
   const paymentMethod = "Paysofter Promise";
-  const [
-    showConfirmPaysofterPromise,
-    setShowConfirmPaysofterPromise,
-  ] = useState(false);
+  const [showConfirmPaysofterPromise, setShowConfirmPaysofterPromise] =
+    useState(false);
   const [hasHandledSuccess, setHasHandledSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -66,6 +67,9 @@ const VerifyAccountFundPromiseOtp = ({
     security_code: sendOtpData.security_code,
     amount: amount,
     public_api_key: paysofterPublicKey,
+    qty: qty,
+    product_name: productName,
+    reference_id: referenceId,
     created_at: createdAt,
   };
 
@@ -139,6 +143,9 @@ const VerifyAccountFundPromiseOtp = ({
             email: email,
             amount: amount,
             public_api_key: paysofterPublicKey,
+            qty: qty,
+            product_name: productName,
+            reference_id: referenceId,
             account_id: sendOtpData.account_id,
             currency: currency,
             duration: duration,
@@ -170,6 +177,9 @@ const VerifyAccountFundPromiseOtp = ({
     email,
     amount,
     paysofterPublicKey,
+    qty,
+    productName,
+    referenceId,
     sendOtpData.account_id,
     currency,
     duration,
@@ -183,7 +193,7 @@ const VerifyAccountFundPromiseOtp = ({
       setShowSuccessMessage(true);
       handleOnSuccess();
       setTimeout(() => {
-        setShowConfirmPaysofterPromise(true); 
+        setShowConfirmPaysofterPromise(true);
         setShowSuccessMessage(false);
         localStorage.removeItem("debitAccountData");
       }, 3000);

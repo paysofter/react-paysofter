@@ -1,7 +1,7 @@
 // PaysofterPromiseTest.js
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Form, Button, Modal } from "react-bootstrap";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import PaysofterPromiseFundTest from "./PaysofterPromiseFundTest";
 import Select from "react-select";
 import { PAYMENT_DURATION_CHOICES } from "./payment-constants";
@@ -11,6 +11,9 @@ const PaysofterPromiseTest = ({
   currency,
   amount,
   paysofterPublicKey,
+  referenceId,
+  qty,
+  productName,
   onSuccess,
   onClose,
 }) => {
@@ -26,10 +29,8 @@ const PaysofterPromiseTest = ({
 
   const [duration, setDuration] = useState("Within 1 day");
   const [showInfoModal, setShowInfoModal] = useState(false);
-  const [
-    showPaysofterAccountFundPromise,
-    setShowPaysofterAccountFundPromise,
-  ] = useState(false);
+  const [showPaysofterAccountFundPromise, setShowPaysofterAccountFundPromise] =
+    useState(false);
 
   const handleShowPaysofterAccountFundPromise = () => {
     setShowPaysofterAccountFundPromise(true);
@@ -57,6 +58,9 @@ const PaysofterPromiseTest = ({
             email={email}
             duration={duration}
             paysofterPublicKey={paysofterPublicKey}
+            referenceId={referenceId}
+            qty={qty}
+            productName={productName}
             onSuccess={onSuccess}
             onClose={onClose}
           />

@@ -1,19 +1,22 @@
 // PaysofterAccountFundTest.js
 import React, { useState, useEffect } from "react";
 import { Row, Col, Form, Button, Modal } from "react-bootstrap";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import VerifyAccountFundOtpTest from "./VerifyAccountFundOtpTest";
 import Message from "./Message";
 import Loader from "./Loader";
 import { formatAmount } from "./FormatAmount";
-import { generateRandomNum } from "./GenerateRandomNum";  
+import { generateRandomNum } from "./GenerateRandomNum";
 // import { PAYSOFTER_API_URL } from "./config/apiConfig";
-// import axios from "axios"; 
+// import axios from "axios";
 
 const PaysofterAccountFundTest = ({
   amount,
   email,
   paysofterPublicKey,
+  referenceId,
+  qty,
+  productName,
   duration,
   currency,
   onSuccess,
@@ -28,9 +31,8 @@ const PaysofterAccountFundTest = ({
   const [showInfoModal, setShowInfoModal] = useState(false);
   const [showAccountInfoModal, setShowAccountInfoModal] = useState(false);
   const [showSecurityCodeModal, setShowSecurityCodeModal] = useState(false);
-  const [showVerifyAccountFundOtp, setShowVerifyAccountFundOtp] = useState(
-    false
-  );
+  const [showVerifyAccountFundOtp, setShowVerifyAccountFundOtp] =
+    useState(false);
   const [securityCodeVisible, setSecurityCodeVisible] = useState(false);
 
   const handleAccountInfoModalShow = () => setShowAccountInfoModal(true);
@@ -94,6 +96,9 @@ const PaysofterAccountFundTest = ({
           currency={currency}
           email={email}
           paysofterPublicKey={paysofterPublicKey}
+          referenceId={referenceId}
+          qty={qty}
+          productName={productName}
           securityCode={securityCode}
           accountId={accountId}
           // formattedPayerEmail={formattedPayerEmail}

@@ -1,7 +1,7 @@
 // PaysofterAccountFund.js
 import React, { useState, useEffect } from "react";
 import { Row, Col, Form, Button, Modal } from "react-bootstrap";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import VerifyAccountFundOtp from "./VerifyAccountFundOtp";
 import Message from "./Message";
 import MessageFixed from "./MessageFixed";
@@ -14,6 +14,9 @@ const PaysofterAccountFund = ({
   amount,
   email,
   paysofterPublicKey,
+  referenceId,
+  qty,
+  productName,
   duration,
   currency,
   onSuccess,
@@ -28,9 +31,8 @@ const PaysofterAccountFund = ({
   const [showInfoModal, setShowInfoModal] = useState(false);
   const [showAccountInfoModal, setShowAccountInfoModal] = useState(false);
   const [showSecurityCodeModal, setShowSecurityCodeModal] = useState(false);
-  const [showVerifyAccountFundOtp, setShowVerifyAccountFundOtp] = useState(
-    false
-  );
+  const [showVerifyAccountFundOtp, setShowVerifyAccountFundOtp] =
+    useState(false);
   const [securityCodeVisible, setSecurityCodeVisible] = useState(false);
   const handleAccountInfoModalShow = () => setShowAccountInfoModal(true);
   const handleAccountInfoModalClose = () => setShowAccountInfoModal(false);
@@ -93,6 +95,9 @@ const PaysofterAccountFund = ({
           currency={currency}
           email={email}
           paysofterPublicKey={paysofterPublicKey}
+          referenceId={referenceId}
+          qty={qty}
+          productName={productName}
           securityCode={securityCode}
           accountId={accountId}
           formattedPayerEmail={formattedPayerEmail}

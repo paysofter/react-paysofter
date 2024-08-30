@@ -22,6 +22,8 @@ function PaysofterButton({
   onClose,
   onError,
   referenceId,
+  qty,
+  productName,
   buyerName,
   buyerPhoneNumber,
   showPaymentModal,
@@ -271,6 +273,9 @@ function PaysofterButton({
                   onSuccess={onSuccess}
                   onClose={handleOnClosePayment}
                   onError={onError}
+                  referenceId={referenceId}
+                  qty={qty}
+                  productName={productName}
                 />
               )}
 
@@ -284,6 +289,8 @@ function PaysofterButton({
                   onClose={handleOnClosePayment}
                   onError={onError}
                   referenceId={referenceId}
+                  qty={qty}
+                  productName={productName}
                   buyerName={buyerName}
                   buyerPhoneNumber={buyerPhoneNumber}
                 />
@@ -298,6 +305,9 @@ function PaysofterButton({
                   onSuccess={onSuccess}
                   onClose={handleOnClosePayment}
                   onError={onError}
+                  referenceId={referenceId}
+                  qty={qty}
+                  productName={productName}
                 />
               )}
 

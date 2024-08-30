@@ -18,6 +18,8 @@ export function Paysofter({
   onClose,
   onError,
   referenceId,
+  qty,
+  productName,
   buyerName,
   buyerPhoneNumber,
   showFundOption,
@@ -114,6 +116,8 @@ export function Paysofter({
                     onSuccess={onSuccess}
                     onClose={onClose}
                     referenceId={referenceId}
+                    qty={qty}
+                    productName={productName}
                     buyerName={buyerName}
                     buyerPhoneNumber={buyerPhoneNumber}
                     showPaymentModal={showPaymentModal}
@@ -133,6 +137,11 @@ export function Paysofter({
                     paysofterPublicKey={paysofterPublicKey}
                     onSuccess={onSuccess}
                     onClose={onClose}
+                    referenceId={referenceId}
+                    qty={qty}
+                    productName={productName}
+                    buyerName={buyerName}
+                    buyerPhoneNumber={buyerPhoneNumber}
                     showPaymentModal={showPaymentModal}
                     setShowPaymentModal={setShowPaymentModal}
                     showPromiseOption={showPromiseOption}

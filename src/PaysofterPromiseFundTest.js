@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 // import { useSelector } from "react-redux";
 import { Row, Col, Form, Button, Modal } from "react-bootstrap";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import Message from "./Message";
 // import Loader from "./Loader";
 import VerifyPromiseFundOtpTest from "./VerifyPromiseFundOtpTest";
@@ -13,6 +13,9 @@ const PaysofterPromiseFundTest = ({
   email,
   amount,
   paysofterPublicKey,
+  referenceId,
+  qty,
+  productName,
   duration,
   currency,
   onSuccess,
@@ -26,10 +29,8 @@ const PaysofterPromiseFundTest = ({
   const [showInfoModal, setShowInfoModal] = useState(false);
   const [showAccountInfoModal, setShowAccountInfoModal] = useState(false);
   const [showSecurityCodeModal, setShowSecurityCodeModal] = useState(false);
-  const [
-    showVerifyAccountFundPromiseOtp,
-    setShowVerifyAccountFundPromiseOtp,
-  ] = useState(false);
+  const [showVerifyAccountFundPromiseOtp, setShowVerifyAccountFundPromiseOtp] =
+    useState(false);
   const [securityCodeVisible, setSecurityCodeVisible] = useState(false);
 
   const handleAccountInfoModalShow = () => {
@@ -121,6 +122,9 @@ const PaysofterPromiseFundTest = ({
         <VerifyPromiseFundOtpTest
           amount={amount}
           paysofterPublicKey={paysofterPublicKey}
+          referenceId={referenceId}
+          qty={qty}
+          productName={productName}
           email={email}
           securityCode={securityCode}
           accountId={accountId}

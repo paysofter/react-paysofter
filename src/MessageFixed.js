@@ -15,7 +15,7 @@ const MessageFixed = ({ variant, children, fixed }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowMessage(false);
-    }, 50000);
+    }, 3000000);
 
     return () => {
       clearTimeout(timer);

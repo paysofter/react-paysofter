@@ -30317,7 +30317,7 @@ var MessageFixed = function MessageFixed(_ref) {
   (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useEffect)(function () {
     var timer = setTimeout(function () {
       setShowMessage(false);
-    }, 50000);
+    }, 3000000);
     return function () {
       clearTimeout(timer);
     };
@@ -30590,6 +30590,8 @@ function CardPayment(_ref) {
     paysofterPublicKey = _ref.paysofterPublicKey,
     onSuccess = _ref.onSuccess,
     onClose = _ref.onClose,
+    qty = _ref.qty,
+    productName = _ref.productName,
     referenceId = _ref.referenceId,
     buyerName = _ref.buyerName,
     buyerPhoneNumber = _ref.buyerPhoneNumber;
@@ -30693,7 +30695,9 @@ function CardPayment(_ref) {
               buyer_email: email,
               buyer_name: buyerName,
               buyer_phone: buyerPhoneNumber,
-              payment_id: referenceId,
+              qty: qty,
+              product_name: productName,
+              reference_id: referenceId,
               currency: currency,
               amount: amount,
               public_api_key: paysofterPublicKey,
@@ -30881,6 +30885,9 @@ var VerifyAccountFundOtp = function VerifyAccountFundOtp(_ref) {
     email = _ref.email,
     currency = _ref.currency,
     paysofterPublicKey = _ref.paysofterPublicKey,
+    qty = _ref.qty,
+    productName = _ref.productName,
+    referenceId = _ref.referenceId,
     formattedPayerEmail = _ref.formattedPayerEmail,
     onSuccess = _ref.onSuccess,
     onClose = _ref.onClose;
@@ -30953,6 +30960,9 @@ var VerifyAccountFundOtp = function VerifyAccountFundOtp(_ref) {
     amount: amount,
     currency: currency,
     public_api_key: paysofterPublicKey,
+    qty: qty,
+    product_name: productName,
+    reference_id: referenceId,
     created_at: createdAt,
     payment_method: paymentMethod,
     account_id: sendOtpData.account_id
@@ -30962,7 +30972,10 @@ var VerifyAccountFundOtp = function VerifyAccountFundOtp(_ref) {
     security_code: sendOtpData.security_code,
     amount: amount,
     currency: currency,
-    public_api_key: paysofterPublicKey
+    public_api_key: paysofterPublicKey,
+    qty: qty,
+    product_name: productName,
+    reference_id: referenceId
   };
   var handleVerifyEmailOtp = /*#__PURE__*/function () {
     var _ref2 = VerifyAccountFundOtp_asyncToGenerator( /*#__PURE__*/VerifyAccountFundOtp_regeneratorRuntime().mark(function _callee() {
@@ -31168,6 +31181,9 @@ var PaysofterAccountFund = function PaysofterAccountFund(_ref) {
   var amount = _ref.amount,
     email = _ref.email,
     paysofterPublicKey = _ref.paysofterPublicKey,
+    referenceId = _ref.referenceId,
+    qty = _ref.qty,
+    productName = _ref.productName,
     duration = _ref.duration,
     currency = _ref.currency,
     onSuccess = _ref.onSuccess,
@@ -31297,6 +31313,9 @@ var PaysofterAccountFund = function PaysofterAccountFund(_ref) {
     currency: currency,
     email: email,
     paysofterPublicKey: paysofterPublicKey,
+    referenceId: referenceId,
+    qty: qty,
+    productName: productName,
     securityCode: securityCode,
     accountId: accountId,
     formattedPayerEmail: formattedPayerEmail,
@@ -31505,6 +31524,9 @@ var VerifyAccountFundPromiseOtp = function VerifyAccountFundPromiseOtp(_ref) {
   var email = _ref.email,
     amount = _ref.amount,
     paysofterPublicKey = _ref.paysofterPublicKey,
+    qty = _ref.qty,
+    productName = _ref.productName,
+    referenceId = _ref.referenceId,
     formattedPayerEmail = _ref.formattedPayerEmail,
     currency = _ref.currency,
     duration = _ref.duration,
@@ -31591,6 +31613,9 @@ var VerifyAccountFundPromiseOtp = function VerifyAccountFundPromiseOtp(_ref) {
     security_code: sendOtpData.security_code,
     amount: amount,
     public_api_key: paysofterPublicKey,
+    qty: qty,
+    product_name: productName,
+    reference_id: referenceId,
     created_at: createdAt
   };
   var handleVerifyEmailOtp = /*#__PURE__*/function () {
@@ -31695,6 +31720,9 @@ var VerifyAccountFundPromiseOtp = function VerifyAccountFundPromiseOtp(_ref) {
                   email: email,
                   amount: amount,
                   public_api_key: paysofterPublicKey,
+                  qty: qty,
+                  product_name: productName,
+                  reference_id: referenceId,
                   account_id: sendOtpData.account_id,
                   currency: currency,
                   duration: duration,
@@ -31730,7 +31758,7 @@ var VerifyAccountFundPromiseOtp = function VerifyAccountFundPromiseOtp(_ref) {
       }();
       createPaysofterPromise();
     }
-  }, [success, email, amount, paysofterPublicKey, sendOtpData.account_id, currency, duration, createdAt, paymentMethod]);
+  }, [success, email, amount, paysofterPublicKey, qty, productName, referenceId, sendOtpData.account_id, currency, duration, createdAt, paymentMethod]);
   (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useEffect)(function () {
     if (promiseSuccess && !hasHandledSuccess) {
       setHasHandledSuccess(true);
@@ -31815,6 +31843,9 @@ var PaysofterAccountFundPromise = function PaysofterAccountFundPromise(_ref) {
   var email = _ref.email,
     amount = _ref.amount,
     paysofterPublicKey = _ref.paysofterPublicKey,
+    referenceId = _ref.referenceId,
+    qty = _ref.qty,
+    productName = _ref.productName,
     duration = _ref.duration,
     currency = _ref.currency,
     onSuccess = _ref.onSuccess,
@@ -31981,6 +32012,9 @@ var PaysofterAccountFundPromise = function PaysofterAccountFundPromise(_ref) {
   return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement((external_commonjs_react_commonjs2_react_amd_React_root_React_default()).Fragment, null, showVerifyAccountFundPromiseOtp ? /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_VerifyAccountFundPromiseOtp, {
     amount: amount,
     paysofterPublicKey: paysofterPublicKey,
+    referenceId: referenceId,
+    qty: qty,
+    productName: productName,
     email: email,
     securityCode: securityCode,
     accountId: accountId,
@@ -32159,6 +32193,9 @@ var PaysofterPromise = function PaysofterPromise(_ref) {
     currency = _ref.currency,
     amount = _ref.amount,
     paysofterPublicKey = _ref.paysofterPublicKey,
+    referenceId = _ref.referenceId,
+    qty = _ref.qty,
+    productName = _ref.productName,
     onSuccess = _ref.onSuccess,
     onClose = _ref.onClose;
   var _useState = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)([]),
@@ -32201,6 +32238,9 @@ var PaysofterPromise = function PaysofterPromise(_ref) {
     email: email,
     duration: duration,
     paysofterPublicKey: paysofterPublicKey,
+    referenceId: referenceId,
+    qty: qty,
+    productName: productName,
     onSuccess: onSuccess,
     onClose: onClose
   })) : /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Row, {
@@ -32391,6 +32431,8 @@ function PaysofterButton(_ref) {
     onClose = _ref.onClose,
     onError = _ref.onError,
     referenceId = _ref.referenceId,
+    qty = _ref.qty,
+    productName = _ref.productName,
     buyerName = _ref.buyerName,
     buyerPhoneNumber = _ref.buyerPhoneNumber,
     showPaymentModal = _ref.showPaymentModal,
@@ -32493,7 +32535,10 @@ function PaysofterButton(_ref) {
     paysofterPublicKey: paysofterPublicKey,
     onSuccess: onSuccess,
     onClose: handleOnClosePayment,
-    onError: onError
+    onError: onError,
+    referenceId: referenceId,
+    qty: qty,
+    productName: productName
   }), selectedPaymentOption === "card" && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_CardPayment, {
     amount: amount,
     currency: currency,
@@ -32503,6 +32548,8 @@ function PaysofterButton(_ref) {
     onClose: handleOnClosePayment,
     onError: onError,
     referenceId: referenceId,
+    qty: qty,
+    productName: productName,
     buyerName: buyerName,
     buyerPhoneNumber: buyerPhoneNumber
   }), selectedPaymentOption === "fund" && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_PaysofterAccountFund, {
@@ -32512,7 +32559,10 @@ function PaysofterButton(_ref) {
     paysofterPublicKey: paysofterPublicKey,
     onSuccess: onSuccess,
     onClose: handleOnClosePayment,
-    onError: onError
+    onError: onError,
+    referenceId: referenceId,
+    qty: qty,
+    productName: productName
   }), selectedPaymentOption === "bank" && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_BankPayment, null), selectedPaymentOption === "transfer" && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_TransferPayment, null), selectedPaymentOption === "ussd" && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_UssdPayment, null), selectedPaymentOption === "qr" && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_QrPayment, null))))));
 }
 /* harmony default export */ const src_PaysofterButton = (PaysofterButton);
@@ -32580,6 +32630,8 @@ function CardPaymentTest(_ref) {
     paysofterPublicKey = _ref.paysofterPublicKey,
     onSuccess = _ref.onSuccess,
     onClose = _ref.onClose,
+    qty = _ref.qty,
+    productName = _ref.productName,
     referenceId = _ref.referenceId,
     buyerName = _ref.buyerName,
     buyerPhoneNumber = _ref.buyerPhoneNumber;
@@ -32682,7 +32734,9 @@ function CardPaymentTest(_ref) {
             paysofterPaymentData = {
               buyer_name: buyerName,
               buyer_phone: buyerPhoneNumber,
-              payment_id: referenceId,
+              qty: qty,
+              product_name: productName,
+              reference_id: referenceId,
               buyer_email: email,
               currency: currency,
               amount: amount,
@@ -32874,6 +32928,9 @@ var VerifyAccountFundOtpTest = function VerifyAccountFundOtpTest(_ref) {
     email = _ref.email,
     currency = _ref.currency,
     paysofterPublicKey = _ref.paysofterPublicKey,
+    qty = _ref.qty,
+    productName = _ref.productName,
+    referenceId = _ref.referenceId,
     formattedPayerEmail = _ref.formattedPayerEmail,
     onSuccess = _ref.onSuccess,
     onClose = _ref.onClose;
@@ -32947,6 +33004,9 @@ var VerifyAccountFundOtpTest = function VerifyAccountFundOtpTest(_ref) {
     amount: amount,
     currency: currency,
     public_api_key: paysofterPublicKey,
+    qty: qty,
+    product_name: productName,
+    reference_id: referenceId,
     created_at: createdAt,
     payment_method: paymentMethod,
     account_id: sendOtpData.account_id
@@ -33160,12 +33220,15 @@ function PaysofterAccountFundTest_arrayWithHoles(r) { if (Array.isArray(r)) retu
 
 
 // import { PAYSOFTER_API_URL } from "./config/apiConfig";
-// import axios from "axios"; 
+// import axios from "axios";
 
 var PaysofterAccountFundTest = function PaysofterAccountFundTest(_ref) {
   var amount = _ref.amount,
     email = _ref.email,
     paysofterPublicKey = _ref.paysofterPublicKey,
+    referenceId = _ref.referenceId,
+    qty = _ref.qty,
+    productName = _ref.productName,
     duration = _ref.duration,
     currency = _ref.currency,
     onSuccess = _ref.onSuccess,
@@ -33286,6 +33349,9 @@ var PaysofterAccountFundTest = function PaysofterAccountFundTest(_ref) {
     currency: currency,
     email: email,
     paysofterPublicKey: paysofterPublicKey,
+    referenceId: referenceId,
+    qty: qty,
+    productName: productName,
     securityCode: securityCode,
     accountId: accountId
     // formattedPayerEmail={formattedPayerEmail}
@@ -33497,6 +33563,9 @@ var VerifyPromiseFundOtpTest = function VerifyPromiseFundOtpTest(_ref) {
   var email = _ref.email,
     amount = _ref.amount,
     paysofterPublicKey = _ref.paysofterPublicKey,
+    qty = _ref.qty,
+    productName = _ref.productName,
+    referenceId = _ref.referenceId,
     formattedPayerEmail = _ref.formattedPayerEmail,
     currency = _ref.currency,
     duration = _ref.duration,
@@ -33558,6 +33627,9 @@ var VerifyPromiseFundOtpTest = function VerifyPromiseFundOtpTest(_ref) {
     email: email,
     amount: amount,
     public_api_key: paysofterPublicKey,
+    qty: qty,
+    product_name: productName,
+    reference_id: referenceId,
     account_id: sendOtpData.account_id,
     buyer_email: email,
     currency: currency,
@@ -33731,6 +33803,9 @@ var PaysofterPromiseFundTest = function PaysofterPromiseFundTest(_ref) {
   var email = _ref.email,
     amount = _ref.amount,
     paysofterPublicKey = _ref.paysofterPublicKey,
+    referenceId = _ref.referenceId,
+    qty = _ref.qty,
+    productName = _ref.productName,
     duration = _ref.duration,
     currency = _ref.currency,
     onSuccess = _ref.onSuccess,
@@ -33842,6 +33917,9 @@ var PaysofterPromiseFundTest = function PaysofterPromiseFundTest(_ref) {
   return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement((external_commonjs_react_commonjs2_react_amd_React_root_React_default()).Fragment, null, showVerifyAccountFundPromiseOtp ? /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_VerifyPromiseFundOtpTest, {
     amount: amount,
     paysofterPublicKey: paysofterPublicKey,
+    referenceId: referenceId,
+    qty: qty,
+    productName: productName,
     email: email,
     securityCode: securityCode,
     accountId: accountId
@@ -34022,6 +34100,9 @@ var PaysofterPromiseTest = function PaysofterPromiseTest(_ref) {
     currency = _ref.currency,
     amount = _ref.amount,
     paysofterPublicKey = _ref.paysofterPublicKey,
+    referenceId = _ref.referenceId,
+    qty = _ref.qty,
+    productName = _ref.productName,
     onSuccess = _ref.onSuccess,
     onClose = _ref.onClose;
   var _useState = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)([]),
@@ -34064,6 +34145,9 @@ var PaysofterPromiseTest = function PaysofterPromiseTest(_ref) {
     email: email,
     duration: duration,
     paysofterPublicKey: paysofterPublicKey,
+    referenceId: referenceId,
+    qty: qty,
+    productName: productName,
     onSuccess: onSuccess,
     onClose: onClose
   })) : /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Row, {
@@ -34171,6 +34255,8 @@ function PaysofterButtonTest(_ref) {
     showPaymentModal = _ref.showPaymentModal,
     setShowPaymentModal = _ref.setShowPaymentModal,
     referenceId = _ref.referenceId,
+    qty = _ref.qty,
+    productName = _ref.productName,
     buyerName = _ref.buyerName,
     buyerPhoneNumber = _ref.buyerPhoneNumber,
     showFundOption = _ref.showFundOption,
@@ -34265,7 +34351,10 @@ function PaysofterButtonTest(_ref) {
     email: email,
     paysofterPublicKey: paysofterPublicKey,
     onSuccess: onSuccess,
-    onClose: handleOnClosePayment
+    onClose: handleOnClosePayment,
+    referenceId: referenceId,
+    qty: qty,
+    productName: productName
   }), selectedPaymentOption === "card" && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_CardPaymentTest, {
     amount: amount,
     currency: currency,
@@ -34274,6 +34363,8 @@ function PaysofterButtonTest(_ref) {
     onSuccess: onSuccess,
     onClose: handleOnClosePayment,
     referenceId: referenceId,
+    qty: qty,
+    productName: productName,
     buyerName: buyerName,
     buyerPhoneNumber: buyerPhoneNumber
   }), selectedPaymentOption === "fund" && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_PaysofterAccountFundTest, {
@@ -34282,7 +34373,10 @@ function PaysofterButtonTest(_ref) {
     email: email,
     paysofterPublicKey: paysofterPublicKey,
     onSuccess: onSuccess,
-    onClose: handleOnClosePayment
+    onClose: handleOnClosePayment,
+    referenceId: referenceId,
+    qty: qty,
+    productName: productName
   }), selectedPaymentOption === "bank" && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_BankPayment, null), selectedPaymentOption === "transfer" && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_TransferPayment, null), selectedPaymentOption === "ussd" && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_UssdPayment, null), selectedPaymentOption === "qr" && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_QrPayment, null))))));
 }
 /* harmony default export */ const src_PaysofterButtonTest = (PaysofterButtonTest);
@@ -34316,6 +34410,8 @@ function src_Paysofter_0(_ref) {
     onClose = _ref.onClose,
     onError = _ref.onError,
     referenceId = _ref.referenceId,
+    qty = _ref.qty,
+    productName = _ref.productName,
     buyerName = _ref.buyerName,
     buyerPhoneNumber = _ref.buyerPhoneNumber,
     showFundOption = _ref.showFundOption,
@@ -34429,6 +34525,8 @@ function src_Paysofter_0(_ref) {
     onSuccess: onSuccess,
     onClose: onClose,
     referenceId: referenceId,
+    qty: qty,
+    productName: productName,
     buyerName: buyerName,
     buyerPhoneNumber: buyerPhoneNumber,
     showPaymentModal: showPaymentModal,
@@ -34443,6 +34541,11 @@ function src_Paysofter_0(_ref) {
     paysofterPublicKey: paysofterPublicKey,
     onSuccess: onSuccess,
     onClose: onClose,
+    referenceId: referenceId,
+    qty: qty,
+    productName: productName,
+    buyerName: buyerName,
+    buyerPhoneNumber: buyerPhoneNumber,
     showPaymentModal: showPaymentModal,
     setShowPaymentModal: setShowPaymentModal,
     showPromiseOption: showPromiseOption,

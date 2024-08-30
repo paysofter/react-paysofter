@@ -14,6 +14,9 @@ const VerifyAccountFundOtp = ({
   email,
   currency,
   paysofterPublicKey,
+  qty,
+  productName,
+  referenceId,
   formattedPayerEmail,
   onSuccess,
   onClose,
@@ -59,6 +62,9 @@ const VerifyAccountFundOtp = ({
     amount: amount,
     currency: currency,
     public_api_key: paysofterPublicKey,
+    qty: qty,
+    product_name: productName,
+    reference_id: referenceId,
     created_at: createdAt,
     payment_method: paymentMethod,
     account_id: sendOtpData.account_id,
@@ -70,6 +76,9 @@ const VerifyAccountFundOtp = ({
     amount: amount,
     currency: currency,
     public_api_key: paysofterPublicKey,
+    qty: qty,
+    product_name: productName,
+    reference_id: referenceId,
   };
 
   const handleVerifyEmailOtp = async () => {

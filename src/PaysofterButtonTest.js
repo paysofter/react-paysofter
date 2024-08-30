@@ -24,6 +24,8 @@ function PaysofterButtonTest({
   showPaymentModal,
   setShowPaymentModal,
   referenceId,
+  qty,
+  productName,
   buyerName,
   buyerPhoneNumber,
   showFundOption,
@@ -214,6 +216,9 @@ function PaysofterButtonTest({
                   paysofterPublicKey={paysofterPublicKey}
                   onSuccess={onSuccess}
                   onClose={handleOnClosePayment}
+                  referenceId={referenceId}
+                  qty={qty}
+                  productName={productName}
                 />
               )}
 
@@ -226,6 +231,8 @@ function PaysofterButtonTest({
                   onSuccess={onSuccess}
                   onClose={handleOnClosePayment}
                   referenceId={referenceId}
+                  qty={qty}
+                  productName={productName}
                   buyerName={buyerName}
                   buyerPhoneNumber={buyerPhoneNumber}
                 />
@@ -239,6 +246,9 @@ function PaysofterButtonTest({
                   paysofterPublicKey={paysofterPublicKey}
                   onSuccess={onSuccess}
                   onClose={handleOnClosePayment}
+                  referenceId={referenceId}
+                  qty={qty}
+                  productName={productName}
                 />
               )}
 

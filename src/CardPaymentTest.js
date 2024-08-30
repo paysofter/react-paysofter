@@ -20,7 +20,9 @@ function CardPaymentTest({
   paysofterPublicKey,
   onSuccess,
   onClose,
-    referenceId,
+  qty,
+  productName,
+  referenceId,
   buyerName,
   buyerPhoneNumber,
 }) {
@@ -103,7 +105,9 @@ function CardPaymentTest({
     const paysofterPaymentData = {
       buyer_name: buyerName,
       buyer_phone: buyerPhoneNumber,
-      payment_id: referenceId,
+      qty: qty,
+      product_name: productName,
+      reference_id: referenceId,
       buyer_email: email,
       currency: currency,
       amount: amount,
