@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Select from "react-select";
 import { MONTH_CHOICES, YEAR_CHOICES } from "./payment-constants";
 import Message from "./Message";
-import MessageFixed from "./MessageFixed";
+import MessageFixed from "./MessageFixed"; 
 import Loader from "./Loader";
 import { formatAmount } from "./FormatAmount";
 import { PAYSOFTER_API_URL } from "./config/apiConfig";
@@ -157,13 +157,13 @@ function CardPayment({
     if (paymentSuccess && !hasHandledSuccess) {
       setHasHandledSuccess(true);
       setShowSuccessMessage(true);
-      handleOnSuccess();
+      // handleOnSuccess();
       setTimeout(() => {
         setShowSuccessMessage(false);
         setShowSuccessScreen(true);
       }, 3000);
     }
-  }, [paymentSuccess, handleOnSuccess, hasHandledSuccess]);
+  }, [paymentSuccess, hasHandledSuccess]);
 
   return (
     <div>
