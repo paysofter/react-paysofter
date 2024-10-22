@@ -100,6 +100,11 @@ const PaysofterAccountFundPromise = ({
       return;
     }
 
+    if (!amount) {
+      setError("Amount is required to proceed with the payment.");
+      return;
+    }
+
     const debitAccountData = {
       account_id: accountId,
       security_code: securityCode,
@@ -107,6 +112,8 @@ const PaysofterAccountFundPromise = ({
       currency: currency,
       public_api_key: paysofterPublicKey,
     };
+
+    console.log("debitAccountData:", debitAccountData);
 
     setLoading(true);
     setError("");

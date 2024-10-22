@@ -63,6 +63,8 @@ function PaysofterButton({
   //   onError();
   // };
 
+  console.log('PaysofterButton amount:', amount)
+
   return (
     <div>
       <Modal

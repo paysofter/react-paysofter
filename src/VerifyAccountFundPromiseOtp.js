@@ -1,5 +1,10 @@
 // VerifyAccountFundPromiseOtp.js
-import React, { useState, useEffect, useCallback } from "react";
+import React, {
+  useState,
+  useEffect,
+  useCallback,
+  // useMemo
+} from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Loader from "./Loader";
@@ -8,7 +13,7 @@ import MessageFixed from "./MessageFixed";
 import ConfirmPaysofterPromise from "./ConfirmPaysofterPromise";
 import { PAYSOFTER_API_URL } from "./config/apiConfig";
 import axios from "axios";
-import SuccessScreen from "./SuccessScreen"; 
+// import SuccessScreen from "./SuccessScreen";
 
 const VerifyAccountFundPromiseOtp = ({
   email,
@@ -53,10 +58,14 @@ const VerifyAccountFundPromiseOtp = ({
   const sendOtpData =
     JSON.parse(localStorage.getItem("debitAccountData")) || [];
 
+  // console.log("localStorage sendOtpData:", sendOtpData);
+  // console.log("sendOtpData.amount:", sendOtpData?.amount);
+
   const otpData = {
     otp: otp,
-    account_id: sendOtpData.account_id,
-    amount: amount,
+    account_id: sendOtpData?.account_id,
+    amount: sendOtpData?.amount,
+    // amount: amount,
     currency: currency,
     public_api_key: paysofterPublicKey,
     created_at: createdAt,
@@ -65,13 +74,15 @@ const VerifyAccountFundPromiseOtp = ({
   const debitAccountData = {
     account_id: sendOtpData.account_id,
     security_code: sendOtpData.security_code,
-    amount: amount,
+    amount: sendOtpData.amount,
+    // amount: amount,
     public_api_key: paysofterPublicKey,
     qty: qty,
     product_name: productName,
     reference_id: referenceId,
     created_at: createdAt,
   };
+  // console.log("debitAccountData:", debitAccountData);
 
   const handleVerifyEmailOtp = async () => {
     setLoading(true);
@@ -82,7 +93,7 @@ const VerifyAccountFundPromiseOtp = ({
         `${PAYSOFTER_API_URL}/api/verify-otp/`,
         otpData
       );
-      console.log(data);
+      // console.log(data);
       setSuccess(true);
     } catch (error) {
       setError(
@@ -133,7 +144,7 @@ const VerifyAccountFundPromiseOtp = ({
   }, [onSuccess]);
 
   useEffect(() => {
-    if (success) {
+    if (success && !hasHandledSuccess) {
       const createPaysofterPromise = async () => {
         setPromiseLoading(true);
         setPromiseError("");
@@ -141,7 +152,8 @@ const VerifyAccountFundPromiseOtp = ({
         try {
           const paysofterPromiseData = {
             email: email,
-            amount: amount,
+            amount: sendOtpData.amount,
+            // amount: amount,
             public_api_key: paysofterPublicKey,
             qty: qty,
             product_name: productName,
@@ -153,17 +165,20 @@ const VerifyAccountFundPromiseOtp = ({
             payment_method: paymentMethod,
           };
 
+          // console.log("paysofterPromiseData:", paysofterPromiseData);
+
           const { data } = await axios.post(
             `${PAYSOFTER_API_URL}/api/create-promise/`,
             paysofterPromiseData
           );
-          console.log(data);
+          // console.log(data);
           setPromiseSuccess(true);
+          setHasHandledSuccess(true);
         } catch (error) {
           setPromiseError(
-            error.response && error.response.data.message
-              ? error.response.data.message
-              : error.message
+            error.response && error.response.data.detail
+              ? error.response.data.detail
+              : error.detail
           );
         } finally {
           setPromiseLoading(false);
@@ -174,13 +189,14 @@ const VerifyAccountFundPromiseOtp = ({
     }
   }, [
     success,
+    hasHandledSuccess,
     email,
-    amount,
+    sendOtpData?.amount,
     paysofterPublicKey,
     qty,
     productName,
     referenceId,
-    sendOtpData.account_id,
+    sendOtpData?.account_id,
     currency,
     duration,
     createdAt,
@@ -196,7 +212,7 @@ const VerifyAccountFundPromiseOtp = ({
         setShowConfirmPaysofterPromise(true);
         setShowSuccessMessage(false);
         localStorage.removeItem("debitAccountData");
-      }, 3000);
+      }, 5000);
     }
   }, [promiseSuccess, handleOnSuccess, hasHandledSuccess]);
 
@@ -255,8 +271,8 @@ const VerifyAccountFundPromiseOtp = ({
               </Form>
               <p>
                 OTP has been sent to your email {formattedPayerEmail} for
-                Paysofter Account ID: {sendOtpData.account_id} and expires in 10
-                minutes. It might take a few seconds to deliver.
+                Paysofter Account ID: {sendOtpData?.account_id} and expires in
+                10 minutes. It might take a few seconds to deliver.
               </p>
               <Button
                 variant="link"

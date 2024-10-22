@@ -9,7 +9,7 @@ import ConfirmPaysofterPromiseTest from "./ConfirmPaysofterPromiseTest";
 import { generateRandomNum } from "./GenerateRandomNum";
 import { PAYSOFTER_API_URL } from "./config/apiConfig";
 import axios from "axios";
-import SuccessScreenTest from "./SuccessScreenTest"; 
+// import SuccessScreenTest from "./SuccessScreenTest"; 
 
 const VerifyPromiseFundOtpTest = ({
   email,
@@ -53,7 +53,8 @@ const VerifyPromiseFundOtpTest = ({
 
   const paysofterPromiseData = {
     email: email,
-    amount: amount,
+    amount: sendOtpData.amount,
+    // amount: amount,
     public_api_key: paysofterPublicKey,
     qty: qty,
     product_name: productName,
@@ -65,6 +66,8 @@ const VerifyPromiseFundOtpTest = ({
     created_at: createdAt,
     payment_method: paymentMethod,
   };
+
+  // console.log('paysofterPromiseData:', paysofterPromiseData)
 
   const handleCreatePromise = async (paysofterPromiseData) => {
     try {
@@ -79,7 +82,7 @@ const VerifyPromiseFundOtpTest = ({
   };
 
   const handleVerifyEmailOtp = async () => {
-    console.log("handleVerifyEmailOtp test...");
+    // console.log("handleVerifyEmailOtp test...");
     setLoading(true);
     setError(null);
     try {
@@ -88,7 +91,7 @@ const VerifyPromiseFundOtpTest = ({
       setHasHandledSuccess(true);
       handleOnSuccess();
 
-      localStorage.removeItem("debitAccountData");
+      localStorage.removeItem("debitAccountData"); 
     } catch (error) {
       setError(
         error.response?.data?.detail ||

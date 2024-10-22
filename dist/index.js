@@ -30755,13 +30755,13 @@ function CardPayment(_ref) {
     if (paymentSuccess && !hasHandledSuccess) {
       setHasHandledSuccess(true);
       setShowSuccessMessage(true);
-      handleOnSuccess();
+      // handleOnSuccess();
       setTimeout(function () {
         setShowSuccessMessage(false);
         setShowSuccessScreen(true);
       }, 3000);
     }
-  }, [paymentSuccess, handleOnSuccess, hasHandledSuccess]);
+  }, [paymentSuccess, hasHandledSuccess]);
   return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", null, showSuccessScreen ? /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_SuccessScreen, null) : /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("h2", {
     className: "py-2 text-center"
   }, "Debit Card"), showSuccessMessage && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_Message, {
@@ -31103,14 +31103,14 @@ var VerifyAccountFundOtp = function VerifyAccountFundOtp(_ref) {
     if (paymentSuccess && !hasHandledSuccess) {
       setHasHandledSuccess(true);
       setShowSuccessMessage(true);
-      handleOnSuccess();
+      // handleOnSuccess();
       setTimeout(function () {
         setShowSuccessMessage(false);
         localStorage.removeItem("debitAccountData");
         setShowSuccessScreen(true);
       }, 3000);
     }
-  }, [paymentSuccess, handleOnSuccess, hasHandledSuccess]);
+  }, [paymentSuccess, hasHandledSuccess]);
   return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Container, null, showSuccessScreen ? /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_SuccessScreen, null) : /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Row, {
     className: "justify-content-center text-center mt-5"
   }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Col, null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", {
@@ -32795,13 +32795,13 @@ function CardPaymentTest(_ref) {
     if (paymentSuccess && !hasHandledSuccess) {
       setHasHandledSuccess(true);
       setShowSuccessMessage(true);
-      handleOnSuccess();
+      // handleOnSuccess();
       setTimeout(function () {
         setShowSuccessMessage(false);
         setShowSuccessScreen(true);
       }, 3000);
     }
-  }, [paymentSuccess, handleOnSuccess, hasHandledSuccess]);
+  }, [paymentSuccess, hasHandledSuccess]);
   return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", null, showSuccessScreen ? /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_SuccessScreenTest, null) : /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("h2", {
     className: "py-2 text-center"
   }, "Debit Card"), showSuccessMessage && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_Message, {
@@ -33144,14 +33144,14 @@ var VerifyAccountFundOtpTest = function VerifyAccountFundOtpTest(_ref) {
     if (paymentSuccess && !hasHandledSuccess) {
       setHasHandledSuccess(true);
       setShowSuccessMessage(true);
-      handleOnSuccess();
+      // handleOnSuccess();
       setTimeout(function () {
         setShowSuccessMessage(false);
         localStorage.removeItem("debitAccountData");
         setShowSuccessScreen(true);
       }, 3000);
     }
-  }, [paymentSuccess, handleOnSuccess, hasHandledSuccess]);
+  }, [paymentSuccess, hasHandledSuccess]);
   return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Container, null, showSuccessScreen ? /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_SuccessScreenTest, null) : /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Row, {
     className: "justify-content-center text-center mt-5"
   }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Col, null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", {

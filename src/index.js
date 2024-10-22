@@ -44,14 +44,14 @@ export function Paysofter({
         );
 
         const data = response.data;
-        console.log("data:", data);
-        console.log("response.data:", response.data);
+        // console.log("data:", data);
+        // console.log("response.data:", response.data);
 
         if (response.status === 200) {
           setApiKeyStatus(data.api_key_status);
           setShowPaymentModal(true);
 
-          console.log("api_key_status:", data.api_key_status);
+          // console.log("api_key_status:", data.api_key_status);
           setSuccess(true);
         } else {
           setError(data.detail || "Unexpected response from server.");
@@ -85,7 +85,7 @@ export function Paysofter({
     setLoading(false);
   };
 
-  console.log("Paysofter:", Paysofter);
+  // console.log('index amount:', amount)
 
   return (
     <>

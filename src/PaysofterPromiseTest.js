@@ -48,6 +48,8 @@ const PaysofterPromiseTest = ({
     e.preventDefault();
   };
 
+  console.log('PaysofterPromiseTest amount:', amount)
+
   return (
     <Container>
       {showPaysofterAccountFundPromise ? (

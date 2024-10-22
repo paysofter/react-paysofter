@@ -55,6 +55,7 @@ const PaysofterAccountFund = ({
       currency: currency,
       public_api_key: paysofterPublicKey,
     };
+    // console.log("debitAccountData:", debitAccountData);
 
     try {
       localStorage.setItem(

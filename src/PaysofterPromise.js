@@ -49,6 +49,8 @@ const PaysofterPromise = ({
     e.preventDefault();
   };
 
+  console.log('PaysofterPromise amount:', amount)
+
   return (
     <Container>
       {showPaysofterAccountFundPromise ? (

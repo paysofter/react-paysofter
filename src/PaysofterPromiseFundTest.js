@@ -86,6 +86,8 @@ const PaysofterPromiseFundTest = ({
     public_api_key: paysofterPublicKey,
   };
 
+  // console.log('debitAccountData:', debitAccountData)
+
   const submitHandler = (e) => {
     e.preventDefault();
 

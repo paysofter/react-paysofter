@@ -59,6 +59,8 @@ function PaysofterButtonTest({
     onClose();
   };
 
+  console.log('PaysofterButtonTest amount:', amount)
+
   return (
     <div>
       <Modal

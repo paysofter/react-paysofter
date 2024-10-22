@@ -52,14 +52,16 @@ const VerifyAccountFundOtp = ({
   const otpData = {
     otp: otp,
     account_id: sendOtpData.account_id,
-    amount: amount,
+    amount: sendOtpData.amount,
+    // amount: amount,
     currency: currency,
     public_api_key: paysofterPublicKey,
   };
 
   const paysofterPaymentData = {
     buyer_email: email,
-    amount: amount,
+    amount: sendOtpData.amount,
+    // amount: amount,
     currency: currency,
     public_api_key: paysofterPublicKey,
     qty: qty,
@@ -73,7 +75,8 @@ const VerifyAccountFundOtp = ({
   const debitAccountData = {
     account_id: sendOtpData.account_id,
     security_code: sendOtpData.security_code,
-    amount: amount,
+    amount: sendOtpData.amount,
+    // amount: amount,
     currency: currency,
     public_api_key: paysofterPublicKey,
     qty: qty,
