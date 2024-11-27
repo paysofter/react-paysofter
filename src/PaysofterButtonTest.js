@@ -8,7 +8,7 @@ import PaysofterPromiseTest from "./PaysofterPromiseTest";
 import UssdPayment from "./UssdPayment";
 import BankPayment from "./BankPayment";
 import TransferPayment from "./TransferPayment";
-import QrPayment from "./QrPayment";
+import QrPayment from "./QrPayment";  
 import { formatAmount } from "./FormatAmount";
 import logoImage from "./images/logo.png";
 import "./Paysofter.css";
@@ -104,7 +104,7 @@ function PaysofterButtonTest({
                 {showPromiseOption && (
                   <div className="py-1">
                     <Button
-                      variant="primary"
+                      variant={selectedPaymentOption === "promise" ? "primary" : "outline-primary"}
                       onClick={() => handlePaymentOptionChange("promise")}
                       className={
                         selectedPaymentOption === "promise" ? "active" : ""
@@ -119,7 +119,7 @@ function PaysofterButtonTest({
                 {showCardOption && (
                   <div className="py-1">
                     <Button
-                      variant="outline-primary"
+                      variant={selectedPaymentOption === "card" ? "primary" : "outline-primary"}
                       onClick={() => handlePaymentOptionChange("card")}
                       className={
                         selectedPaymentOption === "card" ? "active" : ""
@@ -133,7 +133,7 @@ function PaysofterButtonTest({
                 {showFundOption && (
                   <div className="py-1">
                     <Button
-                      variant="outline-primary"
+                      variant={selectedPaymentOption === "fund" ? "primary" : "outline-primary"}
                       onClick={() => handlePaymentOptionChange("fund")}
                       className={
                         selectedPaymentOption === "fund" ? "active" : ""

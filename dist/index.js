@@ -30951,13 +30951,15 @@ var VerifyAccountFundOtp = function VerifyAccountFundOtp(_ref) {
   var otpData = {
     otp: otp,
     account_id: sendOtpData.account_id,
-    amount: amount,
+    amount: sendOtpData.amount,
+    // amount: amount,
     currency: currency,
     public_api_key: paysofterPublicKey
   };
   var paysofterPaymentData = {
     buyer_email: email,
-    amount: amount,
+    amount: sendOtpData.amount,
+    // amount: amount,
     currency: currency,
     public_api_key: paysofterPublicKey,
     qty: qty,
@@ -30970,7 +30972,8 @@ var VerifyAccountFundOtp = function VerifyAccountFundOtp(_ref) {
   var debitAccountData = {
     account_id: sendOtpData.account_id,
     security_code: sendOtpData.security_code,
-    amount: amount,
+    amount: sendOtpData.amount,
+    // amount: amount,
     currency: currency,
     public_api_key: paysofterPublicKey,
     qty: qty,
@@ -31268,7 +31271,7 @@ var PaysofterAccountFund = function PaysofterAccountFund(_ref) {
               amount: amount,
               currency: currency,
               public_api_key: paysofterPublicKey
-            };
+            }; // console.log("debitAccountData:", debitAccountData);
             _context.prev = 4;
             localStorage.setItem("debitAccountData", JSON.stringify(debitAccountData));
             _context.next = 8;
@@ -31519,6 +31522,7 @@ function VerifyAccountFundPromiseOtp_arrayWithHoles(r) { if (Array.isArray(r)) r
 
 
 
+// import SuccessScreen from "./SuccessScreen";
 
 var VerifyAccountFundPromiseOtp = function VerifyAccountFundPromiseOtp(_ref) {
   var email = _ref.email,
@@ -31577,33 +31581,43 @@ var VerifyAccountFundPromiseOtp = function VerifyAccountFundPromiseOtp(_ref) {
     setHasHandledSuccess = _useState16[1];
   var _useState17 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
     _useState18 = VerifyAccountFundPromiseOtp_slicedToArray(_useState17, 2),
-    loading = _useState18[0],
-    setLoading = _useState18[1];
+    hasHandledPaymentSuccess = _useState18[0],
+    setHasHandledPaymentSuccess = _useState18[1];
+  // const [hasHandledCallbackSuccess, setHasHandledCallbackSuccess] = useState(false);
   var _useState19 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
     _useState20 = VerifyAccountFundPromiseOtp_slicedToArray(_useState19, 2),
-    success = _useState20[0],
-    setSuccess = _useState20[1];
-  var _useState21 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(""),
+    loading = _useState20[0],
+    setLoading = _useState20[1];
+  var _useState21 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
     _useState22 = VerifyAccountFundPromiseOtp_slicedToArray(_useState21, 2),
-    error = _useState22[0],
-    setError = _useState22[1];
-  var _useState23 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
+    success = _useState22[0],
+    setSuccess = _useState22[1];
+  var _useState23 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(""),
     _useState24 = VerifyAccountFundPromiseOtp_slicedToArray(_useState23, 2),
-    promiseLoading = _useState24[0],
-    setPromiseLoading = _useState24[1];
+    error = _useState24[0],
+    setError = _useState24[1];
   var _useState25 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
     _useState26 = VerifyAccountFundPromiseOtp_slicedToArray(_useState25, 2),
-    promiseSuccess = _useState26[0],
-    setPromiseSuccess = _useState26[1];
-  var _useState27 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(""),
+    promiseLoading = _useState26[0],
+    setPromiseLoading = _useState26[1];
+  var _useState27 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
     _useState28 = VerifyAccountFundPromiseOtp_slicedToArray(_useState27, 2),
-    promiseError = _useState28[0],
-    setPromiseError = _useState28[1];
+    promiseSuccess = _useState28[0],
+    setPromiseSuccess = _useState28[1];
+  var _useState29 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(""),
+    _useState30 = VerifyAccountFundPromiseOtp_slicedToArray(_useState29, 2),
+    promiseError = _useState30[0],
+    setPromiseError = _useState30[1];
   var sendOtpData = JSON.parse(localStorage.getItem("debitAccountData")) || [];
+
+  // console.log("localStorage sendOtpData:", sendOtpData);
+  // console.log("sendOtpData.amount:", sendOtpData?.amount);
+
   var otpData = {
     otp: otp,
-    account_id: sendOtpData.account_id,
-    amount: amount,
+    account_id: sendOtpData === null || sendOtpData === void 0 ? void 0 : sendOtpData.account_id,
+    amount: sendOtpData === null || sendOtpData === void 0 ? void 0 : sendOtpData.amount,
+    // amount: amount,
     currency: currency,
     public_api_key: paysofterPublicKey,
     created_at: createdAt
@@ -31611,13 +31625,16 @@ var VerifyAccountFundPromiseOtp = function VerifyAccountFundPromiseOtp(_ref) {
   var debitAccountData = {
     account_id: sendOtpData.account_id,
     security_code: sendOtpData.security_code,
-    amount: amount,
+    amount: sendOtpData.amount,
+    // amount: amount,
     public_api_key: paysofterPublicKey,
     qty: qty,
     product_name: productName,
     reference_id: referenceId,
     created_at: createdAt
   };
+  // console.log("debitAccountData:", debitAccountData);
+
   var handleVerifyEmailOtp = /*#__PURE__*/function () {
     var _ref2 = VerifyAccountFundPromiseOtp_asyncToGenerator( /*#__PURE__*/VerifyAccountFundPromiseOtp_regeneratorRuntime().mark(function _callee() {
       var _yield$axios$post, data;
@@ -31706,7 +31723,7 @@ var VerifyAccountFundPromiseOtp = function VerifyAccountFundPromiseOtp(_ref) {
     onSuccess();
   }, [onSuccess]);
   (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useEffect)(function () {
-    if (success) {
+    if (success && !hasHandledPaymentSuccess) {
       var createPaysofterPromise = /*#__PURE__*/function () {
         var _ref4 = VerifyAccountFundPromiseOtp_asyncToGenerator( /*#__PURE__*/VerifyAccountFundPromiseOtp_regeneratorRuntime().mark(function _callee3() {
           var paysofterPromiseData, _yield$axios$post2, data;
@@ -31718,7 +31735,8 @@ var VerifyAccountFundPromiseOtp = function VerifyAccountFundPromiseOtp(_ref) {
                 _context3.prev = 2;
                 paysofterPromiseData = {
                   email: email,
-                  amount: amount,
+                  amount: sendOtpData.amount,
+                  // amount: amount,
                   public_api_key: paysofterPublicKey,
                   qty: qty,
                   product_name: productName,
@@ -31728,7 +31746,7 @@ var VerifyAccountFundPromiseOtp = function VerifyAccountFundPromiseOtp(_ref) {
                   duration: duration,
                   created_at: createdAt,
                   payment_method: paymentMethod
-                };
+                }; // console.log("paysofterPromiseData:", paysofterPromiseData);
                 _context3.next = 6;
                 return lib_axios.post("".concat(PAYSOFTER_API_URL, "/api/create-promise/"), paysofterPromiseData);
               case 6:
@@ -31736,21 +31754,22 @@ var VerifyAccountFundPromiseOtp = function VerifyAccountFundPromiseOtp(_ref) {
                 data = _yield$axios$post2.data;
                 console.log(data);
                 setPromiseSuccess(true);
-                _context3.next = 15;
+                setHasHandledPaymentSuccess(true);
+                _context3.next = 16;
                 break;
-              case 12:
-                _context3.prev = 12;
+              case 13:
+                _context3.prev = 13;
                 _context3.t0 = _context3["catch"](2);
-                setPromiseError(_context3.t0.response && _context3.t0.response.data.message ? _context3.t0.response.data.message : _context3.t0.message);
-              case 15:
-                _context3.prev = 15;
+                setPromiseError(_context3.t0.response && _context3.t0.response.data.detail ? _context3.t0.response.data.detail : _context3.t0.detail);
+              case 16:
+                _context3.prev = 16;
                 setPromiseLoading(false);
-                return _context3.finish(15);
-              case 18:
+                return _context3.finish(16);
+              case 19:
               case "end":
                 return _context3.stop();
             }
-          }, _callee3, null, [[2, 12, 15, 18]]);
+          }, _callee3, null, [[2, 13, 16, 19]]);
         }));
         return function createPaysofterPromise() {
           return _ref4.apply(this, arguments);
@@ -31758,7 +31777,7 @@ var VerifyAccountFundPromiseOtp = function VerifyAccountFundPromiseOtp(_ref) {
       }();
       createPaysofterPromise();
     }
-  }, [success, email, amount, paysofterPublicKey, qty, productName, referenceId, sendOtpData.account_id, currency, duration, createdAt, paymentMethod]);
+  }, [success, hasHandledPaymentSuccess, email, sendOtpData === null || sendOtpData === void 0 ? void 0 : sendOtpData.amount, paysofterPublicKey, qty, productName, referenceId, sendOtpData === null || sendOtpData === void 0 ? void 0 : sendOtpData.account_id, currency, duration, createdAt, paymentMethod]);
   (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useEffect)(function () {
     if (promiseSuccess && !hasHandledSuccess) {
       setHasHandledSuccess(true);
@@ -31768,7 +31787,7 @@ var VerifyAccountFundPromiseOtp = function VerifyAccountFundPromiseOtp(_ref) {
         setShowConfirmPaysofterPromise(true);
         setShowSuccessMessage(false);
         localStorage.removeItem("debitAccountData");
-      }, 3000);
+      }, 5000);
     }
   }, [promiseSuccess, handleOnSuccess, hasHandledSuccess]);
   return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Container, null, showConfirmPaysofterPromise ? /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_ConfirmPaysofterPromise, null) : /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Row, {
@@ -31809,7 +31828,7 @@ var VerifyAccountFundPromiseOtp = function VerifyAccountFundPromiseOtp(_ref) {
     className: "py-2 d-flex justify-content-center"
   }, error && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_MessageFixed, {
     variant: "danger"
-  }, error))), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("p", null, "OTP has been sent to your email ", formattedPayerEmail, " for Paysofter Account ID: ", sendOtpData.account_id, " and expires in 10 minutes. It might take a few seconds to deliver."), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Button, {
+  }, error))), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("p", null, "OTP has been sent to your email ", formattedPayerEmail, " for Paysofter Account ID: ", sendOtpData === null || sendOtpData === void 0 ? void 0 : sendOtpData.account_id, " and expires in 10 minutes. It might take a few seconds to deliver."), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Button, {
     variant: "link",
     type: "button",
     disabled: resendDisabled || resendLoading,
@@ -31961,6 +31980,13 @@ var PaysofterAccountFundPromise = function PaysofterAccountFundPromise(_ref) {
             setSecurityCodeError("Please enter Security Code.");
             return _context.abrupt("return");
           case 7:
+            if (amount) {
+              _context.next = 10;
+              break;
+            }
+            setError("Amount is required to proceed with the payment.");
+            return _context.abrupt("return");
+          case 10:
             debitAccountData = {
               account_id: accountId,
               security_code: securityCode,
@@ -31968,32 +31994,33 @@ var PaysofterAccountFundPromise = function PaysofterAccountFundPromise(_ref) {
               currency: currency,
               public_api_key: paysofterPublicKey
             };
+            console.log("debitAccountData:", debitAccountData);
             setLoading(true);
             setError("");
-            _context.prev = 10;
-            _context.next = 13;
+            _context.prev = 14;
+            _context.next = 17;
             return lib_axios.post("".concat(PAYSOFTER_API_URL, "/api/send-debit-fund-account-otp/"), debitAccountData);
-          case 13:
+          case 17:
             _yield$axios$post = _context.sent;
             data = _yield$axios$post.data;
             setSuccess(true);
             setFormattedPayerEmail(data.formattedPayerEmail);
             localStorage.setItem("debitAccountData", JSON.stringify(debitAccountData));
-            _context.next = 23;
+            _context.next = 27;
             break;
-          case 20:
-            _context.prev = 20;
-            _context.t0 = _context["catch"](10);
+          case 24:
+            _context.prev = 24;
+            _context.t0 = _context["catch"](14);
             setError(_context.t0.response && _context.t0.response.data.detail ? _context.t0.response.data.detail : _context.t0.message);
-          case 23:
-            _context.prev = 23;
+          case 27:
+            _context.prev = 27;
             setLoading(false);
-            return _context.finish(23);
-          case 26:
+            return _context.finish(27);
+          case 30:
           case "end":
             return _context.stop();
         }
-      }, _callee, null, [[10, 20, 23, 26]]);
+      }, _callee, null, [[14, 24, 27, 30]]);
     }));
     return function submitHandler(_x) {
       return _ref2.apply(this, arguments);
@@ -32232,6 +32259,7 @@ var PaysofterPromise = function PaysofterPromise(_ref) {
   var submitHandler = function submitHandler(e) {
     e.preventDefault();
   };
+  console.log('PaysofterPromise amount:', amount);
   return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Container, null, showPaysofterAccountFundPromise ? /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement((external_commonjs_react_commonjs2_react_amd_React_root_React_default()).Fragment, null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_PaysofterAccountFundPromise, {
     currency: currency,
     amount: amount,
@@ -32471,6 +32499,7 @@ function PaysofterButton(_ref) {
   //   onError();
   // };
 
+  console.log('PaysofterButton amount:', amount);
   return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Modal, {
     show: showPaymentModal,
     onHide: handleOnClosePayment,
@@ -32499,7 +32528,7 @@ function PaysofterButton(_ref) {
   }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("p", null, "Options"), showPromiseOption && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", {
     className: "py-1"
   }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Button, {
-    variant: "primary",
+    variant: selectedPaymentOption === "promise" ? "primary" : "outline-primary",
     onClick: function onClick() {
       return handlePaymentOptionChange("promise");
     },
@@ -32508,8 +32537,10 @@ function PaysofterButton(_ref) {
     className: "fas fa-money-bill-wave"
   }), " Paysofter Promise")), showCardOption && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", {
     className: "py-1"
-  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Button, {
-    variant: "outline-primary",
+  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Button
+  // variant="outline-primary"
+  , {
+    variant: selectedPaymentOption === "card" ? "primary" : "outline-primary",
     onClick: function onClick() {
       return handlePaymentOptionChange("card");
     },
@@ -32518,8 +32549,10 @@ function PaysofterButton(_ref) {
     className: "fas fa-credit-card"
   }), " Debit Card"), " "), showFundOption && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", {
     className: "py-1"
-  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Button, {
-    variant: "outline-primary",
+  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Button
+  // variant="outline-primary"
+  , {
+    variant: selectedPaymentOption === "fund" ? "primary" : "outline-primary",
     onClick: function onClick() {
       return handlePaymentOptionChange("fund");
     },
@@ -32994,6 +33027,7 @@ var VerifyAccountFundOtpTest = function VerifyAccountFundOtpTest(_ref) {
   var otpData = {
     otp: otp,
     account_id: sendOtpData.account_id,
+    // amount: sendOtpData.amount,
     amount: amount,
     currency: currency,
     public_api_key: paysofterPublicKey,
@@ -33001,7 +33035,8 @@ var VerifyAccountFundOtpTest = function VerifyAccountFundOtpTest(_ref) {
   };
   var paysofterPaymentData = {
     buyer_email: email,
-    amount: amount,
+    amount: sendOtpData.amount,
+    // amount: amount,
     currency: currency,
     public_api_key: paysofterPublicKey,
     qty: qty,
@@ -33558,6 +33593,7 @@ function VerifyPromiseFundOtpTest_arrayWithHoles(r) { if (Array.isArray(r)) retu
 
 
 
+// import SuccessScreenTest from "./SuccessScreenTest"; 
 
 var VerifyPromiseFundOtpTest = function VerifyPromiseFundOtpTest(_ref) {
   var email = _ref.email,
@@ -33625,7 +33661,8 @@ var VerifyPromiseFundOtpTest = function VerifyPromiseFundOtpTest(_ref) {
   var sendOtpData = JSON.parse(localStorage.getItem("debitAccountData")) || [];
   var paysofterPromiseData = {
     email: email,
-    amount: amount,
+    amount: sendOtpData.amount,
+    // amount: amount,
     public_api_key: paysofterPublicKey,
     qty: qty,
     product_name: productName,
@@ -33637,6 +33674,9 @@ var VerifyPromiseFundOtpTest = function VerifyPromiseFundOtpTest(_ref) {
     created_at: createdAt,
     payment_method: paymentMethod
   };
+
+  // console.log('paysofterPromiseData:', paysofterPromiseData)
+
   var handleCreatePromise = /*#__PURE__*/function () {
     var _ref2 = VerifyPromiseFundOtpTest_asyncToGenerator( /*#__PURE__*/VerifyPromiseFundOtpTest_regeneratorRuntime().mark(function _callee(paysofterPromiseData) {
       var response;
@@ -33669,32 +33709,32 @@ var VerifyPromiseFundOtpTest = function VerifyPromiseFundOtpTest(_ref) {
       return VerifyPromiseFundOtpTest_regeneratorRuntime().wrap(function _callee2$(_context2) {
         while (1) switch (_context2.prev = _context2.next) {
           case 0:
-            console.log("handleVerifyEmailOtp test...");
+            // console.log("handleVerifyEmailOtp test...");
             setLoading(true);
             setError(null);
-            _context2.prev = 3;
-            _context2.next = 6;
+            _context2.prev = 2;
+            _context2.next = 5;
             return handleCreatePromise(paysofterPromiseData);
-          case 6:
+          case 5:
             setShowSuccessMessage(true);
             setHasHandledSuccess(true);
             handleOnSuccess();
             localStorage.removeItem("debitAccountData");
-            _context2.next = 15;
+            _context2.next = 14;
             break;
-          case 12:
-            _context2.prev = 12;
-            _context2.t0 = _context2["catch"](3);
+          case 11:
+            _context2.prev = 11;
+            _context2.t0 = _context2["catch"](2);
             setError(((_error$response = _context2.t0.response) === null || _error$response === void 0 || (_error$response = _error$response.data) === null || _error$response === void 0 ? void 0 : _error$response.detail) || _context2.t0.message || "Error creating promise");
-          case 15:
-            _context2.prev = 15;
+          case 14:
+            _context2.prev = 14;
             setLoading(false);
-            return _context2.finish(15);
-          case 18:
+            return _context2.finish(14);
+          case 17:
           case "end":
             return _context2.stop();
         }
-      }, _callee2, null, [[3, 12, 15, 18]]);
+      }, _callee2, null, [[2, 11, 14, 17]]);
     }));
     return function handleVerifyEmailOtp() {
       return _ref3.apply(this, arguments);
@@ -33892,6 +33932,9 @@ var PaysofterPromiseFundTest = function PaysofterPromiseFundTest(_ref) {
     currency: currency,
     public_api_key: paysofterPublicKey
   };
+
+  // console.log('debitAccountData:', debitAccountData)
+
   var submitHandler = function submitHandler(e) {
     e.preventDefault();
     if (!accountId) {
@@ -34139,6 +34182,7 @@ var PaysofterPromiseTest = function PaysofterPromiseTest(_ref) {
   var submitHandler = function submitHandler(e) {
     e.preventDefault();
   };
+  console.log('PaysofterPromiseTest amount:', amount);
   return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Container, null, showPaysofterAccountFundPromise ? /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement((external_commonjs_react_commonjs2_react_amd_React_root_React_default()).Fragment, null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_PaysofterPromiseFundTest, {
     currency: currency,
     amount: amount,
@@ -34288,6 +34332,7 @@ function PaysofterButtonTest(_ref) {
     setShowPaymentModal(false);
     onClose();
   };
+  console.log('PaysofterButtonTest amount:', amount);
   return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Modal, {
     show: showPaymentModal,
     backdrop: "static",
@@ -34316,7 +34361,7 @@ function PaysofterButtonTest(_ref) {
   }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("p", null, "Options"), showPromiseOption && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", {
     className: "py-1"
   }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Button, {
-    variant: "primary",
+    variant: selectedPaymentOption === "promise" ? "primary" : "outline-primary",
     onClick: function onClick() {
       return handlePaymentOptionChange("promise");
     },
@@ -34326,7 +34371,7 @@ function PaysofterButtonTest(_ref) {
   }), " Paysofter Promise")), showCardOption && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", {
     className: "py-1"
   }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Button, {
-    variant: "outline-primary",
+    variant: selectedPaymentOption === "card" ? "primary" : "outline-primary",
     onClick: function onClick() {
       return handlePaymentOptionChange("card");
     },
@@ -34336,7 +34381,7 @@ function PaysofterButtonTest(_ref) {
   }), " Debit Card"), " "), showFundOption && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", {
     className: "py-1"
   }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Button, {
-    variant: "outline-primary",
+    variant: selectedPaymentOption === "fund" ? "primary" : "outline-primary",
     onClick: function onClick() {
       return handlePaymentOptionChange("fund");
     },
@@ -34437,6 +34482,11 @@ function src_Paysofter_0(_ref) {
     _useState10 = src_slicedToArray(_useState9, 2),
     error = _useState10[0],
     setError = _useState10[1];
+  console.log("PAYSOFTER_API_URL:", PAYSOFTER_API_URL);
+  console.log("paysofterPublicKey:", paysofterPublicKey);
+  console.log("email:", email);
+  console.log("amount:", amount);
+  console.log("currency:", currency);
   (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useEffect)(function () {
     var fetchApiKeyStatus = /*#__PURE__*/function () {
       var _ref2 = src_asyncToGenerator( /*#__PURE__*/src_regeneratorRuntime().mark(function _callee() {
@@ -34454,30 +34504,32 @@ function src_Paysofter_0(_ref) {
               response = _context.sent;
               data = response.data;
               console.log("data:", data);
-              console.log("response.data:", response.data);
+              // console.log("response.data:", response.data);
+
               if (response.status === 200) {
                 setApiKeyStatus(data.api_key_status);
                 setShowPaymentModal(true);
-                console.log("api_key_status:", data.api_key_status);
+
+                // console.log("api_key_status:", data.api_key_status);
                 setSuccess(true);
               } else {
                 setError(data.detail || "Unexpected response from server.");
               }
-              _context.next = 14;
+              _context.next = 13;
               break;
-            case 11:
-              _context.prev = 11;
+            case 10:
+              _context.prev = 10;
               _context.t0 = _context["catch"](1);
               setError(((_error$response = _context.t0.response) === null || _error$response === void 0 || (_error$response = _error$response.data) === null || _error$response === void 0 ? void 0 : _error$response.detail) || _context.t0.MessageFixed || "Error fetching API key status. Check your network connectivity and try again.");
-            case 14:
-              _context.prev = 14;
+            case 13:
+              _context.prev = 13;
               setLoading(false);
-              return _context.finish(14);
-            case 17:
+              return _context.finish(13);
+            case 16:
             case "end":
               return _context.stop();
           }
-        }, _callee, null, [[1, 11, 14, 17]]);
+        }, _callee, null, [[1, 10, 13, 16]]);
       }));
       return function fetchApiKeyStatus() {
         return _ref2.apply(this, arguments);
@@ -34500,7 +34552,9 @@ function src_Paysofter_0(_ref) {
     setError(null);
     setLoading(false);
   };
-  console.log("Paysofter:", src_Paysofter_0);
+
+  // console.log('index amount:', amount)
+
   return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement((external_commonjs_react_commonjs2_react_amd_React_root_React_default()).Fragment, null, (loading || error) && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Modal, {
     show: loading || error,
     onHide: handleClose,

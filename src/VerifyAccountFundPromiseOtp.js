@@ -48,6 +48,8 @@ const VerifyAccountFundPromiseOtp = ({
   const [showConfirmPaysofterPromise, setShowConfirmPaysofterPromise] =
     useState(false);
   const [hasHandledSuccess, setHasHandledSuccess] = useState(false);
+  const [hasHandledPaymentSuccess, setHasHandledPaymentSuccess] = useState(false);
+  // const [hasHandledCallbackSuccess, setHasHandledCallbackSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
@@ -93,7 +95,7 @@ const VerifyAccountFundPromiseOtp = ({
         `${PAYSOFTER_API_URL}/api/verify-otp/`,
         otpData
       );
-      // console.log(data);
+      console.log(data);
       setSuccess(true);
     } catch (error) {
       setError(
@@ -144,7 +146,7 @@ const VerifyAccountFundPromiseOtp = ({
   }, [onSuccess]);
 
   useEffect(() => {
-    if (success && !hasHandledSuccess) {
+    if (success && !hasHandledPaymentSuccess) {
       const createPaysofterPromise = async () => {
         setPromiseLoading(true);
         setPromiseError("");
@@ -171,9 +173,9 @@ const VerifyAccountFundPromiseOtp = ({
             `${PAYSOFTER_API_URL}/api/create-promise/`,
             paysofterPromiseData
           );
-          // console.log(data);
+          console.log(data);
           setPromiseSuccess(true);
-          setHasHandledSuccess(true);
+          setHasHandledPaymentSuccess(true);
         } catch (error) {
           setPromiseError(
             error.response && error.response.data.detail
@@ -189,7 +191,7 @@ const VerifyAccountFundPromiseOtp = ({
     }
   }, [
     success,
-    hasHandledSuccess,
+    hasHandledPaymentSuccess,
     email,
     sendOtpData?.amount,
     paysofterPublicKey,

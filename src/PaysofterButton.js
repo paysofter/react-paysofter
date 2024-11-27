@@ -108,7 +108,7 @@ function PaysofterButton({
                 {showPromiseOption && (
                   <div className="py-1">
                     <Button
-                      variant="primary"
+                      variant={selectedPaymentOption === "promise" ? "primary" : "outline-primary"}
                       onClick={() => handlePaymentOptionChange("promise")}
                       className={
                         selectedPaymentOption === "promise" ? "active" : ""
@@ -123,7 +123,8 @@ function PaysofterButton({
                 {showCardOption && (
                   <div className="py-1">
                     <Button
-                      variant="outline-primary"
+                      // variant="outline-primary"
+                      variant={selectedPaymentOption === "card" ? "primary" : "outline-primary"}
                       onClick={() => handlePaymentOptionChange("card")}
                       className={
                         selectedPaymentOption === "card" ? "active" : ""
@@ -137,7 +138,8 @@ function PaysofterButton({
                 {showFundOption && (
                   <div className="py-1">
                     <Button
-                      variant="outline-primary"
+                      // variant="outline-primary"
+                      variant={selectedPaymentOption === "fund" ? "primary" : "outline-primary"}
                       onClick={() => handlePaymentOptionChange("fund")}
                       className={
                         selectedPaymentOption === "fund" ? "active" : ""

@@ -7,8 +7,8 @@ import PaysofterButton from "./PaysofterButton";
 import PaysofterButtonTest from "./PaysofterButtonTest";
 import Loader from "./Loader";
 import MessageFixed from "./MessageFixed";
-import { PAYSOFTER_API_URL } from "./config/apiConfig";
-
+import { PAYSOFTER_API_URL } from "./config/apiConfig"; 
+  
 export function Paysofter({
   amount, 
   currency,
@@ -32,6 +32,12 @@ export function Paysofter({
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(null);
 
+  console.log("PAYSOFTER_API_URL:", PAYSOFTER_API_URL)
+  console.log("paysofterPublicKey:", paysofterPublicKey) 
+  console.log("email:", email)
+  console.log("amount:", amount)
+  console.log("currency:", currency)
+
   useEffect(() => {
     const fetchApiKeyStatus = async () => {
       setLoading(true);
@@ -44,7 +50,7 @@ export function Paysofter({
         );
 
         const data = response.data;
-        // console.log("data:", data);
+        console.log("data:", data);
         // console.log("response.data:", response.data);
 
         if (response.status === 200) {
