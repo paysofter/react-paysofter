@@ -8,7 +8,7 @@ import Message from "./Message";
 import MessageFixed from "./MessageFixed";
 import Loader from "./Loader";
 import { formatAmount } from "./FormatAmount";
-import { PAYSOFTER_API_URL } from "./config/apiConfig"; 
+import { PAYSOFTER_API_URL } from "./config/apiConfig";
 import axios from "axios";
 import { generateRandomNum } from "./GenerateRandomNum";
 import SuccessScreenTest from "./SuccessScreenTest";
@@ -300,6 +300,11 @@ function CardPaymentTest({
                 </span>
               </Button>
             </div>
+
+            <p style={{ fontSize: "12px", color: "green" }} className="py-3 text-center">
+              Note: This is a test transaction; dummy payment details were automatically generated.
+            </p>
+
             <div className="py-2 d-flex justify-content-center">
               {error && <MessageFixed variant="danger">{error}</MessageFixed>}
             </div>

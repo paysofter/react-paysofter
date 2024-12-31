@@ -329,6 +329,10 @@ const PaysofterAccountFundTest = ({
               <div className="py-2 d-flex justify-content-center">
                 <Form.Text className="text-danger">{error}</Form.Text>
               </div>
+
+              <p style={{ fontSize: "12px", color: "green" }} className="py-3 text-center">
+                Note: This is a test transaction; dummy payment details were automatically generated.
+              </p>
             </Form>
           </Col>
         </Row>

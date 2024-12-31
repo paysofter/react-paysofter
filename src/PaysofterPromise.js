@@ -45,6 +45,14 @@ const PaysofterPromise = ({
     setShowInfoModal(false);
   };
 
+  const [showExpectedDurationInfoModal, setShowExpectedDurationInfoModal] = useState(false);
+  const handleExpectedDurationInfoModalShow = () => {
+    setShowExpectedDurationInfoModal(true);
+  };
+  const handleExpectedDurationInfoModalClose = () => {
+    setShowExpectedDurationInfoModal(false);
+  };
+
   const submitHandler = (e) => {
     e.preventDefault();
   };
@@ -99,7 +107,7 @@ const PaysofterPromise = ({
                       Paysofter Account Fund) until a specified condition has
                       been fulfilled.{" "}
                       <a
-                        href="https://paysofter.com/promise/"
+                        href="https://paysofter.com/about-paysofter-promise/"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -130,7 +138,52 @@ const PaysofterPromise = ({
               </Form.Group>
 
               <Form.Group controlId="duration">
-                <Form.Label>Expected Settlement Duration</Form.Label>
+                <Row>
+                  <Col md={10}>
+                    <Form.Label>Expected Settlement Duration</Form.Label>
+                  </Col>
+                  <Col md={2}>
+                    <Button
+                      variant="outline"
+                      onClick={handleExpectedDurationInfoModalShow}
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title="This represents the seller's estimated fulfillment timeframe for the Promise order."
+                    >
+                      <i className="fa fa-info-circle"> </i>
+                    </Button>
+
+                    <Modal show={showExpectedDurationInfoModal} onHide={handleExpectedDurationInfoModalClose}>
+                      <Modal.Header closeButton>
+                        <Modal.Title className="text-center w-100 py-2">
+                          Expected Settlement Duration
+                        </Modal.Title>
+                      </Modal.Header>
+                      <Modal.Body>
+                        <p className="text-center">
+                          This represents the seller's estimated fulfillment timeframe for the Promise order.{" "}
+                          <a
+                            href="https://paysofter.com/about-paysofter-promise/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {" "}
+                            <span>
+                              <Button
+                                variant="primary"
+                                size="sm"
+                                className="text-center py-2"
+                              >
+                                Learn more
+                              </Button>
+                            </span>
+                          </a>
+                        </p>
+                      </Modal.Body>
+                    </Modal>
+                  </Col>
+                </Row>
+
                 <Select
                   options={durationChoices?.map(([value, label]) => ({
                     value,
