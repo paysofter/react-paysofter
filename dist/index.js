@@ -32256,6 +32256,16 @@ var PaysofterPromise = function PaysofterPromise(_ref) {
   var handleInfoModalClose = function handleInfoModalClose() {
     setShowInfoModal(false);
   };
+  var _useState9 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
+    _useState10 = PaysofterPromise_slicedToArray(_useState9, 2),
+    showExpectedDurationInfoModal = _useState10[0],
+    setShowExpectedDurationInfoModal = _useState10[1];
+  var handleExpectedDurationInfoModalShow = function handleExpectedDurationInfoModalShow() {
+    setShowExpectedDurationInfoModal(true);
+  };
+  var handleExpectedDurationInfoModalClose = function handleExpectedDurationInfoModalClose() {
+    setShowExpectedDurationInfoModal(false);
+  };
   var submitHandler = function submitHandler(e) {
     e.preventDefault();
   };
@@ -32299,7 +32309,7 @@ var PaysofterPromise = function PaysofterPromise(_ref) {
   }, "Paysofter Promise")), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Modal.Body, null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("p", {
     className: "text-center"
   }, "Paysofter Promise option escrows or places in custody the payment made to a seller (using the payer's funded Paysofter Account Fund) until a specified condition has been fulfilled.", " ", /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("a", {
-    href: "https://paysofter.com/promise/",
+    href: "https://paysofter.com/about-paysofter-promise/",
     target: "_blank",
     rel: "noopener noreferrer"
   }, " ", /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("span", null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Button, {
@@ -32318,7 +32328,36 @@ var PaysofterPromise = function PaysofterPromise(_ref) {
     isDisabled: true
   })), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Form.Group, {
     controlId: "duration"
-  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Form.Label, null, "Expected Settlement Duration"), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(StateManagedSelect$1, {
+  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Row, null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Col, {
+    md: 10
+  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Form.Label, null, "Expected Settlement Duration")), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Col, {
+    md: 2
+  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Button, {
+    variant: "outline",
+    onClick: handleExpectedDurationInfoModalShow,
+    "data-toggle": "tooltip",
+    "data-placement": "top",
+    title: "This represents the seller's estimated fulfillment timeframe for the Promise order."
+  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("i", {
+    className: "fa fa-info-circle"
+  }, " ")), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Modal, {
+    show: showExpectedDurationInfoModal,
+    onHide: handleExpectedDurationInfoModalClose
+  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Modal.Header, {
+    closeButton: true
+  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Modal.Title, {
+    className: "text-center w-100 py-2"
+  }, "Expected Settlement Duration")), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Modal.Body, null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("p", {
+    className: "text-center"
+  }, "This represents the seller's estimated fulfillment timeframe for the Promise order.", " ", /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("a", {
+    href: "https://paysofter.com/about-paysofter-promise/",
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }, " ", /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("span", null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Button, {
+    variant: "primary",
+    size: "sm",
+    className: "text-center py-2"
+  }, "Learn more")))))))), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(StateManagedSelect$1, {
     options: durationChoices === null || durationChoices === void 0 ? void 0 : durationChoices.map(function (_ref2) {
       var _ref3 = PaysofterPromise_slicedToArray(_ref2, 2),
         value = _ref3[0],
@@ -32397,7 +32436,7 @@ function QrPayment() {
 }
 /* harmony default export */ const src_QrPayment = (QrPayment);
 ;// CONCATENATED MODULE: ./src/images/logo.png
-/* harmony default export */ const logo = ("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAA8CAMAAACn4e/8AAAACXBIWXMAAAsSAAALEgHS3X78AAABYlBMVEUICR4FBhsEBBgCAxMLDCABAQ8JCCAHCCAHCRwKCiALBR4KBiEGBxwDCh0KBx0JBxsAAAoLCxsMCR4NDiIICh8ICh0ICRYMCyUDDBoBAx79/f8AByICDiQEDB/+//8CCiAABx0GBhMMCCUBCiQPBSEPDxwQESYCDygACCcEDh8OT3QMAxtDlLkTFCIABCYBEy9kr9QEOl4ygqtcm775+f8BK05ovetjwOY7bpItXX4kJC8/QEtQUF0AGz0BDC5HR1Jop8qVlqBkqNNms9tlvOQbGynz8/5ludsuLjmPj5nS0t8AHzYAIkFlZXE2OEagoKzd3ers7PfKytZ4eYZIs+Lm5fNjoL9XV2SlpbE6c5B+f4ooYoBvt95XstRkuOMCMVPAwMw2h6xPkLHX1+OpqbZCapGFhZAmVXJLqtFPnsW1tcFubnpcXWYzi7Ive6ZEe54FP18QYIppwfCJiZMuSmFXeZQwYA5dAAALvElEQVRYw5RYi1/bOBKWbdmSYlvGrzghNk5s5+GkJKH03ZIrBMpuw+6y3Zb+aHkUeruU3V+ft/f/38hAS3t3rTs4tvyQPs03o5kRCH0unFsIET3LEsmVpbyWN1PCs4pv1ijnUYS4TkiaRiBm1R44UcTtvGY2kwC6ZBn0djHDHqXoa8I5FSC6bvm+ZftmHoZpN0i6oZDuxQWuURh13KDRDZpm7lJJEhPTHYe5zMOYoW8INU2iacTMJc65a8pmfTjs9RqNBpx7w6ZpNpuN4XDYaMA17UGr15Ac245ioicaw9hDzAVdvorh+wIEMHLTGehBc3Zya/fWJdmFu99BoLF7q2ifjLpSq1oDFEKiiHke8IW+BVJczFrEnCypX7+yvr7+4cONc7kppGh9KBridv10K82rNehg1/IcIDD7hk3ODINM04z4IOilu5uPj65evfpGnL6Q10dvrr6Gv1cHbycmgGDcbrs5w64LhmdfN7wQ5FPfGQyCdLaz+X7Sa5pxFwySxnEqpCfavTQNZyNodN/vLa+krhcFAQ6ShHmMAVllQCi1B1k2TLeWN/vDoFqtmUni+LZtO47jOVnm+5VA+fn+7qTXifsA0uMBiJOAUIPSb7rwOYjFs0HQBU0ARJg10flZZ9NElQpCelL/e2/6dhRKAmSiJ0ESYDfoElRCzlB8QIEFCXTt9Ye6Vc0jIMIH8aLIA238iNcnk1vTg6ujbn99eaveAR0CN89DVFYAxKyZTlBvjP69c73eIV6TaLDUQcTbilWtVtt+MBne2t9/O+pPd1ZCBhjMtms1vxQC0AF8mXkkaUlQH43CRm8y7KWNRq8wODQasWnWlBBUmezuH7x5f3A86/qYJY4N4KUwYC0iDVSRckzqwSgdjQ6vX4fjSzk8PITf9dePH796dbxlQsgCq3HL4qVAAEWDz82oiQJSb5wsj9fW1u5/krVCzlvjV48BZWcW+tjRNUKgYzl7QFjRswpnhsea5snewXi6Nv5SYPzpeDwdTwXI6ZWtXsdxqCniFy/nXBCFga8KlpAZhsfT1+/eLS29e3d2XhJydjkUD5aArsf7x7NRknFayyOia2VAdJhLbPoUUYdG8Wx52k/TZiFg8PNG3KiDiFj8fv/g6P368izWMx3VaqaelQFBBUgE3xsOx9HW8l6/yXwbYwecFNt2segZYw6mpDf8/XT/eNQfH8/iiq775UGAKgFCfapzFq+AJkMgz+Ec1iYp6ISMpqVRM+ymz8f7R1uT/qudlUaiExNAeDnDEyLogvjBde4ACKz4BNzG4JVMJ7FBKxWYtB7HUqf5brx5vNJI+zdOtya6DrkEvL+ciEVNTERh0MoFCInyyIfoF0NqF2QBip65zb/vv12ZdKT+welWLyDwEkxJy4EAJUSwAiAsFXTVgYmoZtKKDlkGYqRw1Mogs8xw1p0kgyaArIwg6Ag9SoNwDpRxTU8KENAk08wcgpKjeb7j1MBRIwaFSSfPOx09ceQiQGoaWE7jZekCkKIDlAUR5BPQJNMpuBvlOoLiiNaiKAZPc6EKcJxAs9L+dHlmYg3cUtf594EwBmVBuAL5pJdlGgG+NU60QeZY8AoiLosi7DicGiFE4VnMNE1Y6jtAdOHGKYnzUGTGhg4exX2sEQY0DWD2mhZoGJYOgCC3DklrFkrg+xDykP8dIAjFcQzhXoA0oyDJMss3mmZEINxgL8LY9TxRbVrVdr1/sLzVwMgksMRK5pMChCA/ApBaLOgy826a6BjKRlE6dtywO+qKoxviHKTZvwGFhCWio4a+A0QjkLpi5FfD0c74JIxSiFJ1SFZpXOQsqB3r4rbRqEM4g8y4vFJ3hOro+0B8M4IEaeHJ270rz58/v30m0Hh+AteT27cvPTmdHjciASKSUXmbFCBNNhhYvaW1D+uiVjyAQvLm+ubmzf39zc3p5k24PS8o1w/Gh3lN0YogT7SSYaWgy4+kYODwdLL05sonOToqfsfHl55deXPYrbXaZ/4LlfrXBmfUYBjGNwJYD4R4wlc4j6Fc7AozC0MX5h6NzpsTaKTiRRqaLpRppMQakSRGJe5qgSwFmgR1/Vn9g6jPmAc0sAB2Nxj7UE4XvAcE6gzsG7Irw8FYKZpcD77nUGy4noQ8YlyAFBhAImMChKHiVoDUA40YyIXn1EWXtgrn/f6nyJ5rODJ3JBlhiQYfQYrS1NMgbEAlDaW0dm5aIwgMxAyFSgwZSHIvYfx/EFdCyLJch7pYMpCHCSEfv2eBCzMWhHnoYoh6p153kd9hvkw7nvFxUpe6/bcYGMGuTFFlSaauLxnnIATI8VgQuIEA8T6xAckStop21VdcJMF2pBSIL8sdqbX48w9tpSpLGF/+HLQQG05P7NIuRqCS68luq6VsSL6MvHLR10e4Za/Oz88/+K3V6ij4bGEWA8IO7QIEXOJilsyTcav11/aDDcWlUKSVAqG49c/5h89+/HXhmVoUPtyxHAzJA7uy0fGBG8xk8DWxs7BsR3bgrP6ysL26CJpbjiNjS3awBbwD88j3PIPBHvjzdCy76t35Fy117odfr91RbMnC0MMGGGpgVyiCO75EsQHlEbYsBYOy9ty9hVVVqap37ki2hS3XlhQbpkRlmBH1GJLwJ68708RVn83fUxfbc78s/EO1FUVVW0q7WsUwuIzBwFVVhYeSY7mq0tlQ1Y60qP64cGdusdV+eU9RqG2rysaiolattqIqkozBatQzPgexldUHd+fai3OrC/fmnj55+PLhvzZac3882pBcZfUFDPXHo+2XT/5SsHr3z2vzD5+q7bmn8/Mvn9xtv5zf3v7TVlo/bV+79ggm2PrpxcMnvynivx/uF7aqtlYX7s79pxOraXFcB4Kxrc7GYBJplGh4Ogh0sG++6WQbzBxsHIPz4RAScgpMyCGT2/x/eOWZ3WXnMbtvd3UIipG71O5yVcucp3vX2MOm77emreioK5HSWafBWu/7dtMRFVpf1nt95Wrp3PNzfsLC9mjpZPbLJ6MbftXbfrMjhrbz8SNIiBRc3uRFry+BstxyvtQdv2gUiM61UK4lzq0Vab3PAq5uGjta64oL/lLnZGll2pjznSlou0mJwANPTsP/qKYASLk1xl2UEjYtXppGL/mTzqygW13R2ewahZCd6QgPNXNHQvkyHvOTKfF7dSVZrM9jd+EqAQGnPvMeP6pwjDLm91PXcEQ9OKPNffvEl24AObuYZ60zfRfbq15xHA5F3asBxKbYPUDA5qy79ebMK7Om2Aow82H6Vem+vcATQdgFp4DkzFb1tszu5ZAJwsT8XKfCqtWydk8ICXoolboz8aPJUP+dLikd5te6P6W20kcei/eG9bsGvYMIYZcASUeJJ4KVeQUFYmTyqkvMbjpGkRRX2w3P3ZFjencnPuw+SILOHUD4F7dE0TgNDxKpfgD59pXLB+t1TgIvNptVW/dSHu56SaXZdEXZbmNRFsVhp3uLLT81Tae3QoF7DWixghSVNt6Ya9O83G3m1pR+LjNsQWu9IibHEWNU1MbVxqy5enXOGL2v4lobZ/bgUXyBwuk2C+LgCO5hdVfrjaWmNdqZVlX6QpJ9/sGORc2hgtn+A49NVVzesfOVVTwrD+XzXihkUuQxxXjz892uUCitWh1SyLykNC+V4Ko47co4SIvVYuJ/7vHQej8IJ5Mo8SQUkt6GwL3Ebd0HClegGYgMHpJPXuyLGXmBJ/1RgpLMRPJ2j8cmQeAt5OfdytyTEgYUSjmXiZTpRMIOfabSatXqjoR8kA+z2YMv5Ay5ChaM2CDKC3gXGgEWQq2AE478SA5twk+sUfqSTRjih3KElmQS4XCWEKRD62XAHmb+dMrC2XwxPIkohKL7CSg0n3thtGBYvMAkCkdyEk3m85+detFpjR8TCavFGEVv1yK/u61P4EP01Sl/ozn8hQG/d1oDCFKZh+9GO/7iDfoeSJ/9j3v/CUiYYMg5Gp+3/+MwEnCURejL3wH58sP4BchYDiBDd/W2coycmM/QvvnfQ/wFyL8OzupCG7Qu8QAAAABJRU5ErkJggg==");
+/* harmony default export */ const logo = ("/images/logo.4c530c0b.png");
 // EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js!./src/Paysofter.css
 var Paysofter = __webpack_require__(360);
 ;// CONCATENATED MODULE: ./src/Paysofter.css
@@ -32927,7 +32966,13 @@ function CardPaymentTest(_ref) {
     variant: "primary",
     type: "submit",
     disabled: !isFormValid() || loading
-  }, "Pay", " ", /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("span", null, "(", formatAmount(amount), " ", currency, ")"))), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", {
+  }, "Pay", " ", /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("span", null, "(", formatAmount(amount), " ", currency, ")"))), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("p", {
+    style: {
+      fontSize: "12px",
+      color: "green"
+    },
+    className: "py-3 text-center"
+  }, "Note: This is a test transaction; dummy payment details were automatically generated."), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", {
     className: "py-2 d-flex justify-content-center"
   }, error && /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_MessageFixed, {
     variant: "danger"
@@ -33543,7 +33588,13 @@ var PaysofterAccountFundTest = function PaysofterAccountFundTest(_ref) {
     className: "py-2 d-flex justify-content-center"
   }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Form.Text, {
     className: "text-danger"
-  }, error))))));
+  }, error)), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("p", {
+    style: {
+      fontSize: "12px",
+      color: "green"
+    },
+    className: "py-3 text-center"
+  }, "Note: This is a test transaction; dummy payment details were automatically generated.")))));
 };
 /* harmony default export */ const src_PaysofterAccountFundTest = (PaysofterAccountFundTest);
 ;// CONCATENATED MODULE: ./src/ConfirmPaysofterPromiseTest.js
@@ -34121,7 +34172,13 @@ var PaysofterPromiseFundTest = function PaysofterPromiseFundTest(_ref) {
     onClick: submitHandler
   }, "Pay", " ", /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("span", null, "(", formatAmount(amount), " ", currency, ")"))), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", {
     className: "py-2 d-flex justify-content-center"
-  })))));
+  }), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("p", {
+    style: {
+      fontSize: "12px",
+      color: "green"
+    },
+    className: "py-3 text-center"
+  }, "Note: This is a test transaction; dummy payment details were automatically generated.")))));
 };
 /* harmony default export */ const src_PaysofterPromiseFundTest = (PaysofterPromiseFundTest);
 ;// CONCATENATED MODULE: ./src/PaysofterPromiseTest.js
@@ -34178,6 +34235,16 @@ var PaysofterPromiseTest = function PaysofterPromiseTest(_ref) {
   };
   var handleInfoModalClose = function handleInfoModalClose() {
     setShowInfoModal(false);
+  };
+  var _useState9 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
+    _useState10 = PaysofterPromiseTest_slicedToArray(_useState9, 2),
+    showExpectedDurationInfoModal = _useState10[0],
+    setShowExpectedDurationInfoModal = _useState10[1];
+  var handleExpectedDurationInfoModalShow = function handleExpectedDurationInfoModalShow() {
+    setShowExpectedDurationInfoModal(true);
+  };
+  var handleExpectedDurationInfoModalClose = function handleExpectedDurationInfoModalClose() {
+    setShowExpectedDurationInfoModal(false);
   };
   var submitHandler = function submitHandler(e) {
     e.preventDefault();
@@ -34241,7 +34308,36 @@ var PaysofterPromiseTest = function PaysofterPromiseTest(_ref) {
     isDisabled: true
   })), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Form.Group, {
     controlId: "duration"
-  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Form.Label, null, "Expected Settlement Duration"), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(StateManagedSelect$1, {
+  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Row, null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Col, {
+    md: 10
+  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Form.Label, null, "Expected Settlement Duration")), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Col, {
+    md: 2
+  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Button, {
+    variant: "outline",
+    onClick: handleExpectedDurationInfoModalShow,
+    "data-toggle": "tooltip",
+    "data-placement": "top",
+    title: "This represents the seller's estimated fulfillment timeframe for the Promise order."
+  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("i", {
+    className: "fa fa-info-circle"
+  }, " ")), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Modal, {
+    show: showExpectedDurationInfoModal,
+    onHide: handleExpectedDurationInfoModalClose
+  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Modal.Header, {
+    closeButton: true
+  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Modal.Title, {
+    className: "text-center w-100 py-2"
+  }, "Expected Settlement Duration")), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Modal.Body, null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("p", {
+    className: "text-center"
+  }, "This represents the seller's estimated fulfillment timeframe for the Promise order.", " ", /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("a", {
+    href: "https://paysofter.com/about-paysofter-promise/",
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }, " ", /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("span", null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Button, {
+    variant: "primary",
+    size: "sm",
+    className: "text-center py-2"
+  }, "Learn more")))))))), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(StateManagedSelect$1, {
     options: durationChoices === null || durationChoices === void 0 ? void 0 : durationChoices.map(function (_ref2) {
       var _ref3 = PaysofterPromiseTest_slicedToArray(_ref2, 2),
         value = _ref3[0],
