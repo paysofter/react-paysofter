@@ -32436,7 +32436,7 @@ function QrPayment() {
 }
 /* harmony default export */ const src_QrPayment = (QrPayment);
 ;// CONCATENATED MODULE: ./src/images/logo.png
-/* harmony default export */ const logo = ("/images/logo.4c530c0b.png");
+/* harmony default export */ const logo = ("/images/logo.6c9c301d.png");
 // EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js!./src/Paysofter.css
 var Paysofter = __webpack_require__(360);
 ;// CONCATENATED MODULE: ./src/Paysofter.css
