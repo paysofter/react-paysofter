@@ -10,7 +10,8 @@ import BankPayment from "./BankPayment";
 import TransferPayment from "./TransferPayment";
 import QrPayment from "./QrPayment";
 import { formatAmount } from "./FormatAmount";
-import logoImage from "./images/logo.png";
+// import logoImage from "./images/logo.png";
+const logoImage = new URL("./images/logo.png", import.meta.url).href;
 import "./Paysofter.css";
 
 function PaysofterButton({

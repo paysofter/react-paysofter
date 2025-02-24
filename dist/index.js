@@ -1095,6 +1095,14 @@ module.exports = "data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%
 
 /***/ }),
 
+/***/ 306:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "ddb2e68ea6f990419c5a.png";
+
+/***/ }),
+
 /***/ 156:
 /***/ ((module) => {
 
@@ -1274,6 +1282,11 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		__webpack_require__.p = "./dist/";
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
@@ -32435,8 +32448,6 @@ function QrPayment() {
   }, "Visa QR  "), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", null, "Coming soon...")));
 }
 /* harmony default export */ const src_QrPayment = (QrPayment);
-;// CONCATENATED MODULE: ./src/images/logo.png
-/* harmony default export */ const logo = ("/images/logo.6c9c301d.png");
 // EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js!./src/Paysofter.css
 var Paysofter = __webpack_require__(360);
 ;// CONCATENATED MODULE: ./src/Paysofter.css
@@ -32487,7 +32498,8 @@ function PaysofterButton_arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
-
+// import logoImage from "./images/logo.png";
+var logoImage = new URL(/* asset import */ __webpack_require__(306), __webpack_require__.b).href;
 
 function PaysofterButton(_ref) {
   var amount = _ref.amount,
@@ -32550,7 +32562,7 @@ function PaysofterButton(_ref) {
   }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", {
     className: "py-2"
   }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("img", {
-    src: logo,
+    src: logoImage,
     alt: "Paysofter",
     style: {
       maxHeight: "40px",
@@ -34363,6 +34375,8 @@ var PaysofterPromiseTest = function PaysofterPromiseTest(_ref) {
   }, "Submit", " "))))));
 };
 /* harmony default export */ const src_PaysofterPromiseTest = (PaysofterPromiseTest);
+;// CONCATENATED MODULE: ./src/images/logo.png
+/* harmony default export */ const logo = ("/images/logo.png");
 ;// CONCATENATED MODULE: ./src/PaysofterButtonTest.js
 function PaysofterButtonTest_slicedToArray(r, e) { return PaysofterButtonTest_arrayWithHoles(r) || PaysofterButtonTest_iterableToArrayLimit(r, e) || PaysofterButtonTest_unsupportedIterableToArray(r, e) || PaysofterButtonTest_nonIterableRest(); }
 function PaysofterButtonTest_nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }

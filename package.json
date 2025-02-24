@@ -1,6 +1,6 @@
 {
   "name": "react-paysofter",
-  "version": "1.2.3",  
+  "version": "1.2.4",  
   "description": "This is a ReactJS package for integrating Paysofter payment gateway into your ReactJS application.",
   "main": "./dist/index.js",
   "scripts": {
