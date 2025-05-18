@@ -13,6 +13,7 @@ export function Paysofter({
   amount, 
   currency,
   email,
+  promises,
   paysofterPublicKey,
   onSuccess,
   onClose,
@@ -37,6 +38,7 @@ export function Paysofter({
   console.log("email:", email)
   console.log("amount:", amount)
   console.log("currency:", currency)
+  console.log("promises:", promises)
 
   useEffect(() => {
     const fetchApiKeyStatus = async () => {
@@ -118,6 +120,7 @@ export function Paysofter({
                     amount={amount}
                     email={email}
                     currency={currency}
+                    promises={promises}
                     paysofterPublicKey={paysofterPublicKey}
                     onSuccess={onSuccess}
                     onClose={onClose}
@@ -140,6 +143,7 @@ export function Paysofter({
                     amount={amount}
                     email={email}
                     currency={currency}
+                    promises={promises}
                     paysofterPublicKey={paysofterPublicKey}
                     onSuccess={onSuccess}
                     onClose={onClose}

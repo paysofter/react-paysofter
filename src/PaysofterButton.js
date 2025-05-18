@@ -10,14 +10,14 @@ import BankPayment from "./BankPayment";
 import TransferPayment from "./TransferPayment";
 import QrPayment from "./QrPayment";
 import { formatAmount } from "./FormatAmount";
-// import logoImage from "./images/logo.png";
-const logoImage = new URL("./images/logo.png", import.meta.url).href;
 import "./Paysofter.css";
+import logoImage from "./images/logo.png";
 
 function PaysofterButton({
   amount,
   currency,
   email,
+  promises,
   paysofterPublicKey,
   onSuccess,
   onClose,
@@ -65,6 +65,8 @@ function PaysofterButton({
   // };
 
   console.log('PaysofterButton amount:', amount)
+  // console.log("logoImage:", logoImage);
+  console.log("promises:", promises);
 
   return (
     <div>
@@ -274,6 +276,7 @@ function PaysofterButton({
                   amount={amount}
                   currency={currency}
                   email={email}
+                  promises={promises}
                   paysofterPublicKey={paysofterPublicKey}
                   onSuccess={onSuccess}
                   onClose={handleOnClosePayment}

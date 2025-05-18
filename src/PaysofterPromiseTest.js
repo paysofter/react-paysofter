@@ -10,6 +10,7 @@ const PaysofterPromiseTest = ({
   email,
   currency,
   amount,
+  promises,
   paysofterPublicKey,
   referenceId,
   qty,
@@ -57,6 +58,7 @@ const PaysofterPromiseTest = ({
   };
 
   console.log('PaysofterPromiseTest amount:', amount)
+  // console.log("promises:", promises);
 
   return (
     <Container>
@@ -67,6 +69,7 @@ const PaysofterPromiseTest = ({
             amount={amount}
             email={email}
             duration={duration}
+            promises={promises}
             paysofterPublicKey={paysofterPublicKey}
             referenceId={referenceId}
             qty={qty}

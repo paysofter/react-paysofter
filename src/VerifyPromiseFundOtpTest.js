@@ -14,6 +14,7 @@ import axios from "axios";
 const VerifyPromiseFundOtpTest = ({
   email,
   amount,
+  promises,
   paysofterPublicKey,
   qty,
   productName,
@@ -54,7 +55,7 @@ const VerifyPromiseFundOtpTest = ({
   const paysofterPromiseData = {
     email: email,
     amount: sendOtpData.amount,
-    // amount: amount,
+    promises: promises,
     public_api_key: paysofterPublicKey,
     qty: qty,
     product_name: productName,
@@ -68,6 +69,7 @@ const VerifyPromiseFundOtpTest = ({
   };
 
   // console.log('paysofterPromiseData:', paysofterPromiseData)
+  // console.log("promises:", promises);
 
   const handleCreatePromise = async (paysofterPromiseData) => {
     try {

@@ -13,6 +13,7 @@ import axios from "axios";
 const PaysofterAccountFundPromise = ({
   email,
   amount,
+  promises,
   paysofterPublicKey,
   referenceId,
   qty,
@@ -113,7 +114,8 @@ const PaysofterAccountFundPromise = ({
       public_api_key: paysofterPublicKey,
     };
 
-    console.log("debitAccountData:", debitAccountData);
+    // console.log("debitAccountData:", debitAccountData);
+    // console.log("promises:", promises);
 
     setLoading(true);
     setError("");
@@ -156,6 +158,7 @@ const PaysofterAccountFundPromise = ({
       {showVerifyAccountFundPromiseOtp ? (
         <VerifyAccountFundPromiseOtp
           amount={amount}
+          promises={promises}
           paysofterPublicKey={paysofterPublicKey}
           referenceId={referenceId}
           qty={qty}

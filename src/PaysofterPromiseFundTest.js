@@ -12,6 +12,7 @@ import { generateRandomNum } from "./GenerateRandomNum";
 const PaysofterPromiseFundTest = ({
   email,
   amount,
+  promises,
   paysofterPublicKey,
   referenceId,
   qty,
@@ -87,6 +88,7 @@ const PaysofterPromiseFundTest = ({
   };
 
   // console.log('debitAccountData:', debitAccountData)
+  console.log("promises:", promises);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -123,6 +125,7 @@ const PaysofterPromiseFundTest = ({
       {showVerifyAccountFundPromiseOtp ? (
         <VerifyPromiseFundOtpTest
           amount={amount}
+          promises={promises}
           paysofterPublicKey={paysofterPublicKey}
           referenceId={referenceId}
           qty={qty}

@@ -48,11 +48,11 @@ module.exports = {
           {
             loader: "url-loader",
             options: {
-              limit: 8192,
+              limit: 20000,
               name: "[name].[ext]",
               // name: "[name].[hash:8].[ext]",
               outputPath: "images/",
-              publicPath: "/images/",
+              publicPath: "images/",
             },
           },
         ],

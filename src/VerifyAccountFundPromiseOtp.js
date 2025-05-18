@@ -18,6 +18,7 @@ import axios from "axios";
 const VerifyAccountFundPromiseOtp = ({
   email,
   amount,
+  promises,
   paysofterPublicKey,
   qty,
   productName,
@@ -68,6 +69,7 @@ const VerifyAccountFundPromiseOtp = ({
     account_id: sendOtpData?.account_id,
     amount: sendOtpData?.amount,
     // amount: amount,
+    promises: promises,
     currency: currency,
     public_api_key: paysofterPublicKey,
     created_at: createdAt,
@@ -78,6 +80,7 @@ const VerifyAccountFundPromiseOtp = ({
     security_code: sendOtpData.security_code,
     amount: sendOtpData.amount,
     // amount: amount,
+    promises: promises,
     public_api_key: paysofterPublicKey,
     qty: qty,
     product_name: productName,
@@ -85,6 +88,7 @@ const VerifyAccountFundPromiseOtp = ({
     created_at: createdAt,
   };
   // console.log("debitAccountData:", debitAccountData);
+  // console.log("promises:", promises);
 
   const handleVerifyEmailOtp = async () => {
     setLoading(true);
@@ -156,6 +160,7 @@ const VerifyAccountFundPromiseOtp = ({
             email: email,
             amount: sendOtpData.amount,
             // amount: amount,
+            promises: promises,
             public_api_key: paysofterPublicKey,
             qty: qty,
             product_name: productName,
@@ -168,6 +173,7 @@ const VerifyAccountFundPromiseOtp = ({
           };
 
           // console.log("paysofterPromiseData:", paysofterPromiseData);
+          console.log("promises:", promises);
 
           const { data } = await axios.post(
             `${PAYSOFTER_API_URL}/api/create-promise/`,
@@ -194,6 +200,7 @@ const VerifyAccountFundPromiseOtp = ({
     hasHandledPaymentSuccess,
     email,
     sendOtpData?.amount,
+    promises,
     paysofterPublicKey,
     qty,
     productName,
@@ -285,8 +292,8 @@ const VerifyAccountFundPromiseOtp = ({
                 {resendLoading
                   ? "Resending OTP..."
                   : resendDisabled
-                  ? `Resend OTP (${countdown}sec)`
-                  : "Resend OTP"}
+                    ? `Resend OTP (${countdown}sec)`
+                    : "Resend OTP"}
               </Button>
             </div>
           </Col>
