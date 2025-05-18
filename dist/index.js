@@ -31475,6 +31475,302 @@ var PaysofterAccountFund = function PaysofterAccountFund(_ref) {
   }, error))))));
 };
 /* harmony default export */ const src_PaysofterAccountFund = (PaysofterAccountFund);
+;// CONCATENATED MODULE: ./node_modules/react-bootstrap/esm/CardBody.js
+"use client";
+
+
+
+
+
+const CardBody = /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_.forwardRef(({
+  className,
+  bsPrefix,
+  as: Component = 'div',
+  ...props
+}, ref) => {
+  bsPrefix = useBootstrapPrefix(bsPrefix, 'card-body');
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(Component, {
+    ref: ref,
+    className: classnames_default()(className, bsPrefix),
+    ...props
+  });
+});
+CardBody.displayName = 'CardBody';
+/* harmony default export */ const esm_CardBody = (CardBody);
+;// CONCATENATED MODULE: ./node_modules/react-bootstrap/esm/CardFooter.js
+"use client";
+
+
+
+
+
+const CardFooter = /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_.forwardRef(({
+  className,
+  bsPrefix,
+  as: Component = 'div',
+  ...props
+}, ref) => {
+  bsPrefix = useBootstrapPrefix(bsPrefix, 'card-footer');
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(Component, {
+    ref: ref,
+    className: classnames_default()(className, bsPrefix),
+    ...props
+  });
+});
+CardFooter.displayName = 'CardFooter';
+/* harmony default export */ const esm_CardFooter = (CardFooter);
+;// CONCATENATED MODULE: ./node_modules/react-bootstrap/esm/CardHeaderContext.js
+"use client";
+
+
+const context = /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_.createContext(null);
+context.displayName = 'CardHeaderContext';
+/* harmony default export */ const CardHeaderContext = (context);
+;// CONCATENATED MODULE: ./node_modules/react-bootstrap/esm/CardHeader.js
+"use client";
+
+
+
+
+
+
+
+const CardHeader = /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_.forwardRef(({
+  bsPrefix,
+  className,
+  // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+  as: Component = 'div',
+  ...props
+}, ref) => {
+  const prefix = useBootstrapPrefix(bsPrefix, 'card-header');
+  const contextValue = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useMemo)(() => ({
+    cardHeaderBsPrefix: prefix
+  }), [prefix]);
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(CardHeaderContext.Provider, {
+    value: contextValue,
+    children: /*#__PURE__*/(0,jsx_runtime.jsx)(Component, {
+      ref: ref,
+      ...props,
+      className: classnames_default()(className, prefix)
+    })
+  });
+});
+CardHeader.displayName = 'CardHeader';
+/* harmony default export */ const esm_CardHeader = (CardHeader);
+;// CONCATENATED MODULE: ./node_modules/react-bootstrap/esm/CardImg.js
+"use client";
+
+
+
+
+
+const CardImg = /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_.forwardRef(
+// Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+({
+  bsPrefix,
+  className,
+  variant,
+  as: Component = 'img',
+  ...props
+}, ref) => {
+  const prefix = useBootstrapPrefix(bsPrefix, 'card-img');
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(Component, {
+    ref: ref,
+    className: classnames_default()(variant ? `${prefix}-${variant}` : prefix, className),
+    ...props
+  });
+});
+CardImg.displayName = 'CardImg';
+/* harmony default export */ const esm_CardImg = (CardImg);
+;// CONCATENATED MODULE: ./node_modules/react-bootstrap/esm/CardImgOverlay.js
+"use client";
+
+
+
+
+
+const CardImgOverlay = /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_.forwardRef(({
+  className,
+  bsPrefix,
+  as: Component = 'div',
+  ...props
+}, ref) => {
+  bsPrefix = useBootstrapPrefix(bsPrefix, 'card-img-overlay');
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(Component, {
+    ref: ref,
+    className: classnames_default()(className, bsPrefix),
+    ...props
+  });
+});
+CardImgOverlay.displayName = 'CardImgOverlay';
+/* harmony default export */ const esm_CardImgOverlay = (CardImgOverlay);
+;// CONCATENATED MODULE: ./node_modules/react-bootstrap/esm/CardLink.js
+"use client";
+
+
+
+
+
+const CardLink = /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_.forwardRef(({
+  className,
+  bsPrefix,
+  as: Component = 'a',
+  ...props
+}, ref) => {
+  bsPrefix = useBootstrapPrefix(bsPrefix, 'card-link');
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(Component, {
+    ref: ref,
+    className: classnames_default()(className, bsPrefix),
+    ...props
+  });
+});
+CardLink.displayName = 'CardLink';
+/* harmony default export */ const esm_CardLink = (CardLink);
+;// CONCATENATED MODULE: ./node_modules/react-bootstrap/esm/CardSubtitle.js
+"use client";
+
+
+
+
+
+
+const DivStyledAsH6 = divWithClassName('h6');
+const CardSubtitle = /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_.forwardRef(({
+  className,
+  bsPrefix,
+  as: Component = DivStyledAsH6,
+  ...props
+}, ref) => {
+  bsPrefix = useBootstrapPrefix(bsPrefix, 'card-subtitle');
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(Component, {
+    ref: ref,
+    className: classnames_default()(className, bsPrefix),
+    ...props
+  });
+});
+CardSubtitle.displayName = 'CardSubtitle';
+/* harmony default export */ const esm_CardSubtitle = (CardSubtitle);
+;// CONCATENATED MODULE: ./node_modules/react-bootstrap/esm/CardText.js
+"use client";
+
+
+
+
+
+const CardText = /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_.forwardRef(({
+  className,
+  bsPrefix,
+  as: Component = 'p',
+  ...props
+}, ref) => {
+  bsPrefix = useBootstrapPrefix(bsPrefix, 'card-text');
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(Component, {
+    ref: ref,
+    className: classnames_default()(className, bsPrefix),
+    ...props
+  });
+});
+CardText.displayName = 'CardText';
+/* harmony default export */ const esm_CardText = (CardText);
+;// CONCATENATED MODULE: ./node_modules/react-bootstrap/esm/CardTitle.js
+"use client";
+
+
+
+
+
+
+const DivStyledAsH5 = divWithClassName('h5');
+const CardTitle = /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_.forwardRef(({
+  className,
+  bsPrefix,
+  as: Component = DivStyledAsH5,
+  ...props
+}, ref) => {
+  bsPrefix = useBootstrapPrefix(bsPrefix, 'card-title');
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(Component, {
+    ref: ref,
+    className: classnames_default()(className, bsPrefix),
+    ...props
+  });
+});
+CardTitle.displayName = 'CardTitle';
+/* harmony default export */ const esm_CardTitle = (CardTitle);
+;// CONCATENATED MODULE: ./node_modules/react-bootstrap/esm/Card.js
+"use client";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const Card = /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_.forwardRef(({
+  bsPrefix,
+  className,
+  bg,
+  text,
+  border,
+  body = false,
+  children,
+  // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+  as: Component = 'div',
+  ...props
+}, ref) => {
+  const prefix = useBootstrapPrefix(bsPrefix, 'card');
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(Component, {
+    ref: ref,
+    ...props,
+    className: classnames_default()(className, prefix, bg && `bg-${bg}`, text && `text-${text}`, border && `border-${border}`),
+    children: body ? /*#__PURE__*/(0,jsx_runtime.jsx)(esm_CardBody, {
+      children: children
+    }) : children
+  });
+});
+Card.displayName = 'Card';
+/* harmony default export */ const esm_Card = (Object.assign(Card, {
+  Img: esm_CardImg,
+  Title: esm_CardTitle,
+  Subtitle: esm_CardSubtitle,
+  Body: esm_CardBody,
+  Link: esm_CardLink,
+  Text: esm_CardText,
+  Header: esm_CardHeader,
+  Footer: esm_CardFooter,
+  ImgOverlay: esm_CardImgOverlay
+}));
+;// CONCATENATED MODULE: ./node_modules/react-bootstrap/esm/Badge.js
+"use client";
+
+
+
+
+
+const Badge = /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_.forwardRef(({
+  bsPrefix,
+  bg = 'primary',
+  pill = false,
+  text,
+  className,
+  as: Component = 'span',
+  ...props
+}, ref) => {
+  const prefix = useBootstrapPrefix(bsPrefix, 'badge');
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(Component, {
+    ref: ref,
+    ...props,
+    className: classnames_default()(className, prefix, pill && `rounded-pill`, text && `text-${text}`, bg && `bg-${bg}`)
+  });
+});
+Badge.displayName = 'Badge';
+/* harmony default export */ const esm_Badge = (Badge);
 ;// CONCATENATED MODULE: ./src/ConfirmPaysofterPromise.js
 // ConfirmPaysofterPromise.js
 
@@ -31527,6 +31823,7 @@ function VerifyAccountFundPromiseOtp_arrayWithHoles(r) { if (Array.isArray(r)) r
 var VerifyAccountFundPromiseOtp = function VerifyAccountFundPromiseOtp(_ref) {
   var email = _ref.email,
     amount = _ref.amount,
+    promises = _ref.promises,
     paysofterPublicKey = _ref.paysofterPublicKey,
     qty = _ref.qty,
     productName = _ref.productName,
@@ -31618,6 +31915,7 @@ var VerifyAccountFundPromiseOtp = function VerifyAccountFundPromiseOtp(_ref) {
     account_id: sendOtpData === null || sendOtpData === void 0 ? void 0 : sendOtpData.account_id,
     amount: sendOtpData === null || sendOtpData === void 0 ? void 0 : sendOtpData.amount,
     // amount: amount,
+    promises: promises,
     currency: currency,
     public_api_key: paysofterPublicKey,
     created_at: createdAt
@@ -31627,6 +31925,7 @@ var VerifyAccountFundPromiseOtp = function VerifyAccountFundPromiseOtp(_ref) {
     security_code: sendOtpData.security_code,
     amount: sendOtpData.amount,
     // amount: amount,
+    promises: promises,
     public_api_key: paysofterPublicKey,
     qty: qty,
     product_name: productName,
@@ -31634,6 +31933,7 @@ var VerifyAccountFundPromiseOtp = function VerifyAccountFundPromiseOtp(_ref) {
     created_at: createdAt
   };
   // console.log("debitAccountData:", debitAccountData);
+  // console.log("promises:", promises);
 
   var handleVerifyEmailOtp = /*#__PURE__*/function () {
     var _ref2 = VerifyAccountFundPromiseOtp_asyncToGenerator( /*#__PURE__*/VerifyAccountFundPromiseOtp_regeneratorRuntime().mark(function _callee() {
@@ -31737,6 +32037,7 @@ var VerifyAccountFundPromiseOtp = function VerifyAccountFundPromiseOtp(_ref) {
                   email: email,
                   amount: sendOtpData.amount,
                   // amount: amount,
+                  promises: promises,
                   public_api_key: paysofterPublicKey,
                   qty: qty,
                   product_name: productName,
@@ -31747,29 +32048,30 @@ var VerifyAccountFundPromiseOtp = function VerifyAccountFundPromiseOtp(_ref) {
                   created_at: createdAt,
                   payment_method: paymentMethod
                 }; // console.log("paysofterPromiseData:", paysofterPromiseData);
-                _context3.next = 6;
+                console.log("promises:", promises);
+                _context3.next = 7;
                 return lib_axios.post("".concat(PAYSOFTER_API_URL, "/api/create-promise/"), paysofterPromiseData);
-              case 6:
+              case 7:
                 _yield$axios$post2 = _context3.sent;
                 data = _yield$axios$post2.data;
                 console.log(data);
                 setPromiseSuccess(true);
                 setHasHandledPaymentSuccess(true);
-                _context3.next = 16;
+                _context3.next = 17;
                 break;
-              case 13:
-                _context3.prev = 13;
+              case 14:
+                _context3.prev = 14;
                 _context3.t0 = _context3["catch"](2);
                 setPromiseError(_context3.t0.response && _context3.t0.response.data.detail ? _context3.t0.response.data.detail : _context3.t0.detail);
-              case 16:
-                _context3.prev = 16;
+              case 17:
+                _context3.prev = 17;
                 setPromiseLoading(false);
-                return _context3.finish(16);
-              case 19:
+                return _context3.finish(17);
+              case 20:
               case "end":
                 return _context3.stop();
             }
-          }, _callee3, null, [[2, 13, 16, 19]]);
+          }, _callee3, null, [[2, 14, 17, 20]]);
         }));
         return function createPaysofterPromise() {
           return _ref4.apply(this, arguments);
@@ -31777,7 +32079,7 @@ var VerifyAccountFundPromiseOtp = function VerifyAccountFundPromiseOtp(_ref) {
       }();
       createPaysofterPromise();
     }
-  }, [success, hasHandledPaymentSuccess, email, sendOtpData === null || sendOtpData === void 0 ? void 0 : sendOtpData.amount, paysofterPublicKey, qty, productName, referenceId, sendOtpData === null || sendOtpData === void 0 ? void 0 : sendOtpData.account_id, currency, duration, createdAt, paymentMethod]);
+  }, [success, hasHandledPaymentSuccess, email, sendOtpData === null || sendOtpData === void 0 ? void 0 : sendOtpData.amount, promises, paysofterPublicKey, qty, productName, referenceId, sendOtpData === null || sendOtpData === void 0 ? void 0 : sendOtpData.account_id, currency, duration, createdAt, paymentMethod]);
   (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useEffect)(function () {
     if (promiseSuccess && !hasHandledSuccess) {
       setHasHandledSuccess(true);
@@ -31861,6 +32163,7 @@ function PaysofterAccountFundPromise_arrayWithHoles(r) { if (Array.isArray(r)) r
 var PaysofterAccountFundPromise = function PaysofterAccountFundPromise(_ref) {
   var email = _ref.email,
     amount = _ref.amount,
+    promises = _ref.promises,
     paysofterPublicKey = _ref.paysofterPublicKey,
     referenceId = _ref.referenceId,
     qty = _ref.qty,
@@ -31993,34 +32296,34 @@ var PaysofterAccountFundPromise = function PaysofterAccountFundPromise(_ref) {
               amount: amount,
               currency: currency,
               public_api_key: paysofterPublicKey
-            };
-            console.log("debitAccountData:", debitAccountData);
+            }; // console.log("debitAccountData:", debitAccountData);
+            // console.log("promises:", promises);
             setLoading(true);
             setError("");
-            _context.prev = 14;
-            _context.next = 17;
+            _context.prev = 13;
+            _context.next = 16;
             return lib_axios.post("".concat(PAYSOFTER_API_URL, "/api/send-debit-fund-account-otp/"), debitAccountData);
-          case 17:
+          case 16:
             _yield$axios$post = _context.sent;
             data = _yield$axios$post.data;
             setSuccess(true);
             setFormattedPayerEmail(data.formattedPayerEmail);
             localStorage.setItem("debitAccountData", JSON.stringify(debitAccountData));
-            _context.next = 27;
+            _context.next = 26;
             break;
-          case 24:
-            _context.prev = 24;
-            _context.t0 = _context["catch"](14);
+          case 23:
+            _context.prev = 23;
+            _context.t0 = _context["catch"](13);
             setError(_context.t0.response && _context.t0.response.data.detail ? _context.t0.response.data.detail : _context.t0.message);
-          case 27:
-            _context.prev = 27;
+          case 26:
+            _context.prev = 26;
             setLoading(false);
-            return _context.finish(27);
-          case 30:
+            return _context.finish(26);
+          case 29:
           case "end":
             return _context.stop();
         }
-      }, _callee, null, [[14, 24, 27, 30]]);
+      }, _callee, null, [[13, 23, 26, 29]]);
     }));
     return function submitHandler(_x) {
       return _ref2.apply(this, arguments);
@@ -32038,6 +32341,7 @@ var PaysofterAccountFundPromise = function PaysofterAccountFundPromise(_ref) {
   }, [success]);
   return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement((external_commonjs_react_commonjs2_react_amd_React_root_React_default()).Fragment, null, showVerifyAccountFundPromiseOtp ? /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_VerifyAccountFundPromiseOtp, {
     amount: amount,
+    promises: promises,
     paysofterPublicKey: paysofterPublicKey,
     referenceId: referenceId,
     qty: qty,
@@ -32215,16 +32519,19 @@ function PaysofterPromise_arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
+var defaultPromises = ["Payment will be held in escrow until all terms are met.", "Item will be exactly as described in the listing."];
 var PaysofterPromise = function PaysofterPromise(_ref) {
   var email = _ref.email,
     currency = _ref.currency,
     amount = _ref.amount,
+    promises = _ref.promises,
     paysofterPublicKey = _ref.paysofterPublicKey,
     referenceId = _ref.referenceId,
     qty = _ref.qty,
     productName = _ref.productName,
     onSuccess = _ref.onSuccess,
     onClose = _ref.onClose;
+  console.log("promises:", promises);
   var _useState = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)([]),
     _useState2 = PaysofterPromise_slicedToArray(_useState, 2),
     durationChoices = _useState2[0],
@@ -32241,12 +32548,21 @@ var PaysofterPromise = function PaysofterPromise(_ref) {
     setDuration = _useState4[1];
   var _useState5 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
     _useState6 = PaysofterPromise_slicedToArray(_useState5, 2),
-    showInfoModal = _useState6[0],
-    setShowInfoModal = _useState6[1];
+    acceptedPromises = _useState6[0],
+    setAcceptedPromises = _useState6[1];
+  var promisesToShow = (promises === null || promises === void 0 ? void 0 : promises.length) > 0 ? promises : defaultPromises;
   var _useState7 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
     _useState8 = PaysofterPromise_slicedToArray(_useState7, 2),
-    showPaysofterAccountFundPromise = _useState8[0],
-    setShowPaysofterAccountFundPromise = _useState8[1];
+    showInfoModal = _useState8[0],
+    setShowInfoModal = _useState8[1];
+  var _useState9 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
+    _useState10 = PaysofterPromise_slicedToArray(_useState9, 2),
+    showPaysofterAccountFundPromise = _useState10[0],
+    setShowPaysofterAccountFundPromise = _useState10[1];
+  var _useState11 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
+    _useState12 = PaysofterPromise_slicedToArray(_useState11, 2),
+    showPromisesInfoModal = _useState12[0],
+    setShowPromisesInfoModal = _useState12[1];
   var handleShowPaysofterAccountFundPromise = function handleShowPaysofterAccountFundPromise() {
     setShowPaysofterAccountFundPromise(true);
   };
@@ -32256,10 +32572,16 @@ var PaysofterPromise = function PaysofterPromise(_ref) {
   var handleInfoModalClose = function handleInfoModalClose() {
     setShowInfoModal(false);
   };
-  var _useState9 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
-    _useState10 = PaysofterPromise_slicedToArray(_useState9, 2),
-    showExpectedDurationInfoModal = _useState10[0],
-    setShowExpectedDurationInfoModal = _useState10[1];
+  var handlePromisesInfoModalShow = function handlePromisesInfoModalShow() {
+    setShowPromisesInfoModal(true);
+  };
+  var handlePromisesInfoModalClose = function handlePromisesInfoModalClose() {
+    setShowPromisesInfoModal(false);
+  };
+  var _useState13 = (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useState)(false),
+    _useState14 = PaysofterPromise_slicedToArray(_useState13, 2),
+    showExpectedDurationInfoModal = _useState14[0],
+    setShowExpectedDurationInfoModal = _useState14[1];
   var handleExpectedDurationInfoModalShow = function handleExpectedDurationInfoModalShow() {
     setShowExpectedDurationInfoModal(true);
   };
@@ -32275,6 +32597,7 @@ var PaysofterPromise = function PaysofterPromise(_ref) {
     amount: amount,
     email: email,
     duration: duration,
+    promises: promisesToShow,
     paysofterPublicKey: paysofterPublicKey,
     referenceId: referenceId,
     qty: qty,
@@ -32292,7 +32615,7 @@ var PaysofterPromise = function PaysofterPromise(_ref) {
   }, "Paysofter Promise")), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Col, {
     md: 2
   }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Button, {
-    variant: "outline",
+    variant: "outline-info",
     onClick: handleInfoModalShow,
     "data-toggle": "tooltip",
     "data-placement": "top",
@@ -32333,7 +32656,7 @@ var PaysofterPromise = function PaysofterPromise(_ref) {
   }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Form.Label, null, "Expected Settlement Duration")), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Col, {
     md: 2
   }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Button, {
-    variant: "outline",
+    variant: "outline-info",
     onClick: handleExpectedDurationInfoModalShow,
     "data-toggle": "tooltip",
     "data-placement": "top",
@@ -32373,13 +32696,78 @@ var PaysofterPromise = function PaysofterPromise(_ref) {
     },
     onChange: handleDurationChange,
     placeholder: "Select Duration"
-  })), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", {
+  })), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Form.Group, {
+    controlId: "promises"
+  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Row, {
+    className: "justify-content-center py-1"
+  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Col, {
+    md: 10
+  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Form.Label, null, "Promises")), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Col, {
+    md: 2
+  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Button, {
+    variant: "outline-info",
+    onClick: handlePromisesInfoModalShow,
+    "data-toggle": "tooltip",
+    "data-placement": "top",
+    title: "View the promises that define the escrow agreement."
+  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("i", {
+    className: "fa fa-info-circle"
+  }, " ")))), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Card, {
+    className: "h-100 shadow-sm rounded"
+  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Card.Body, null, promisesToShow === null || promisesToShow === void 0 ? void 0 : promisesToShow.map(function (item, idx) {
+    return (
+      /*#__PURE__*/
+      // <p key={idx} className="text-center">
+      //   <Badge bg="success">{item}</Badge>
+      // </p>
+      external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", {
+        key: idx,
+        className: "d-flex justify-content-center py-1"
+      }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Badge, {
+        bg: "success",
+        className: "px-3 py-2 text-wrap text-center rounded-pill",
+        style: {
+          maxWidth: '100%'
+        }
+      }, item))
+    );
+  }))), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Modal, {
+    show: showPromisesInfoModal,
+    onHide: handlePromisesInfoModalClose
+  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Modal.Header, {
+    closeButton: true
+  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Modal.Title, {
+    className: "text-center w-100 py-2"
+  }, "Promises Info")), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Modal.Body, null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("p", {
+    className: "text-center"
+  }, "Promises are agreements between the buyer and seller, and must include the following standard terms as part of the escrow arrangement:", /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("ul", null, defaultPromises.map(function (promise, idx) {
+    return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("li", {
+      key: idx
+    }, promise);
+  })), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("a", {
+    href: "https://paysofter.com/about-paysofter-promise/",
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Button, {
+    variant: "primary",
+    size: "sm",
+    className: "text-center py-2"
+  }, "Learn more")))))), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Form.Check, {
+    type: "checkbox",
+    label: "Accept Promises",
+    checked: acceptedPromises,
+    onChange: function onChange(e) {
+      return setAcceptedPromises(e.target.checked);
+    },
+    className: "rounded py-2 mb-2"
+  }), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", {
     className: "py-3 text-center"
   }, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Button, {
-    className: "w-100 rounded",
+    className: "w-100 rounded-pill",
     type: "submit",
     variant: "primary",
-    onClick: handleShowPaysofterAccountFundPromise
+    onClick: handleShowPaysofterAccountFundPromise,
+    disabled: !acceptedPromises
   }, "Submit", " "))))));
 };
 /* harmony default export */ const src_PaysofterPromise = (PaysofterPromise);
@@ -32435,8 +32823,6 @@ function QrPayment() {
   }, "Visa QR  "), /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", null, "Coming soon...")));
 }
 /* harmony default export */ const src_QrPayment = (QrPayment);
-;// CONCATENATED MODULE: ./src/images/logo.png
-/* harmony default export */ const logo = ("data:image/png;base64,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");
 // EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js!./src/Paysofter.css
 var Paysofter = __webpack_require__(360);
 ;// CONCATENATED MODULE: ./src/Paysofter.css
@@ -32468,6 +32854,8 @@ var Paysofter_update = injectStylesIntoStyleTag_default()(Paysofter/* default */
 
        /* harmony default export */ const src_Paysofter = (Paysofter/* default */.A && Paysofter/* default */.A.locals ? Paysofter/* default */.A.locals : undefined);
 
+;// CONCATENATED MODULE: ./src/images/logo.png
+/* harmony default export */ const logo = ("data:image/png;base64,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");
 ;// CONCATENATED MODULE: ./src/PaysofterButton.js
 function PaysofterButton_slicedToArray(r, e) { return PaysofterButton_arrayWithHoles(r) || PaysofterButton_iterableToArrayLimit(r, e) || PaysofterButton_unsupportedIterableToArray(r, e) || PaysofterButton_nonIterableRest(); }
 function PaysofterButton_nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -32493,6 +32881,7 @@ function PaysofterButton(_ref) {
   var amount = _ref.amount,
     currency = _ref.currency,
     email = _ref.email,
+    promises = _ref.promises,
     paysofterPublicKey = _ref.paysofterPublicKey,
     onSuccess = _ref.onSuccess,
     onClose = _ref.onClose,
@@ -32539,7 +32928,8 @@ function PaysofterButton(_ref) {
   // };
 
   console.log('PaysofterButton amount:', amount);
-  console.log("logoImage:", logo);
+  // console.log("logoImage:", logoImage);
+  console.log("promises:", promises);
   return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Modal, {
     show: showPaymentModal,
     onHide: handleOnClosePayment,
@@ -32605,6 +32995,7 @@ function PaysofterButton(_ref) {
     amount: amount,
     currency: currency,
     email: email,
+    promises: promises,
     paysofterPublicKey: paysofterPublicKey,
     onSuccess: onSuccess,
     onClose: handleOnClosePayment,
@@ -33650,6 +34041,7 @@ function VerifyPromiseFundOtpTest_arrayWithHoles(r) { if (Array.isArray(r)) retu
 var VerifyPromiseFundOtpTest = function VerifyPromiseFundOtpTest(_ref) {
   var email = _ref.email,
     amount = _ref.amount,
+    promises = _ref.promises,
     paysofterPublicKey = _ref.paysofterPublicKey,
     qty = _ref.qty,
     productName = _ref.productName,
@@ -33714,7 +34106,7 @@ var VerifyPromiseFundOtpTest = function VerifyPromiseFundOtpTest(_ref) {
   var paysofterPromiseData = {
     email: email,
     amount: sendOtpData.amount,
-    // amount: amount,
+    promises: promises,
     public_api_key: paysofterPublicKey,
     qty: qty,
     product_name: productName,
@@ -33728,6 +34120,7 @@ var VerifyPromiseFundOtpTest = function VerifyPromiseFundOtpTest(_ref) {
   };
 
   // console.log('paysofterPromiseData:', paysofterPromiseData)
+  // console.log("promises:", promises);
 
   var handleCreatePromise = /*#__PURE__*/function () {
     var _ref2 = VerifyPromiseFundOtpTest_asyncToGenerator( /*#__PURE__*/VerifyPromiseFundOtpTest_regeneratorRuntime().mark(function _callee(paysofterPromiseData) {
@@ -33894,6 +34287,7 @@ function PaysofterPromiseFundTest_arrayWithHoles(r) { if (Array.isArray(r)) retu
 var PaysofterPromiseFundTest = function PaysofterPromiseFundTest(_ref) {
   var email = _ref.email,
     amount = _ref.amount,
+    promises = _ref.promises,
     paysofterPublicKey = _ref.paysofterPublicKey,
     referenceId = _ref.referenceId,
     qty = _ref.qty,
@@ -33986,7 +34380,7 @@ var PaysofterPromiseFundTest = function PaysofterPromiseFundTest(_ref) {
   };
 
   // console.log('debitAccountData:', debitAccountData)
-
+  console.log("promises:", promises);
   var submitHandler = function submitHandler(e) {
     e.preventDefault();
     if (!accountId) {
@@ -34011,6 +34405,7 @@ var PaysofterPromiseFundTest = function PaysofterPromiseFundTest(_ref) {
   };
   return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement((external_commonjs_react_commonjs2_react_amd_React_root_React_default()).Fragment, null, showVerifyAccountFundPromiseOtp ? /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_VerifyPromiseFundOtpTest, {
     amount: amount,
+    promises: promises,
     paysofterPublicKey: paysofterPublicKey,
     referenceId: referenceId,
     qty: qty,
@@ -34200,6 +34595,7 @@ var PaysofterPromiseTest = function PaysofterPromiseTest(_ref) {
   var email = _ref.email,
     currency = _ref.currency,
     amount = _ref.amount,
+    promises = _ref.promises,
     paysofterPublicKey = _ref.paysofterPublicKey,
     referenceId = _ref.referenceId,
     qty = _ref.qty,
@@ -34251,11 +34647,14 @@ var PaysofterPromiseTest = function PaysofterPromiseTest(_ref) {
     e.preventDefault();
   };
   console.log('PaysofterPromiseTest amount:', amount);
+  // console.log("promises:", promises);
+
   return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(esm_Container, null, showPaysofterAccountFundPromise ? /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement((external_commonjs_react_commonjs2_react_amd_React_root_React_default()).Fragment, null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(src_PaysofterPromiseFundTest, {
     currency: currency,
     amount: amount,
     email: email,
     duration: duration,
+    promises: promises,
     paysofterPublicKey: paysofterPublicKey,
     referenceId: referenceId,
     qty: qty,
@@ -34389,6 +34788,7 @@ function PaysofterButtonTest(_ref) {
   var amount = _ref.amount,
     currency = _ref.currency,
     email = _ref.email,
+    promises = _ref.promises,
     paysofterPublicKey = _ref.paysofterPublicKey,
     onSuccess = _ref.onSuccess,
     onClose = _ref.onClose,
@@ -34430,7 +34830,9 @@ function PaysofterButtonTest(_ref) {
     onClose();
   };
   console.log('PaysofterButtonTest amount:', amount);
-  console.log("logoImage:", logo);
+  // console.log("logoImage:", logoImage);
+  // console.log("promises:", promises);
+
   return /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement("div", null, /*#__PURE__*/external_commonjs_react_commonjs2_react_amd_React_root_React_default().createElement(react_bootstrap_esm_Modal, {
     show: showPaymentModal,
     backdrop: "static",
@@ -34492,6 +34894,7 @@ function PaysofterButtonTest(_ref) {
     amount: amount,
     currency: currency,
     email: email,
+    promises: promises,
     paysofterPublicKey: paysofterPublicKey,
     onSuccess: onSuccess,
     onClose: handleOnClosePayment,
@@ -34548,6 +34951,7 @@ function src_Paysofter_0(_ref) {
   var amount = _ref.amount,
     currency = _ref.currency,
     email = _ref.email,
+    promises = _ref.promises,
     paysofterPublicKey = _ref.paysofterPublicKey,
     onSuccess = _ref.onSuccess,
     onClose = _ref.onClose,
@@ -34585,6 +34989,7 @@ function src_Paysofter_0(_ref) {
   console.log("email:", email);
   console.log("amount:", amount);
   console.log("currency:", currency);
+  console.log("promises:", promises);
   (0,external_commonjs_react_commonjs2_react_amd_React_root_React_.useEffect)(function () {
     var fetchApiKeyStatus = /*#__PURE__*/function () {
       var _ref2 = src_asyncToGenerator( /*#__PURE__*/src_regeneratorRuntime().mark(function _callee() {
@@ -34673,6 +35078,7 @@ function src_Paysofter_0(_ref) {
     amount: amount,
     email: email,
     currency: currency,
+    promises: promises,
     paysofterPublicKey: paysofterPublicKey,
     onSuccess: onSuccess,
     onClose: onClose,
@@ -34690,6 +35096,7 @@ function src_Paysofter_0(_ref) {
     amount: amount,
     email: email,
     currency: currency,
+    promises: promises,
     paysofterPublicKey: paysofterPublicKey,
     onSuccess: onSuccess,
     onClose: onClose,
